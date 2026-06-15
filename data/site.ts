@@ -20,13 +20,17 @@ export const site = {
 export const whatsappLink = (message = site.whatsappText) =>
   `https://wa.me/${site.whatsappDigits}?text=${encodeURIComponent(message)}`;
 
-export const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
+export const serviceNavLinks = [
   { label: "Study Abroad", href: "/services/study-abroad" },
   { label: "Visit Visa", href: "/services/visitor-visa" },
   { label: "PR & Skilled Migration", href: "/services/pr-skilled-migration" },
-  { label: "Work & Business Visa", href: "/services/work-business-visa" },
+  { label: "Work & Business Visa", href: "/services/work-business-visa" }
+];
+
+export const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
   { label: "Countries", href: "/countries" },
   { label: "Settlement Support", href: "/settlement-support" },
   { label: "Success Stories", href: "/success-stories" },
