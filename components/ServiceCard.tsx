@@ -10,7 +10,7 @@ type ServiceCardProps = {
 
 export function ServiceCard({ service, compact = false }: ServiceCardProps) {
   return (
-    <article className="group flex h-full flex-col rounded-[8px] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-cyan/60 hover:shadow-xl">
+    <article className="group flex h-full flex-col rounded-[8px] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-gold/50 hover:shadow-xl">
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ocean">
@@ -18,7 +18,7 @@ export function ServiceCard({ service, compact = false }: ServiceCardProps) {
           </p>
           <h3 className="mt-3 text-xl font-semibold text-ink">{service.title}</h3>
         </div>
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-cyan/10 text-ocean transition group-hover:bg-cyan group-hover:text-midnight">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gold/10 text-ocean transition group-hover:bg-gold group-hover:text-ink">
           <CheckCircle2 className="h-5 w-5" aria-hidden="true" />
         </span>
       </div>
@@ -42,7 +42,7 @@ export function ServiceCard({ service, compact = false }: ServiceCardProps) {
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </Link>
         <a
-          className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-ink transition hover:border-cyan"
+          className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-ink transition hover:border-gold"
           href={whatsappLink(service.whatsappMessage)}
           target="_blank"
           rel="noreferrer"

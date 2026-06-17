@@ -4,8 +4,8 @@ export const site = {
   domain: "idolimmigration.com",
   url: "https://idolimmigration.com",
   email: "info@idolimmigration.com",
-  whatsappNumber: "+44 7918418525",
-  whatsappDigits: "447918418525",
+  whatsappNumber: "+918527427723",
+  whatsappDigits: "918527427723",
   whatsappText:
     "Hi Idol Immigration, I want guidance for my visa or study abroad plan.",
   tagline: "Not just visa filing. Real guidance from people who have lived the journey.",

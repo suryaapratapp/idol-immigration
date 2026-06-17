@@ -334,7 +334,7 @@ export default function HomePage() {
                 Chat on WhatsApp
               </a>
               <a
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-cyan"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-gold"
                 href={`mailto:${site.email}`}
               >
                 {site.email}

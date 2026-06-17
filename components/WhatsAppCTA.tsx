@@ -37,7 +37,7 @@ export function WhatsAppCTA({
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
           <a
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-cyan px-5 py-3 text-sm font-semibold text-midnight transition hover:bg-white"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gold px-5 py-3 text-sm font-semibold text-ink shadow-gold transition hover:bg-white"
             href={whatsappLink(message)}
             target="_blank"
             rel="noreferrer"
@@ -49,8 +49,8 @@ export function WhatsAppCTA({
             className={[
               "inline-flex min-h-12 items-center justify-center gap-2 rounded-full border px-5 py-3 text-sm font-semibold transition",
               dark
-                ? "border-white/20 text-white hover:border-cyan"
-                : "border-slate-200 text-ink hover:border-cyan"
+                ? "border-white/20 text-white hover:border-gold"
+                : "border-slate-200 text-ink hover:border-gold"
             ].join(" ")}
             href={secondaryHref}
           >

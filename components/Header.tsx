@@ -12,14 +12,14 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-midnight/90 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-midnight/95 backdrop-blur-xl">
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
-          className="group flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan"
+          className="group flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           href="/"
           aria-label="Idol Immigration home"
         >
-          <span className="grid h-10 w-10 place-items-center rounded-[8px] border border-cyan/30 bg-white/10 text-sm font-bold text-cyan shadow-glow">
+          <span className="grid h-10 w-10 place-items-center rounded-[8px] border border-gold/40 bg-white/5 text-sm font-bold text-gold shadow-gold">
             II
           </span>
           <span className="leading-tight">
@@ -48,7 +48,7 @@ export function Header() {
                     className={[
                       "inline-flex items-center gap-1 rounded-full px-3 py-2 text-xs font-medium transition",
                       active
-                        ? "bg-white/10 text-white"
+                        ? "bg-white/10 text-white ring-1 ring-gold/30"
                         : "text-white/70 hover:bg-white/10 hover:text-white"
                     ].join(" ")}
                     onClick={() => setServicesOpen((value) => !value)}
@@ -72,7 +72,7 @@ export function Header() {
                     ].join(" ")}
                   >
                     <div
-                      className="rounded-[8px] border border-white/10 bg-midnight/95 p-2 shadow-2xl backdrop-blur-xl"
+                      className="rounded-[8px] border border-gold/20 bg-ink/95 p-2 shadow-2xl backdrop-blur-xl"
                       role="menu"
                     >
                       <Link
@@ -105,7 +105,7 @@ export function Header() {
               <Link
                 className={[
                   "rounded-full px-3 py-2 text-xs font-medium transition",
-                  active ? "bg-white/10 text-white" : "text-white/70 hover:bg-white/10 hover:text-white"
+                  active ? "bg-white/10 text-white ring-1 ring-gold/30" : "text-white/70 hover:bg-white/10 hover:text-white"
                 ].join(" ")}
                 href={link.href}
                 key={link.href}
@@ -118,7 +118,7 @@ export function Header() {
 
         <div className="hidden items-center gap-3 xl:flex">
           <a
-            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-cyan px-4 py-2 text-sm font-semibold text-midnight transition hover:bg-white"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-gold px-4 py-2 text-sm font-semibold text-ink shadow-gold transition hover:bg-white"
             href={whatsappLink()}
             target="_blank"
             rel="noreferrer"
@@ -146,7 +146,7 @@ export function Header() {
               if (link.label === "Services") {
                 return (
                   <div
-                    className="rounded-[8px] border border-white/10 bg-white/10 p-2"
+                    className="rounded-[8px] border border-gold/20 bg-white/10 p-2"
                     key={link.href}
                   >
                     <Link
@@ -185,7 +185,7 @@ export function Header() {
               );
             })}
             <a
-              className="mt-2 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-cyan px-5 py-3 text-sm font-semibold text-midnight"
+              className="mt-2 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gold px-5 py-3 text-sm font-semibold text-ink"
               href={whatsappLink()}
               target="_blank"
               rel="noreferrer"

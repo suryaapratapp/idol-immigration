@@ -14,15 +14,16 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center opacity-75"
+          className="object-cover object-center opacity-65"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-midnight via-midnight/90 to-midnight/25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-midnight via-midnight/90 to-midnight/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-midnight/20 via-transparent to-midnight/75" />
         <div className="absolute inset-0 bg-radial-fade" />
       </div>
 
       <div className="relative mx-auto grid min-h-[calc(100vh-72px)] max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
         <div className="max-w-3xl">
-          <p className="mb-5 inline-flex rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-cyan backdrop-blur">
+          <p className="mb-5 inline-flex rounded-full border border-gold/25 bg-midnight/50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-gold backdrop-blur">
             Global migration mentor for Indians
           </p>
           <h1 className="text-4xl font-semibold tracking-normal sm:text-6xl lg:text-7xl">
@@ -36,7 +37,7 @@ export function Hero() {
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-midnight shadow-glow transition hover:-translate-y-0.5 hover:bg-white"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink shadow-gold transition hover:-translate-y-0.5 hover:bg-white"
               href={whatsappLink()}
               target="_blank"
               rel="noreferrer"
@@ -45,7 +46,7 @@ export function Hero() {
               Start on WhatsApp
             </a>
             <a
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:border-cyan"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:border-gold"
               href="#visa-options"
             >
               Explore Visa Options
@@ -60,15 +61,15 @@ export function Hero() {
         <div className="grid gap-4 sm:grid-cols-2 lg:pt-24">
           {featuredServices.map((service, index) => (
             <a
-              className="group rounded-[8px] border border-white/10 bg-white/10 p-5 backdrop-blur-xl transition hover:-translate-y-1 hover:border-cyan/60 hover:bg-white/20"
+              className="group rounded-[8px] border border-white/70 bg-white/90 p-5 text-ink shadow-glow backdrop-blur-xl transition hover:-translate-y-1 hover:border-gold hover:bg-white"
               href={`/services/${service.slug}`}
               key={service.slug}
             >
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
                 0{index + 1}
               </span>
-              <h2 className="mt-3 text-lg font-semibold text-white">{service.shortTitle}</h2>
-              <p className="mt-2 line-clamp-3 text-sm leading-6 text-white/60">
+              <h2 className="mt-3 text-lg font-semibold text-ink">{service.shortTitle}</h2>
+              <p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-600">
                 {service.summary}
               </p>
             </a>

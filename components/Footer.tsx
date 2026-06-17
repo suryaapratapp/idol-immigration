@@ -12,7 +12,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.3fr_0.8fr_0.8fr_0.8fr] lg:px-8">
         <div>
           <div className="flex items-center gap-3">
-            <span className="grid h-11 w-11 place-items-center rounded-[8px] border border-cyan/30 bg-white/10 text-sm font-bold text-cyan">
+            <span className="grid h-11 w-11 place-items-center rounded-[8px] border border-gold/40 bg-white/10 text-sm font-bold text-gold">
               II
             </span>
             <div>
@@ -26,7 +26,7 @@ export function Footer() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm text-white/80 transition hover:border-cyan hover:text-white"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm text-white/80 transition hover:border-gold hover:text-white"
               href={whatsappLink()}
               target="_blank"
               rel="noreferrer"
@@ -35,7 +35,7 @@ export function Footer() {
               {site.whatsappNumber}
             </a>
             <a
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm text-white/80 transition hover:border-cyan hover:text-white"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm text-white/80 transition hover:border-gold hover:text-white"
               href={`mailto:${site.email}`}
             >
               <Mail className="h-4 w-4" aria-hidden="true" />
@@ -44,7 +44,7 @@ export function Footer() {
           </div>
           <div className="mt-4 flex gap-3">
             <a
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white/70 transition hover:border-cyan hover:text-white"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white/70 transition hover:border-gold hover:text-white"
               href={site.founders.jagdeep}
               target="_blank"
               rel="noreferrer"
@@ -53,7 +53,7 @@ export function Footer() {
               <Linkedin className="h-4 w-4" />
             </a>
             <a
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white/70 transition hover:border-cyan hover:text-white"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white/70 transition hover:border-gold hover:text-white"
               href={site.founders.pooja}
               target="_blank"
               rel="noreferrer"
@@ -108,7 +108,7 @@ function FooterColumn({ title, links }: FooterColumnProps) {
       <ul className="mt-4 grid gap-3">
         {links.map((link) => (
           <li key={link.href}>
-            <Link className="text-sm text-white/60 transition hover:text-cyan" href={link.href}>
+            <Link className="text-sm text-white/60 transition hover:text-gold" href={link.href}>
               {link.label}
             </Link>
           </li>
