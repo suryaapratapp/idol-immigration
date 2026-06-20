@@ -6,6 +6,10 @@ import { navLinks, site, whatsappLink } from "@/data/site";
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const quickLinks = [
+    ...navLinks.slice(1, 7),
+    { label: "UK Life Guide", href: "/founders/uk-experience" }
+  ];
 
   return (
     <footer className="bg-midnight text-white">
@@ -64,7 +68,7 @@ export function Footer() {
           </div>
         </div>
 
-        <FooterColumn title="Quick links" links={navLinks.slice(1, 7)} />
+        <FooterColumn title="Quick links" links={quickLinks} />
         <FooterColumn
           title="Visa categories"
           links={featuredServices.map((service) => ({
@@ -75,7 +79,7 @@ export function Footer() {
         <FooterColumn
           title="Countries"
           links={countries.slice(0, 8).map((country) => ({
-            label: country.name,
+            label: `${country.flag} ${country.name}`,
             href: `/countries/${country.slug}`
           }))}
         />

@@ -71,8 +71,7 @@ export function professionalServiceSchema() {
       "Australia",
       "United States",
       "New Zealand",
-      "Europe",
-      "Hong Kong"
+      "Europe"
     ],
     serviceType: [
       "Study abroad counselling",

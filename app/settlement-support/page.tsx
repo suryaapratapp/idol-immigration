@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { BriefcaseBusiness, Building2, CreditCard, MapPinned, Phone, ShieldCheck } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, BriefcaseBusiness, Building2, CreditCard, MapPinned, Phone, ShieldCheck } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
@@ -81,6 +82,24 @@ export default function SettlementSupportPage() {
               );
             })}
           </div>
+          <Link
+            className="mt-8 flex flex-col gap-4 rounded-[8px] border border-gold/30 bg-ivory p-6 shadow-sm transition hover:-translate-y-1 hover:border-ocean hover:shadow-xl sm:flex-row sm:items-center sm:justify-between"
+            href="/founders/uk-experience"
+          >
+            <span>
+              <span className="block text-xs font-semibold uppercase tracking-[0.22em] text-ocean">
+                Founder UK experience
+              </span>
+              <span className="mt-2 block text-xl font-semibold text-ink">
+                See the detailed UK arrival and settlement checklist
+              </span>
+              <span className="mt-2 block text-sm leading-7 text-slate-600">
+                A practical, link-rich guide for students and newcomers who
+                want fewer surprises after landing.
+              </span>
+            </span>
+            <ArrowRight className="h-5 w-5 shrink-0 text-ocean" aria-hidden="true" />
+          </Link>
           <div className="mt-10">
             <WhatsAppCTA
               title="Prepare before you land"

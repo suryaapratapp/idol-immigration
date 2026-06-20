@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">USA destination illustration</title>
+  <desc id="desc">Warm illustrated New York skyline and Statue of Liberty inspired scene.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#08172d"/>
+      <stop offset="0.5" stop-color="#203f73"/>
+      <stop offset="1" stop-color="#f5b56c"/>
+    </linearGradient>
+    <linearGradient id="river" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0b2e4c"/>
+      <stop offset="1" stop-color="#3b8daf"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#sky)"/>
+  <circle cx="940" cy="148" r="68" fill="#ffd18b"/>
+  <path d="M0 548 C156 516 252 566 410 532 C580 496 714 548 878 514 C1020 485 1112 494 1200 470 L1200 760 L0 760 Z" fill="url(#river)"/>
+  <rect x="170" y="362" width="54" height="166" fill="#10283f"/>
+  <rect x="246" y="304" width="66" height="224" fill="#10283f"/>
+  <rect x="340" y="256" width="72" height="272" fill="#10283f"/>
+  <rect x="436" y="338" width="58" height="190" fill="#10283f"/>
+  <rect x="522" y="288" width="70" height="240" fill="#10283f"/>
+  <polygon points="344,256 408,256 376,204" fill="#10283f"/>
+  <rect x="372" y="168" width="8" height="44" fill="#10283f"/>
+  <rect x="704" y="320" width="44" height="190" fill="#123b42"/>
+  <path d="M694 320 L758 320 L732 272 L720 228 L708 272 Z" fill="#123b42"/>
+  <rect x="718" y="184" width="8" height="50" fill="#f3c36b"/>
+  <path d="M704 384 L676 430 L772 430 L748 384 Z" fill="#123b42"/>
+  <path d="M666 510 L782 510" stroke="#123b42" stroke-width="28" stroke-linecap="round"/>
+  <path d="M104 626 C258 590 402 642 552 612 C732 576 896 630 1092 594" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.34"/>
+  <path d="M794 306 L854 284" stroke="#f8d58c" stroke-width="8" stroke-linecap="round"/>
+</svg>

@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/about",
     "/founders",
+    "/founders/uk-experience",
     "/services",
     "/settlement-support",
     "/countries",

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">New Zealand destination illustration</title>
+  <desc id="desc">Warm illustrated New Zealand lake, mountains and calm landscape.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#082038"/>
+      <stop offset="0.55" stop-color="#277888"/>
+      <stop offset="1" stop-color="#f3be7a"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0b3344"/>
+      <stop offset="1" stop-color="#54b4bd"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#sky)"/>
+  <circle cx="930" cy="152" r="66" fill="#ffd492"/>
+  <path d="M0 490 L160 330 L282 440 L438 246 L610 472 L750 324 L930 486 L1066 368 L1200 510 L1200 760 L0 760 Z" fill="#102b3d"/>
+  <path d="M438 246 L498 352 L380 352 Z M750 324 L806 414 L694 414 Z" fill="#f7efe2" opacity="0.82"/>
+  <path d="M0 548 C178 512 282 564 446 534 C614 504 750 554 910 520 C1054 490 1124 500 1200 486 L1200 760 L0 760 Z" fill="url(#water)"/>
+  <path d="M116 530 C132 474 172 440 226 420 C194 466 196 506 230 552 C186 536 154 528 116 530 Z" fill="#163e36"/>
+  <path d="M258 532 C276 470 320 432 382 412 C348 470 350 512 390 560 C340 540 300 532 258 532 Z" fill="#163e36"/>
+  <path d="M780 560 C824 498 888 466 960 458 C914 512 908 560 948 620 C890 592 836 574 780 560 Z" fill="#163e36"/>
+  <path d="M108 632 C278 588 412 654 580 614 C758 572 890 632 1090 594" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.34"/>
+</svg>

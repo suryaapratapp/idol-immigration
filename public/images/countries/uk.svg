@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">United Kingdom destination illustration</title>
+  <desc id="desc">Warm illustrated view of London-inspired landmarks and the Thames.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#09203a"/>
+      <stop offset="0.48" stop-color="#1b5f86"/>
+      <stop offset="1" stop-color="#f1c37a"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#10324a"/>
+      <stop offset="1" stop-color="#2d93b2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#sky)"/>
+  <circle cx="920" cy="160" r="72" fill="#ffd493" opacity="0.92"/>
+  <path d="M0 528 C150 478 236 548 380 505 C524 463 648 510 770 482 C930 445 1038 478 1200 430 L1200 760 L0 760 Z" fill="url(#water)" opacity="0.92"/>
+  <path d="M0 608 C176 566 298 628 470 594 C650 560 760 622 930 580 C1030 556 1120 560 1200 544 L1200 760 L0 760 Z" fill="#082033" opacity="0.45"/>
+  <rect x="154" y="352" width="88" height="202" rx="4" fill="#10263d"/>
+  <rect x="172" y="286" width="52" height="66" rx="3" fill="#10263d"/>
+  <polygon points="168,286 228,286 198,242" fill="#10263d"/>
+  <rect x="190" y="196" width="16" height="72" fill="#10263d"/>
+  <circle cx="198" cy="378" r="18" fill="#f2c36f"/>
+  <rect x="340" y="430" width="360" height="42" fill="#10263d"/>
+  <path d="M340 430 C420 350 500 350 580 430 C620 390 660 390 700 430" fill="none" stroke="#f8d497" stroke-width="14" stroke-linecap="round"/>
+  <rect x="708" y="320" width="76" height="198" rx="4" fill="#10263d"/>
+  <rect x="722" y="260" width="48" height="60" rx="3" fill="#10263d"/>
+  <polygon points="720,260 772,260 746,222" fill="#10263d"/>
+  <rect x="742" y="176" width="10" height="70" fill="#10263d"/>
+  <path d="M68 560 L1120 560" stroke="#f8d497" stroke-width="8" opacity="0.55"/>
+  <path d="M86 646 C260 604 352 666 512 628 C686 587 812 646 1010 612" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.38"/>
+</svg>

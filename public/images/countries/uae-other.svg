@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">UAE and other destinations illustration</title>
+  <desc id="desc">Warm illustrated UAE skyline, desert light and global mobility scene.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#08182d"/>
+      <stop offset="0.48" stop-color="#315270"/>
+      <stop offset="1" stop-color="#f4b56b"/>
+    </linearGradient>
+    <linearGradient id="sand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8b6741"/>
+      <stop offset="1" stop-color="#efbd77"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#sky)"/>
+  <circle cx="930" cy="162" r="76" fill="#ffd08c"/>
+  <path d="M0 548 C154 494 300 560 458 520 C656 470 820 548 1004 500 C1082 480 1142 474 1200 468 L1200 760 L0 760 Z" fill="url(#sand)"/>
+  <path d="M0 610 C160 552 300 628 486 586 C680 542 818 624 1026 568 C1102 548 1160 544 1200 542 L1200 760 L0 760 Z" fill="#704b32" opacity="0.35"/>
+  <rect x="222" y="350" width="54" height="182" rx="4" fill="#10263d"/>
+  <rect x="310" y="292" width="58" height="240" rx="4" fill="#10263d"/>
+  <path d="M426 532 L470 176 L514 532 Z" fill="#10263d"/>
+  <rect x="560" y="254" width="60" height="278" rx="28" fill="#10263d"/>
+  <rect x="666" y="338" width="56" height="194" rx="4" fill="#10263d"/>
+  <rect x="758" y="286" width="72" height="246" rx="8" fill="#10263d"/>
+  <path d="M758 286 C794 226 826 226 830 286 Z" fill="#10263d"/>
+  <path d="M882 416 C948 360 1016 360 1082 416 L1082 532 L882 532 Z" fill="#10263d"/>
+  <path d="M126 604 C286 562 410 636 582 598 C746 560 900 622 1080 582" fill="none" stroke="#ffe1a4" stroke-width="5" opacity="0.42"/>
+</svg>

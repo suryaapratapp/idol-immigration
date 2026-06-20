@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Europe destination illustration</title>
+  <desc id="desc">Warm illustrated European street, arches and evening city scene.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#09172d"/>
+      <stop offset="0.52" stop-color="#28446f"/>
+      <stop offset="1" stop-color="#e9b66f"/>
+    </linearGradient>
+    <linearGradient id="street" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#17243b"/>
+      <stop offset="1" stop-color="#735b55"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#sky)"/>
+  <circle cx="946" cy="154" r="62" fill="#ffd18f"/>
+  <path d="M0 524 L1200 456 L1200 760 L0 760 Z" fill="url(#street)"/>
+  <rect x="118" y="220" width="210" height="330" rx="8" fill="#10263d"/>
+  <rect x="370" y="270" width="178" height="250" rx="8" fill="#17314b"/>
+  <rect x="610" y="226" width="214" height="292" rx="8" fill="#10263d"/>
+  <rect x="872" y="286" width="170" height="212" rx="8" fill="#17314b"/>
+  <path d="M142 548 L142 420 C142 364 182 324 224 324 C268 324 304 364 304 420 L304 548 Z" fill="#f0c172" opacity="0.86"/>
+  <path d="M638 518 L638 398 C638 344 676 306 718 306 C760 306 796 344 796 398 L796 518 Z" fill="#f0c172" opacity="0.86"/>
+  <rect x="402" y="326" width="40" height="58" rx="20" fill="#f4d28f"/>
+  <rect x="470" y="326" width="40" height="58" rx="20" fill="#f4d28f"/>
+  <rect x="904" y="334" width="34" height="48" rx="17" fill="#f4d28f"/>
+  <rect x="958" y="334" width="34" height="48" rx="17" fill="#f4d28f"/>
+  <path d="M286 618 C410 560 554 620 700 578 C842 536 936 564 1064 536" fill="none" stroke="#f6d08b" stroke-width="5" opacity="0.45"/>
+  <path d="M220 578 L188 640 L254 640 Z M748 550 L706 646 L794 646 Z" fill="#102d2e"/>
+</svg>

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { FounderCard } from "@/components/FounderCard";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -53,6 +55,24 @@ export default function FoundersPage() {
               </article>
             ))}
           </div>
+          <Link
+            className="mt-8 flex items-center justify-between gap-4 rounded-[8px] border border-gold/30 bg-white p-6 text-left shadow-sm transition hover:-translate-y-1 hover:border-ocean hover:shadow-xl"
+            href="/founders/uk-experience"
+          >
+            <span>
+              <span className="block text-xs font-semibold uppercase tracking-[0.22em] text-ocean">
+                New UK experience guide
+              </span>
+              <span className="mt-2 block text-xl font-semibold text-ink">
+                Read Jagdeep and Pooja&apos;s practical UK arrival guide
+              </span>
+              <span className="mt-2 block text-sm leading-7 text-slate-600">
+                Rooms, banking, SIM, groceries, transport, utilities, jobs,
+                discounts, car buying, scams and emotional preparation.
+              </span>
+            </span>
+            <ArrowRight className="h-5 w-5 shrink-0 text-ocean" aria-hidden="true" />
+          </Link>
           <div className="mt-10">
             <WhatsAppCTA
               title="Ask for founder-led guidance"

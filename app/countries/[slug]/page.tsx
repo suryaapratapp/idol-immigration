@@ -61,13 +61,19 @@ export default async function CountryDetailPage({ params }: CountryPageProps) {
       />
       <PageHero
         eyebrow={`${country.region} destination`}
-        title={`${country.name} Guidance for Indian Applicants`}
+        title={`${country.flag} ${country.name} Guidance for Indian Applicants`}
         copy={country.overview}
-      />
+      >
+        <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white/80 backdrop-blur">
+          <span className="text-2xl" aria-hidden="true">{country.flag}</span>
+          {country.image.caption}
+        </div>
+      </PageHero>
 
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div>
+            <CountryVisual country={country} />
             <SectionHeader
               eyebrow="Country fit"
               title={`Is ${country.name} Right for Your Plan?`}
@@ -115,6 +121,34 @@ export default async function CountryDetailPage({ params }: CountryPageProps) {
         </div>
       </section>
     </>
+  );
+}
+
+function CountryVisual({ country }: { country: NonNullable<ReturnType<typeof countryBySlug>> }) {
+  return (
+    <div className="mb-8 overflow-hidden rounded-[8px] border border-slate-200 bg-ink shadow-xl">
+      <div
+        aria-label={country.image.alt}
+        className="relative min-h-72 bg-cover bg-center"
+        role="img"
+        style={{ backgroundImage: `url(${country.image.src})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-midnight/85 via-midnight/15 to-transparent" />
+        <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">
+              Destination snapshot
+            </p>
+            <p className="mt-2 max-w-md text-sm leading-7 text-white/80">
+              {country.image.caption}
+            </p>
+          </div>
+          <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full border border-white/20 bg-white/15 text-3xl shadow-lg backdrop-blur">
+            <span aria-hidden="true">{country.flag}</span>
+          </span>
+        </div>
+      </div>
+    </div>
   );
 }
 

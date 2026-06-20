@@ -10,7 +10,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Countries for Study, Visit, PR and Settlement",
   description:
-    "Compare UK, Canada, Australia, USA, New Zealand, Europe, Hong Kong and UAE options with Idol Immigration.",
+    "Compare UK, Canada, Australia, USA, New Zealand, Europe and UAE options with Idol Immigration.",
   path: "/countries",
   keywords: [
     "UK student visa consultant India",

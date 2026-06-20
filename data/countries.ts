@@ -3,7 +3,13 @@ import { countryFaqs, type FAQ } from "./faqs";
 export type Country = {
   slug: string;
   name: string;
+  flag: string;
   region: string;
+  image: {
+    src: string;
+    alt: string;
+    caption: string;
+  };
   bestFor: string;
   popularRoutes: string[];
   commonProfile: string;
@@ -19,7 +25,13 @@ export const countries: Country[] = [
   {
     slug: "uk",
     name: "United Kingdom",
+    flag: "🇬🇧",
     region: "Europe",
+    image: {
+      src: "/images/countries/uk.svg",
+      alt: "Warm illustrated view of London landmarks and the Thames",
+      caption: "UK planning with real arrival and settlement context."
+    },
     bestFor: "Students seeking globally recognized education, shorter academic timelines and English-speaking exposure.",
     popularRoutes: ["Study abroad", "Visitor visa", "Skilled work planning", "Family routes"],
     commonProfile:
@@ -36,7 +48,13 @@ export const countries: Country[] = [
   {
     slug: "canada",
     name: "Canada",
+    flag: "🇨🇦",
     region: "North America",
+    image: {
+      src: "/images/countries/canada.svg",
+      alt: "Warm illustrated Canadian skyline with mountains and pine trees",
+      caption: "Canada comparison for study, family and long-term planning."
+    },
     bestFor: "Students and skilled professionals who want structured study, family and long-term migration planning.",
     popularRoutes: ["Study permit planning", "Visitor visa", "PR pathway discussion", "Family support"],
     commonProfile:
@@ -53,7 +71,13 @@ export const countries: Country[] = [
   {
     slug: "australia",
     name: "Australia",
+    flag: "🇦🇺",
     region: "Oceania",
+    image: {
+      src: "/images/countries/australia.svg",
+      alt: "Warm illustrated Sydney harbour and Opera House inspired scene",
+      caption: "Australia planning with profile, English and pathway clarity."
+    },
     bestFor: "Skilled professionals, students and families comparing education, work and long-term settlement possibilities.",
     popularRoutes: ["Study abroad", "Visitor visa", "General skilled migration planning", "Family routes"],
     commonProfile:
@@ -70,7 +94,13 @@ export const countries: Country[] = [
   {
     slug: "usa",
     name: "USA",
+    flag: "🇺🇸",
     region: "North America",
+    image: {
+      src: "/images/countries/usa.svg",
+      alt: "Warm illustrated New York skyline and Statue of Liberty inspired scene",
+      caption: "USA planning focused on purpose, documents and confidence."
+    },
     bestFor: "Students, visitors and professionals who need strong interview clarity and purpose-driven documentation.",
     popularRoutes: ["Student visa planning", "Visitor visa", "Interview preparation", "Business travel"],
     commonProfile:
@@ -87,7 +117,13 @@ export const countries: Country[] = [
   {
     slug: "new-zealand",
     name: "New Zealand",
+    flag: "🇳🇿",
     region: "Oceania",
+    image: {
+      src: "/images/countries/new-zealand.svg",
+      alt: "Warm illustrated New Zealand lake, mountains and calm landscape",
+      caption: "New Zealand planning with lifestyle and route-fit awareness."
+    },
     bestFor: "Students and families seeking a calmer destination with education, lifestyle and settlement planning.",
     popularRoutes: ["Study abroad", "Visitor visa", "Work-route planning", "Family support"],
     commonProfile:
@@ -104,7 +140,13 @@ export const countries: Country[] = [
   {
     slug: "europe",
     name: "Europe",
+    flag: "🇪🇺",
     region: "Europe",
+    image: {
+      src: "/images/countries/europe.svg",
+      alt: "Warm illustrated European street, arches and evening city scene",
+      caption: "Europe needs country-specific comparison, not generic advice."
+    },
     bestFor: "Students, visitors and professionals comparing Germany, Ireland and other European routes.",
     popularRoutes: ["Study abroad", "Visitor visa", "Job seeker planning", "Business travel"],
     commonProfile:
@@ -119,26 +161,15 @@ export const countries: Country[] = [
     faqs: countryFaqs.europe
   },
   {
-    slug: "hong-kong",
-    name: "Hong Kong",
-    region: "Asia",
-    bestFor: "Business, visitor and regional mobility planning for applicants with clear purpose and documentation.",
-    popularRoutes: ["Visitor visa", "Business travel", "Work-route discussion"],
-    commonProfile:
-      "Business travellers, visitors and professionals comparing Asia-Pacific options.",
-    worries: ["Purpose clarity", "Invitation documents", "Business evidence", "Travel history"],
-    howIdolHelps:
-      "Idol helps applicants organize purpose, invitations, travel plans and supporting evidence with official-source checks.",
-    overview:
-      "Hong Kong can be relevant for visitors and business applicants who need clear evidence and travel purpose.",
-    lastUpdated: "June 15, 2026",
-    officialSourcePlaceholder: "Verify current Hong Kong immigration requirements on official government sources before publishing.",
-    faqs: countryFaqs.europe
-  },
-  {
     slug: "uae-other-destinations",
     name: "UAE / Other Destinations",
+    flag: "🇦🇪",
     region: "Middle East + global",
+    image: {
+      src: "/images/countries/uae-other.svg",
+      alt: "Warm illustrated UAE skyline, desert light and global mobility scene",
+      caption: "Regional and other destinations compared by purpose and fit."
+    },
     bestFor: "Applicants exploring regional work, visitor, business or stepping-stone international plans.",
     popularRoutes: ["Visitor visa", "Business travel", "Work guidance", "Family visits"],
     commonProfile:
