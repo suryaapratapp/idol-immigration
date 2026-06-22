@@ -12,14 +12,15 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-midnight/95 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-midnight/[0.88] shadow-[0_18px_60px_rgba(0,0,0,0.22)] backdrop-blur-xl">
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan/35 to-transparent" />
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           className="group flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           href="/"
           aria-label="Idol Immigration home"
         >
-          <span className="grid h-10 w-10 place-items-center rounded-[8px] border border-gold/40 bg-white/5 text-sm font-bold text-gold shadow-gold">
+          <span className="grid h-10 w-10 place-items-center rounded-[8px] border border-gold/40 bg-gradient-to-br from-white/15 to-cyan/10 text-sm font-bold text-gold shadow-gold">
             II
           </span>
           <span className="leading-tight">
@@ -30,7 +31,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary navigation">
+        <nav className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] p-1 xl:flex" aria-label="Primary navigation">
           {navLinks.map((link) => {
             const active =
               link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
@@ -48,7 +49,7 @@ export function Header() {
                     className={[
                       "inline-flex items-center gap-1 rounded-full px-3 py-2 text-xs font-medium transition",
                       active
-                        ? "bg-white/10 text-white ring-1 ring-gold/30"
+                        ? "bg-white/[0.12] text-white ring-1 ring-gold/30"
                         : "text-white/70 hover:bg-white/10 hover:text-white"
                     ].join(" ")}
                     onClick={() => setServicesOpen((value) => !value)}
@@ -72,11 +73,11 @@ export function Header() {
                     ].join(" ")}
                   >
                     <div
-                      className="rounded-[8px] border border-gold/20 bg-ink/95 p-2 shadow-2xl backdrop-blur-xl"
+                      className="overflow-hidden rounded-[8px] border border-gold/20 bg-ink/95 p-2 shadow-2xl backdrop-blur-xl"
                       role="menu"
                     >
                       <Link
-                        className="block rounded-[8px] px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                        className="block rounded-[8px] bg-white/[0.04] px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
                         href="/services"
                         onClick={() => setServicesOpen(false)}
                         role="menuitem"
@@ -105,7 +106,7 @@ export function Header() {
               <Link
                 className={[
                   "rounded-full px-3 py-2 text-xs font-medium transition",
-                  active ? "bg-white/10 text-white ring-1 ring-gold/30" : "text-white/70 hover:bg-white/10 hover:text-white"
+                  active ? "bg-white/[0.12] text-white ring-1 ring-gold/30" : "text-white/70 hover:bg-white/10 hover:text-white"
                 ].join(" ")}
                 href={link.href}
                 key={link.href}
@@ -129,7 +130,7 @@ export function Header() {
         </div>
 
         <button
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white xl:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/[0.05] text-white xl:hidden"
           type="button"
           onClick={() => setOpen((value) => !value)}
           aria-label={open ? "Close menu" : "Open menu"}
@@ -140,7 +141,7 @@ export function Header() {
       </div>
 
       {open ? (
-        <div className="border-t border-white/10 bg-midnight px-4 py-4 shadow-2xl xl:hidden">
+        <div className="border-t border-white/10 bg-midnight/[0.98] px-4 py-4 shadow-2xl xl:hidden">
           <nav className="mx-auto grid max-w-7xl gap-2" aria-label="Mobile navigation">
             {navLinks.map((link) => {
               if (link.label === "Services") {

@@ -28,10 +28,10 @@ const rows: ComparisonRow[] = [
 
 export function ComparisonTable() {
   return (
-    <div className="overflow-hidden rounded-[8px] border border-slate-200 bg-white shadow-sm">
+    <div className="overflow-hidden rounded-[8px] border border-slate-200 bg-white shadow-xl shadow-slate-200/60">
       <table className="w-full border-collapse text-left text-sm">
         <caption className="sr-only">Migration planning areas Idol Immigration reviews</caption>
-        <thead className="bg-ink text-white">
+        <thead className="bg-gradient-to-r from-midnight via-ink to-ocean text-white">
           <tr>
             <th className="px-5 py-4 font-semibold" scope="col">Planning area</th>
             <th className="px-5 py-4 font-semibold" scope="col">What we clarify</th>

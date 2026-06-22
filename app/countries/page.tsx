@@ -30,7 +30,8 @@ export default function CountriesPage() {
       />
 
       <section className="relative overflow-hidden bg-midnight py-16 text-white sm:py-24">
-        <div className="absolute inset-0 glass-grid opacity-40" />
+        <div className="absolute inset-0 premium-grid opacity-45" />
+        <div className="absolute inset-0 route-lines opacity-55" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Destination comparison"

@@ -8,7 +8,8 @@ type ResourceCardProps = {
 
 export function ResourceCard({ resource }: ResourceCardProps) {
   return (
-    <article className="group flex h-full flex-col rounded-[8px] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-cyan/60 hover:shadow-xl">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-[8px] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-cyan/60 hover:shadow-xl">
+      <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-ocean via-cyan to-gold opacity-75" />
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-ocean">
@@ -16,7 +17,7 @@ export function ResourceCard({ resource }: ResourceCardProps) {
           </p>
           <h3 className="mt-3 text-xl font-semibold text-ink">{resource.title}</h3>
         </div>
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gold/10 text-gold">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-slate-200 bg-mist text-ocean transition group-hover:border-gold/60 group-hover:bg-ink group-hover:text-cyan">
           <BookOpen className="h-5 w-5" aria-hidden="true" />
         </span>
       </div>

@@ -10,7 +10,9 @@ type ServiceCardProps = {
 
 export function ServiceCard({ service, compact = false }: ServiceCardProps) {
   return (
-    <article className="group flex h-full flex-col rounded-[8px] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-gold/50 hover:shadow-xl">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-[8px] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-cyan/50 hover:shadow-xl">
+      <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-gold via-cyan to-ocean opacity-80" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-cyan/[0.08] via-transparent to-gold/10 opacity-0 transition group-hover:opacity-100" />
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ocean">
@@ -18,7 +20,7 @@ export function ServiceCard({ service, compact = false }: ServiceCardProps) {
           </p>
           <h3 className="mt-3 text-xl font-semibold text-ink">{service.title}</h3>
         </div>
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gold/10 text-ocean transition group-hover:bg-gold group-hover:text-ink">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-slate-200 bg-mist text-ocean transition group-hover:border-gold/60 group-hover:bg-ink group-hover:text-cyan">
           <CheckCircle2 className="h-5 w-5" aria-hidden="true" />
         </span>
       </div>

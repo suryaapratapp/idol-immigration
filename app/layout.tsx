@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
+import { EnquiryPopup } from "@/components/EnquiryPopup";
 import { FloatingWhatsAppButton } from "@/components/FloatingWhatsAppButton";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Header />
         <main>{children}</main>
         <Footer />
+        <EnquiryPopup />
         <FloatingWhatsAppButton />
         <MobileBottomCTA />
       </body>

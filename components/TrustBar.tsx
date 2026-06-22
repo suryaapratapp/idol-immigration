@@ -9,9 +9,9 @@ export function TrustBar({ items, dark = true }: TrustBarProps) {
   return (
     <div
       className={[
-        "flex flex-wrap items-center gap-3 rounded-full border px-4 py-3 text-sm",
+        "flex flex-wrap items-center gap-3 rounded-[8px] border px-4 py-3 text-sm shadow-glow",
         dark
-          ? "border-white/20 bg-midnight/50 text-white/80 backdrop-blur"
+          ? "border-white/20 bg-midnight/60 text-white/80 backdrop-blur"
           : "border-slate-200 bg-white text-slate-700 shadow-sm"
       ].join(" ")}
     >

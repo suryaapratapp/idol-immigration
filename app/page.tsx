@@ -5,7 +5,7 @@ import { ComparisonTable } from "@/components/ComparisonTable";
 import { CountryCard } from "@/components/CountryCard";
 import { EligibilityQuestionCards } from "@/components/EligibilityQuestionCards";
 import { FAQAccordion } from "@/components/FAQAccordion";
-import { FounderCard } from "@/components/FounderCard";
+import { GlobalCommandCenter } from "@/components/GlobalCommandCenter";
 import { Hero } from "@/components/Hero";
 import { JsonLd } from "@/components/JsonLd";
 import { ProcessTimeline } from "@/components/ProcessTimeline";
@@ -18,7 +18,6 @@ import { TestimonialCard } from "@/components/TestimonialCard";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { generalFaqs } from "@/data/faqs";
 import { countries } from "@/data/countries";
-import { founders } from "@/data/founders";
 import { resources } from "@/data/resources";
 import { allServiceCards } from "@/data/services";
 import { site, whatsappLink } from "@/data/site";
@@ -28,7 +27,7 @@ import { createMetadata, faqSchema } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Immigration Consultant for Indians",
   description:
-    "Premium founder-led study abroad, visitor visa, PR, skilled migration and overseas settlement guidance for Indian students, families and professionals.",
+    "Premium study abroad, visitor visa, PR, skilled migration and overseas settlement guidance for Indian students, families and professionals.",
   path: "/",
   keywords: [
     "immigration consultant for Indians",
@@ -42,7 +41,7 @@ export const metadata: Metadata = createMetadata({
 const differentiators = [
   {
     title: "Lived-Abroad Guidance",
-    copy: "Founders understand the real move, not only forms and checklists.",
+    copy: "Practical guidance that considers the real move, not only forms and checklists.",
     icon: Map
   },
   {
@@ -91,8 +90,10 @@ export default function HomePage() {
       <JsonLd data={faqSchema(generalFaqs)} />
       <Hero />
 
-      <section className="bg-white py-16 sm:py-24" id="visa-options">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-white py-16 sm:py-24" id="visa-options">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/35 to-transparent" />
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(123,211,244,0.10),transparent_30%,rgba(201,164,93,0.08))]" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <SectionHeader
               eyebrow="Why Idol is different"
@@ -106,8 +107,9 @@ export default function HomePage() {
               const Icon = item.icon;
               return (
                 <Reveal delay={index * 0.04} key={item.title}>
-                  <article className="h-full rounded-[8px] border border-slate-200 bg-mist/35 p-6">
-                    <span className="grid h-12 w-12 place-items-center rounded-[8px] bg-ink text-cyan">
+                  <article className="relative h-full overflow-hidden rounded-[8px] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-cyan/50 hover:shadow-xl">
+                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-gold via-cyan to-ocean opacity-80" />
+                    <span className="grid h-12 w-12 place-items-center rounded-[8px] border border-cyan/20 bg-ink text-cyan shadow-glow">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </span>
                     <h2 className="mt-5 text-xl font-semibold text-ink">{item.title}</h2>
@@ -120,42 +122,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-ivory py-16 sm:py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-          <Reveal>
-            <div>
-              <SectionHeader
-                eyebrow="Founder-led guidance"
-                title="Guided by People Who Understand the Journey Personally"
-                copy="Because Jagdeep and Pooja have lived the journey themselves, Idol Immigration looks beyond forms and checklists."
-              />
-              <p className="mt-6 text-base leading-8 text-slate-600">
-                After living abroad themselves for more than three years, Jagdeep
-                and Pooja saw the gap most applicants face: people get visa advice,
-                but not enough real-life preparation. Idol Immigration bridges that
-                gap with pathway planning, application support and practical
-                settlement guidance.
-              </p>
-              <Link
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:bg-ocean"
-                href="/founders"
-              >
-                Meet the founders
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
-            </div>
-          </Reveal>
-          <div className="grid gap-5 md:grid-cols-2">
-            {founders.map((founder, index) => (
-              <Reveal delay={index * 0.08} key={founder.name}>
-                <FounderCard founder={founder} />
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <GlobalCommandCenter />
 
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-ivory py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Visa pathway finder"
@@ -170,7 +139,8 @@ export default function HomePage() {
       </section>
 
       <section className="relative overflow-hidden bg-midnight py-16 text-white sm:py-24">
-        <div className="absolute inset-0 glass-grid opacity-50" />
+        <div className="absolute inset-0 premium-grid opacity-45" />
+        <div className="absolute inset-0 route-lines opacity-55" />
         <div className="absolute inset-0 bg-radial-fade" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
@@ -310,13 +280,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-midnight py-16 text-white sm:py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_0.9fr] lg:px-8">
+      <section className="relative overflow-hidden bg-midnight py-16 text-white sm:py-24">
+        <div className="absolute inset-0 premium-grid opacity-35" />
+        <div className="absolute inset-0 route-lines opacity-45" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/45 to-transparent" />
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_0.9fr] lg:px-8">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan">
               Contact
             </p>
-            <h2 className="mt-4 text-3xl font-semibold sm:text-5xl">
+            <h2 className="text-balance mt-4 text-3xl font-semibold sm:text-5xl">
               Start with a WhatsApp Consultation
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-8 text-white/70">
@@ -341,13 +314,14 @@ export default function HomePage() {
               </a>
             </div>
           </div>
-          <div className="rounded-[8px] border border-white/10 bg-white/10 p-6 backdrop-blur">
+          <div className="relative overflow-hidden rounded-[8px] border border-white/10 bg-white/[0.09] p-6 shadow-glow backdrop-blur">
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-gold via-cyan to-ocean" />
             <Landmark className="h-9 w-9 text-gold" aria-hidden="true" />
             <h3 className="mt-5 text-2xl font-semibold">Not just visa filing.</h3>
             <p className="mt-4 text-sm leading-7 text-white/70">
-              Real guidance from people who have lived the journey: preparing
-              documents, applying, moving, finding accommodation, building
-              confidence, understanding part-time work and settling properly.
+              Practical guidance for stronger documents, clearer country
+              comparison, realistic cost planning, pre-departure preparation and
+              settlement confidence after arrival.
             </p>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Linkedin, Mail, MessageCircle } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
 import { countries } from "@/data/countries";
 import { featuredServices } from "@/data/services";
 import { navLinks, site, whatsappLink } from "@/data/site";
@@ -12,11 +12,13 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-midnight text-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.3fr_0.8fr_0.8fr_0.8fr] lg:px-8">
+    <footer className="relative overflow-hidden bg-midnight text-white">
+      <div className="absolute inset-0 premium-grid opacity-25" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.3fr_0.8fr_0.8fr_0.8fr] lg:px-8">
         <div>
           <div className="flex items-center gap-3">
-            <span className="grid h-11 w-11 place-items-center rounded-[8px] border border-gold/40 bg-white/10 text-sm font-bold text-gold">
+            <span className="grid h-11 w-11 place-items-center rounded-[8px] border border-gold/40 bg-gradient-to-br from-white/15 to-cyan/10 text-sm font-bold text-gold shadow-gold">
               II
             </span>
             <div>
@@ -25,8 +27,8 @@ export function Footer() {
             </div>
           </div>
           <p className="mt-6 max-w-md text-sm leading-7 text-white/70">
-            Founder-led visa, study abroad, immigration and overseas settlement
-            guidance for Indian students, families and professionals.
+            Visa, study abroad, immigration and overseas settlement guidance for
+            Indian students, families and professionals.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
@@ -44,26 +46,6 @@ export function Footer() {
             >
               <Mail className="h-4 w-4" aria-hidden="true" />
               {site.email}
-            </a>
-          </div>
-          <div className="mt-4 flex gap-3">
-            <a
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white/70 transition hover:border-gold hover:text-white"
-              href={site.founders.jagdeep}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Jagdeep LinkedIn"
-            >
-              <Linkedin className="h-4 w-4" />
-            </a>
-            <a
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white/70 transition hover:border-gold hover:text-white"
-              href={site.founders.pooja}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Pooja LinkedIn"
-            >
-              <Linkedin className="h-4 w-4" />
             </a>
           </div>
         </div>
@@ -85,7 +67,7 @@ export function Footer() {
         />
       </div>
 
-      <div className="border-t border-white/10">
+      <div className="relative border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 text-xs leading-6 text-white/50 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <p>
             Idol Immigration provides consultation and application support.

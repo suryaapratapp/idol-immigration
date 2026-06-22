@@ -33,7 +33,7 @@ export function SectionHeader({
       ) : null}
       <h2
         className={[
-          "text-3xl font-semibold tracking-normal sm:text-4xl lg:text-5xl",
+          "text-balance text-3xl font-semibold tracking-normal sm:text-4xl lg:text-5xl",
           dark ? "text-white" : "text-ink"
         ].join(" ")}
       >

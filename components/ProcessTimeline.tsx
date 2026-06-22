@@ -14,11 +14,12 @@ export function ProcessTimeline() {
     <ol className="grid gap-4 lg:grid-cols-6">
       {steps.map((step, index) => (
         <li
-          className="relative rounded-[8px] border border-slate-200 bg-white p-5 shadow-sm"
+          className="relative overflow-hidden rounded-[8px] border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-cyan/50 hover:shadow-xl"
           key={step}
         >
+          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-gold via-cyan to-ocean" />
           <div className="flex items-center gap-3 lg:block">
-            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-ink text-sm font-semibold text-cyan">
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-cyan/25 bg-ink text-sm font-semibold text-cyan shadow-glow">
               {index + 1}
             </span>
             <h3 className="text-base font-semibold text-ink lg:mt-5">{step}</h3>

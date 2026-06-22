@@ -9,13 +9,14 @@ type CountryCardProps = {
 
 export function CountryCard({ country }: CountryCardProps) {
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-[8px] border border-white/20 bg-white/10 text-white backdrop-blur transition hover:-translate-y-1 hover:border-gold/50 hover:bg-white/20">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-[8px] border border-white/20 bg-white/[0.09] text-white shadow-glow backdrop-blur transition hover:-translate-y-1 hover:border-gold/50 hover:bg-white/[0.14]">
       <div
         aria-label={country.image.alt}
         className="relative min-h-48 bg-cover bg-center"
         role="img"
         style={{ backgroundImage: `url(${country.image.src})` }}
       >
+        <div className="absolute inset-0 premium-grid opacity-25" />
         <div className="absolute inset-0 bg-gradient-to-t from-midnight/85 via-midnight/20 to-transparent" />
         <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
           <div>
