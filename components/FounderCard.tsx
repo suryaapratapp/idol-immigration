@@ -29,7 +29,7 @@ export function FounderCard({ founder }: FounderCardProps) {
       <p className="mt-6 text-sm leading-7 text-slate-600">{founder.copy}</p>
       <p className="mt-4 text-sm leading-7 text-slate-600">{founder.detail}</p>
       <a
-        className="mt-6 inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-ink transition hover:border-cyan"
+        className="mt-6 inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-[#0A66C2] transition hover:border-[#0A66C2] hover:bg-[#0A66C2]/10"
         href={founder.linkedIn}
         target="_blank"
         rel="noreferrer"

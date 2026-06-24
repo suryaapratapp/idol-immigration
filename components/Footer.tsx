@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, MessageCircle, Phone, Star, Youtube } from "lucide-react";
 import { footerQuickLinks, site, whatsappLink } from "@/data/site";
@@ -15,11 +16,17 @@ export function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-stone-200 bg-ivory text-ink">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.15fr_0.85fr_0.8fr] lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.15fr_0.7fr_0.95fr] lg:px-8">
         <div>
           <div className="flex items-center gap-3">
-            <span className="grid h-12 w-12 place-items-center rounded-[8px] border border-gold/40 bg-white text-sm font-bold text-ink shadow-[0_14px_38px_rgba(201,164,93,0.16)]">
-              II
+            <span className="grid h-14 w-14 place-items-center overflow-hidden rounded-[8px] border border-gold/40 bg-white shadow-[0_14px_38px_rgba(201,164,93,0.16)]">
+              <Image
+                src="/images/logo-idol.png"
+                alt="Idol Immigration logo"
+                width={56}
+                height={56}
+                className="h-full w-full object-contain p-1"
+              />
             </span>
             <div>
               <p className="font-semibold">{site.name}</p>
@@ -62,8 +69,10 @@ export function Footer() {
           </div>
         </div>
 
+        <FooterColumn title="Useful Links" links={footerQuickLinks} />
+
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold">Contact</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold">Contact Us</p>
           <div className="mt-5 grid gap-4 text-sm leading-7 text-slate-600">
             <p className="flex gap-3">
               <MapPin className="mt-1 h-5 w-5 shrink-0 text-ocean" aria-hidden="true" />
@@ -88,8 +97,6 @@ export function Footer() {
             Quick WhatsApp Enquiry
           </a>
         </div>
-
-        <FooterColumn title="Useful Links" links={footerQuickLinks} />
       </div>
 
       <div className="border-t border-stone-200 bg-white/70">

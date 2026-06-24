@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, Menu, MessageCircle, X } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -19,8 +20,14 @@ export function Header() {
           href="/"
           aria-label="Idol Immigration home"
         >
-          <span className="grid h-11 w-11 place-items-center rounded-[8px] border border-gold/40 bg-ivory text-sm font-bold text-ink shadow-[0_12px_30px_rgba(201,164,93,0.16)]">
-            II
+          <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-[8px] border border-gold/40 bg-white shadow-[0_12px_30px_rgba(201,164,93,0.16)]">
+            <Image
+              src="/images/logo-idol.png"
+              alt="Idol Immigration logo"
+              width={44}
+              height={44}
+              className="h-full w-full object-contain p-0.5"
+            />
           </span>
           <span className="leading-tight">
             <span className="block text-sm font-semibold text-ink">Idol Immigration</span>
@@ -36,12 +43,7 @@ export function Header() {
               link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
             if (link.label === "Services") {
               return (
-                <div
-                  className="relative"
-                  key={link.href}
-                  onMouseEnter={() => setServicesOpen(true)}
-                  onMouseLeave={() => setServicesOpen(false)}
-                >
+                <div className="relative" key={link.href}>
                   <button
                     aria-expanded={servicesOpen}
                     aria-haspopup="menu"

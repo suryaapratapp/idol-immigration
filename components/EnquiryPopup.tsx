@@ -7,6 +7,7 @@ import { allServiceCards } from "@/data/services";
 import { whatsappLink } from "@/data/site";
 
 const storageKey = "idol-enquiry-popup-dismissed";
+const enquiryFinishedEvent = "idol:enquiry-finished";
 
 export function EnquiryPopup() {
   const [open, setOpen] = useState(false);
@@ -51,6 +52,7 @@ export function EnquiryPopup() {
   function close() {
     window.sessionStorage.setItem(storageKey, "true");
     setOpen(false);
+    window.dispatchEvent(new CustomEvent(enquiryFinishedEvent));
   }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -68,6 +70,7 @@ export function EnquiryPopup() {
 
     window.sessionStorage.setItem(storageKey, "true");
     setOpen(false);
+    window.dispatchEvent(new CustomEvent(enquiryFinishedEvent));
     window.open(whatsappLink(message), "_blank", "noopener,noreferrer");
   }
 
