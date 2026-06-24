@@ -9,6 +9,9 @@ export type Service = {
   whoFor: string[];
   helpsWith: string[];
   commonMistakes: string[];
+  eligibilityOverview?: string[];
+  documentsOverview?: string[];
+  whyChoose?: string[];
   cta: string;
   whatsappMessage: string;
   keywords: string[];
@@ -52,11 +55,11 @@ export const services: Service[] = [
   },
   {
     slug: "visitor-visa",
-    title: "Visitor / Tourist Visa Guidance",
-    shortTitle: "Visitor Visa",
+    title: "Tourist / Visitor Visa Guidance",
+    shortTitle: "Tourist / Visitor Visa",
     eyebrow: "Tourism, family visits & short stays",
     summary:
-      "Prepare a clear visitor visa application with stronger purpose, funds, itinerary, invitation and home-country tie evidence.",
+      "Prepare a clear tourist or visitor visa application with stronger purpose, funds, itinerary, invitation and home-country tie evidence.",
     whoFor: [
       "Families visiting children or relatives abroad",
       "Tourists planning short-term travel",
@@ -68,16 +71,31 @@ export const services: Service[] = [
       "Travel history and home-country tie presentation",
       "Refusal risk review before submission"
     ],
+    eligibilityOverview: [
+      "Clear purpose of travel, such as tourism, family visit, event, short business visit or holiday",
+      "Reasonable funds or sponsorship aligned with the itinerary",
+      "Strong ties to India and a credible intention to return"
+    ],
+    documentsOverview: [
+      "Passport, photographs, travel plan and accommodation or invitation details",
+      "Bank statements, income proof, employment or business records",
+      "Family, property, education or work documents that support India ties"
+    ],
+    whyChoose: [
+      "Practical review of purpose, itinerary and funds before submission",
+      "Guidance for parents, families and first-time travellers",
+      "Clear explanation of refusal-risk signals without overpromising"
+    ],
     commonMistakes: [
       "Submitting generic itineraries without personal context",
       "Funds that do not match the proposed travel plan",
       "Weak explanation of why the applicant will return to India"
     ],
-    cta: "Review my visitor visa",
-    whatsappMessage: "Hi Idol Immigration, I want visitor visa guidance.",
-    keywords: ["visitor visa consultant India"],
+    cta: "Review my tourist visa",
+    whatsappMessage: "Hi Idol Immigration, I want tourist or visitor visa guidance.",
+    keywords: ["tourist visa consultant India", "visitor visa consultant India"],
     pageIntro:
-      "A visitor visa application should make the trip easy to understand. Idol helps applicants present purpose, funds, travel dates and family context in a consistent, well-documented way.",
+      "A tourist or visitor visa application should make the trip easy to understand. Idol helps applicants present purpose, funds, travel dates and family context in a consistent, well-documented way.",
     outcome:
       "A cleaner document plan and a stronger understanding of avoidable refusal risks before you apply.",
     faqs: serviceFaqs["visitor-visa"]
@@ -177,6 +195,52 @@ export const services: Service[] = [
     outcome:
       "A calmer, better organized application plan with stronger evidence and fewer avoidable gaps.",
     faqs: serviceFaqs["spouse-family-visa"]
+  },
+  {
+    slug: "dependent-visa",
+    title: "Dependent Visa Support",
+    shortTitle: "Dependent Visa",
+    eyebrow: "Families moving together",
+    summary:
+      "Plan dependent visa applications for spouses, children or eligible family members with clear relationship, financial and purpose evidence.",
+    whoFor: [
+      "Spouses or children of students, workers or eligible visa holders",
+      "Families planning to join the main applicant abroad",
+      "Applicants who need help organizing relationship and dependency proof"
+    ],
+    helpsWith: [
+      "Relationship and dependency evidence planning",
+      "Funds, sponsorship and accommodation document review",
+      "Consistency check across forms, statements and supporting records"
+    ],
+    commonMistakes: [
+      "Weak relationship evidence or unclear dependency details",
+      "Financial documents that do not match the family plan",
+      "Inconsistent dates, names or answers across forms"
+    ],
+    eligibilityOverview: [
+      "A qualifying relationship with the main applicant or sponsor",
+      "Evidence that the main applicant's visa category allows dependents",
+      "Funds, accommodation and documentation that match current official criteria"
+    ],
+    documentsOverview: [
+      "Passports, photographs, marriage or birth certificates where relevant",
+      "Main applicant visa, enrolment, work or sponsorship documents",
+      "Financial proof, accommodation details and relationship evidence"
+    ],
+    whyChoose: [
+      "Sensitive handling of family documents and personal timelines",
+      "Practical review of relationship, funds and consistency",
+      "India-focused guidance for families planning the move together"
+    ],
+    cta: "Plan dependent visa",
+    whatsappMessage: "Hi Idol Immigration, I want dependent visa guidance.",
+    keywords: ["dependent visa consultant India", "family visa consultant India"],
+    pageIntro:
+      "Dependent visa applications need clear relationship evidence, financial planning and consistency with the main applicant's route. Idol helps families organize the file carefully before applying.",
+    outcome:
+      "A clearer dependent visa document plan with fewer avoidable gaps and better family-move preparation.",
+    faqs: serviceFaqs["dependent-visa"]
   },
   {
     slug: "visa-refusal-review",

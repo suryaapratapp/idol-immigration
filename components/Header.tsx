@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ChevronDown, Menu, MessageCircle, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { navLinks, serviceNavLinks, site, whatsappLink } from "@/data/site";
+import { navLinks, serviceNavLinks, whatsappLink } from "@/data/site";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -12,26 +12,25 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-midnight/[0.88] shadow-[0_18px_60px_rgba(0,0,0,0.22)] backdrop-blur-xl">
-      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan/35 to-transparent" />
+    <header className="sticky top-0 z-50 border-b border-stone-200/80 bg-white/92 shadow-[0_12px_34px_rgba(15,23,42,0.06)] backdrop-blur-xl">
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           className="group flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           href="/"
           aria-label="Idol Immigration home"
         >
-          <span className="grid h-10 w-10 place-items-center rounded-[8px] border border-gold/40 bg-gradient-to-br from-white/15 to-cyan/10 text-sm font-bold text-gold shadow-gold">
+          <span className="grid h-11 w-11 place-items-center rounded-[8px] border border-gold/40 bg-ivory text-sm font-bold text-ink shadow-[0_12px_30px_rgba(201,164,93,0.16)]">
             II
           </span>
           <span className="leading-tight">
-            <span className="block text-sm font-semibold text-white">Idol Immigration</span>
-            <span className="hidden text-xs text-white/50 sm:block">
+            <span className="block text-sm font-semibold text-ink">Idol Immigration</span>
+            <span className="hidden text-xs text-slate-500 sm:block">
               Overseas Consultants
             </span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] p-1 xl:flex" aria-label="Primary navigation">
+        <nav className="hidden items-center gap-1 rounded-full border border-stone-200 bg-ivory/70 p-1 xl:flex" aria-label="Primary navigation">
           {navLinks.map((link) => {
             const active =
               link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
@@ -47,10 +46,10 @@ export function Header() {
                     aria-expanded={servicesOpen}
                     aria-haspopup="menu"
                     className={[
-                      "inline-flex items-center gap-1 rounded-full px-3 py-2 text-xs font-medium transition",
+                      "inline-flex items-center gap-1 rounded-full px-3 py-2 text-xs font-semibold transition",
                       active
-                        ? "bg-white/[0.12] text-white ring-1 ring-gold/30"
-                        : "text-white/70 hover:bg-white/10 hover:text-white"
+                        ? "bg-white text-ink shadow-sm ring-1 ring-gold/30"
+                        : "text-slate-600 hover:bg-white hover:text-ink"
                     ].join(" ")}
                     onClick={() => setServicesOpen((value) => !value)}
                     type="button"
@@ -73,21 +72,21 @@ export function Header() {
                     ].join(" ")}
                   >
                     <div
-                      className="overflow-hidden rounded-[8px] border border-gold/20 bg-ink/95 p-2 shadow-2xl backdrop-blur-xl"
+                      className="overflow-hidden rounded-[8px] border border-stone-200 bg-white p-2 shadow-2xl"
                       role="menu"
                     >
                       <Link
-                        className="block rounded-[8px] bg-white/[0.04] px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                        className="block rounded-[8px] bg-ivory px-4 py-3 text-sm font-semibold text-ink transition hover:bg-stone-100"
                         href="/services"
                         onClick={() => setServicesOpen(false)}
                         role="menuitem"
                       >
                         All Services
                       </Link>
-                      <div className="my-2 h-px bg-white/10" />
+                      <div className="my-2 h-px bg-stone-200" />
                       {serviceNavLinks.map((serviceLink) => (
                         <Link
-                          className="block rounded-[8px] px-4 py-3 text-sm font-medium text-white/75 transition hover:bg-white/10 hover:text-white"
+                          className="block rounded-[8px] px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-ivory hover:text-ink"
                           href={serviceLink.href}
                           key={serviceLink.href}
                           onClick={() => setServicesOpen(false)}
@@ -105,8 +104,8 @@ export function Header() {
             return (
               <Link
                 className={[
-                  "rounded-full px-3 py-2 text-xs font-medium transition",
-                  active ? "bg-white/[0.12] text-white ring-1 ring-gold/30" : "text-white/70 hover:bg-white/10 hover:text-white"
+                  "rounded-full px-3 py-2 text-xs font-semibold transition",
+                  active ? "bg-white text-ink shadow-sm ring-1 ring-gold/30" : "text-slate-600 hover:bg-white hover:text-ink"
                 ].join(" ")}
                 href={link.href}
                 key={link.href}
@@ -119,18 +118,18 @@ export function Header() {
 
         <div className="hidden items-center gap-3 xl:flex">
           <a
-            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-gold px-4 py-2 text-sm font-semibold text-ink shadow-gold transition hover:bg-white"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(15,23,42,0.18)] transition hover:bg-gold hover:text-ink"
             href={whatsappLink()}
             target="_blank"
             rel="noreferrer"
           >
             <MessageCircle className="h-4 w-4" aria-hidden="true" />
-            WhatsApp Consultation
+            Enquire Now
           </a>
         </div>
 
         <button
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/[0.05] text-white xl:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-stone-200 bg-ivory text-ink xl:hidden"
           type="button"
           onClick={() => setOpen((value) => !value)}
           aria-label={open ? "Close menu" : "Open menu"}
@@ -141,17 +140,14 @@ export function Header() {
       </div>
 
       {open ? (
-        <div className="border-t border-white/10 bg-midnight/[0.98] px-4 py-4 shadow-2xl xl:hidden">
+        <div className="border-t border-stone-200 bg-white px-4 py-4 shadow-2xl xl:hidden">
           <nav className="mx-auto grid max-w-7xl gap-2" aria-label="Mobile navigation">
             {navLinks.map((link) => {
               if (link.label === "Services") {
                 return (
-                  <div
-                    className="rounded-[8px] border border-gold/20 bg-white/10 p-2"
-                    key={link.href}
-                  >
+                  <div className="rounded-[8px] border border-stone-200 bg-ivory p-2" key={link.href}>
                     <Link
-                      className="flex items-center justify-between rounded-[8px] px-3 py-3 text-sm font-semibold text-white"
+                      className="flex items-center justify-between rounded-[8px] px-3 py-3 text-sm font-semibold text-ink"
                       href={link.href}
                       onClick={() => setOpen(false)}
                     >
@@ -161,7 +157,7 @@ export function Header() {
                     <div className="grid gap-1 pt-1">
                       {serviceNavLinks.map((serviceLink) => (
                         <Link
-                          className="rounded-[8px] px-3 py-2.5 text-sm font-medium text-white/70 transition hover:bg-white/10 hover:text-white"
+                          className="rounded-[8px] px-3 py-2.5 text-sm font-medium text-slate-600 transition hover:bg-white hover:text-ink"
                           href={serviceLink.href}
                           key={serviceLink.href}
                           onClick={() => setOpen(false)}
@@ -176,7 +172,7 @@ export function Header() {
 
               return (
                 <Link
-                  className="rounded-[8px] border border-white/10 bg-white/10 px-4 py-3 text-sm font-medium text-white/80"
+                  className="rounded-[8px] border border-stone-200 bg-ivory px-4 py-3 text-sm font-medium text-ink"
                   href={link.href}
                   key={link.href}
                   onClick={() => setOpen(false)}
@@ -186,17 +182,14 @@ export function Header() {
               );
             })}
             <a
-              className="mt-2 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gold px-5 py-3 text-sm font-semibold text-ink"
+              className="mt-2 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white"
               href={whatsappLink()}
               target="_blank"
               rel="noreferrer"
             >
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
-              WhatsApp Consultation
+              WhatsApp Enquiry
             </a>
-            <p className="px-1 pt-2 text-xs text-white/50">
-              Confused where to start? Message us on WhatsApp: {site.whatsappNumber}
-            </p>
           </nav>
         </div>
       ) : null}

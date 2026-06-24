@@ -63,6 +63,22 @@ export function professionalServiceSchema() {
     url: site.url,
     email: site.email,
     telephone: site.whatsappNumber,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress:
+        "LG-006, DLF Grand Mall, Mehrauli Road, near Sikanderpur, Sector 28, DLF Phase 1",
+      addressLocality: "Gurugram",
+      addressRegion: "Haryana",
+      postalCode: "122002",
+      addressCountry: "IN"
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: "42",
+      bestRating: "5",
+      worstRating: "1"
+    },
     description: site.description,
     areaServed: [
       "India",
@@ -75,9 +91,12 @@ export function professionalServiceSchema() {
     ],
     serviceType: [
       "Study abroad counselling",
-      "Visitor visa guidance",
+      "Tourist / visitor visa guidance",
       "Permanent residency consultation",
       "Skilled migration guidance",
+      "Work visa consultation",
+      "Dependent visa support",
+      "MBBS abroad counselling",
       "Spouse and family visa support",
       "Visa refusal review",
       "Overseas settlement support"
@@ -94,7 +113,14 @@ export function professionalServiceSchema() {
         sameAs: site.founders.pooja
       }
     ],
-    sameAs: [site.founders.jagdeep, site.founders.pooja]
+    sameAs: [
+      site.founders.jagdeep,
+      site.founders.pooja,
+      site.socials.instagram,
+      site.socials.linkedin,
+      site.socials.facebook,
+      site.socials.youtube
+    ]
   };
 }
 

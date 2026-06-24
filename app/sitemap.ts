@@ -13,15 +13,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services",
     "/settlement-support",
     "/countries",
-    "/resources",
+    "/blogs",
     "/success-stories",
-    "/contact"
+    "/contact",
+    "/refund-policy",
+    "/privacy-policy",
+    "/terms-conditions",
+    "/faqs"
   ];
 
   const dynamicRoutes = [
     ...allServiceCards.map((service) => `/services/${service.slug}`),
     ...countries.map((country) => `/countries/${country.slug}`),
-    ...resources.map((resource) => `/resources/${resource.slug}`)
+    ...resources.map((resource) => `/blogs/${resource.slug}`)
   ];
 
   return [...staticRoutes, ...dynamicRoutes].map((route) => ({

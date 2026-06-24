@@ -10,10 +10,8 @@ import {
 import { BrandLogo } from "@/components/BrandLogo";
 import { Button } from "@/components/Buttons";
 import { JsonLd } from "@/components/JsonLd";
-import { OfficialSourceNotice } from "@/components/OfficialSourceNotice";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
-import { VisaRulesDisclaimer } from "@/components/VisaRulesDisclaimer";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import {
   ukArrivalTimeline,
@@ -209,11 +207,6 @@ export default function UkExperiencePage() {
               title="The Links, Checks And Habits Newcomers Usually Need"
               copy="Use this directory as a practical starting point for UK life. Check each provider's latest terms, pricing, eligibility and availability before signing up."
             />
-
-            <div className="mt-8 grid gap-5">
-              <OfficialSourceNotice text="This page is practical settlement guidance, not legal, financial, tax, medical or tenancy advice. Check official sources, provider terms, eligibility, prices and local rules before making decisions." />
-              <VisaRulesDisclaimer />
-            </div>
 
             <div className="mt-10 grid gap-8">
               {ukExperienceSections.map((section) => (

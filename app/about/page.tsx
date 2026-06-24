@@ -47,10 +47,10 @@ export default function AboutPage() {
             </p>
             <p>
               Services include study abroad counselling, student visa support,
-              visitor visa guidance, permanent residency and skilled migration
-              planning, spouse and family visa support, business and start-up
-              route guidance, IELTS or interview preparation, visa refusal review
-              and post-arrival support.
+              tourist or visitor visa guidance, permanent residency and skilled
+              migration planning, dependent visa support, spouse and family visa
+              support, business and start-up route guidance, IELTS or interview
+              preparation, visa refusal review and post-arrival support.
             </p>
             <p>
               The promise is simple: no blind guarantees, no cheap agent-style

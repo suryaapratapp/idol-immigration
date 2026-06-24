@@ -9,9 +9,9 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Contact Idol Immigration",
   description:
-    "Start a WhatsApp consultation with Idol Immigration for visa, study abroad, PR, visitor visa, refusal review and settlement guidance.",
+    "Start a WhatsApp consultation with Idol Immigration for visa, study abroad, PR, tourist visa, refusal review and settlement guidance.",
   path: "/contact",
-  keywords: ["immigration consultant for Indians", "study abroad consultant India", "visitor visa consultant India"]
+  keywords: ["immigration consultant for Indians", "study abroad consultant India", "tourist visa consultant India"]
 });
 
 export default function ContactPage() {

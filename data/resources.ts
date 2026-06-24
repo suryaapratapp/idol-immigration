@@ -28,8 +28,7 @@ export const resources: Resource[] = [
       {
         heading: "Prepare for life after arrival",
         body: [
-          "Plan accommodation, local travel, bank account basics, SIM card, budgeting and part-time job readiness before departure.",
-          "Visa rules change frequently. Verify with official government sources before publishing."
+          "Plan accommodation, local travel, bank account basics, SIM card, budgeting and part-time job readiness before departure."
         ]
       }
     ]
@@ -53,18 +52,17 @@ export const resources: Resource[] = [
       {
         heading: "Common weak signals",
         body: [
-          "Weak SOP, funds mismatch, unclear course progression and inconsistent information can create avoidable risk.",
-          "Visa rules change frequently. Verify with official government sources before publishing."
+          "Weak SOP, funds mismatch, unclear course progression and inconsistent information can create avoidable risk."
         ]
       }
     ]
   },
   {
     slug: "visitor-visa-documents-for-indians",
-    title: "Visitor Visa Documents for Indians",
+    title: "Tourist / Visitor Visa Documents for Indians",
     description:
-      "How to think about purpose, funds, itinerary, invitation and ties to India for visitor visa planning.",
-    category: "Visitor Visa",
+      "How to think about purpose, funds, itinerary, invitation and ties to India for tourist or visitor visa planning.",
+    category: "Tourist Visa",
     readTime: "5 min read",
     keywords: ["visitor visa consultant India"],
     sections: [
@@ -78,8 +76,7 @@ export const resources: Resource[] = [
       {
         heading: "Review before filing",
         body: [
-          "Check invitation details, bank evidence, employment or family ties, travel history and itinerary consistency.",
-          "Visa rules change frequently. Verify with official government sources before publishing."
+          "Check invitation details, bank evidence, employment or family ties, travel history and itinerary consistency."
         ]
       }
     ]
@@ -103,8 +100,7 @@ export const resources: Resource[] = [
       {
         heading: "Avoid template mistakes",
         body: [
-          "Do not copy generic internet lines. Officers and reviewers can usually identify vague or mismatched statements.",
-          "Visa rules change frequently. Verify with official government sources before publishing."
+          "Do not copy generic internet lines. Officers and reviewers can usually identify vague or mismatched statements."
         ]
       }
     ]
@@ -128,8 +124,7 @@ export const resources: Resource[] = [
       {
         heading: "Build a stronger Plan B",
         body: [
-          "Sometimes the right answer is a better reapplication. Sometimes it is a different country, course, timing or route.",
-          "Visa rules change frequently. Verify with official government sources before publishing."
+          "Sometimes the right answer is a better reapplication. Sometimes it is a different country, course, timing or route."
         ]
       }
     ]
@@ -153,8 +148,7 @@ export const resources: Resource[] = [
       {
         heading: "Part-time work is not a full plan",
         body: [
-          "Part-time work can support some costs where permitted, but it should not replace realistic financial planning.",
-          "Visa rules change frequently. Verify with official government sources before publishing."
+          "Part-time work can support some costs where permitted, but it should not replace realistic financial planning."
         ]
       }
     ]
@@ -178,8 +172,7 @@ export const resources: Resource[] = [
       {
         heading: "Start work readiness early",
         body: [
-          "Prepare a local-style CV, basic interview answers, LinkedIn profile and realistic expectations for part-time job search.",
-          "Visa rules change frequently. Verify with official government sources before publishing."
+          "Prepare a local-style CV, basic interview answers, LinkedIn profile and realistic expectations for part-time job search."
         ]
       }
     ]
@@ -203,8 +196,7 @@ export const resources: Resource[] = [
       {
         heading: "Avoid unrealistic expectations",
         body: [
-          "Part-time jobs may take time. Budgeting should not assume immediate employment from week one.",
-          "Visa rules change frequently. Verify with official government sources before publishing."
+          "Part-time jobs may take time. Budgeting should not assume immediate employment from week one."
         ]
       }
     ]
@@ -228,8 +220,7 @@ export const resources: Resource[] = [
       {
         heading: "Keep a backup pathway",
         body: [
-          "If Plan A is weak, compare alternatives early instead of waiting until deadlines or refusals create pressure.",
-          "Visa rules change frequently. Verify with official government sources before publishing."
+          "If Plan A is weak, compare alternatives early instead of waiting until deadlines or refusals create pressure."
         ]
       }
     ]
@@ -253,8 +244,7 @@ export const resources: Resource[] = [
       {
         heading: "Support confidence, not only paperwork",
         body: [
-          "Students need confidence, communication skills and life skills alongside documents and admission letters.",
-          "Visa rules change frequently. Verify with official government sources before publishing."
+          "Students need confidence, communication skills and life skills alongside documents and admission letters."
         ]
       }
     ]

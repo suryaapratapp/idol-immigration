@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ServiceCard } from "@/components/ServiceCard";
-import { VisaRulesDisclaimer } from "@/components/VisaRulesDisclaimer";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { allServiceCards } from "@/data/services";
 import { createMetadata } from "@/lib/seo";
@@ -10,11 +9,11 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Visa & Study Abroad Services",
   description:
-    "Explore Idol Immigration services for study abroad, visitor visa, PR, work, business, spouse, refusal review and settlement support.",
+    "Explore Idol Immigration services for study abroad, tourist visa, PR, work visa, dependent visa, MBBS abroad, refusal review and settlement support.",
   path: "/services",
   keywords: [
     "study abroad consultant India",
-    "visitor visa consultant India",
+    "tourist visa consultant India",
     "PR visa consultant India",
     "spouse visa consultant",
     "visa refusal help India"
@@ -43,8 +42,7 @@ export default function ServicesPage() {
               <ServiceCard service={service} key={service.slug} />
             ))}
           </div>
-          <div className="mt-10 grid gap-5 lg:grid-cols-[1fr_1fr]">
-            <VisaRulesDisclaimer />
+          <div className="mt-10">
             <WhatsAppCTA
               title="Not sure which service fits?"
               copy="Message us with your target country, profile and concern. We will point you to the right starting point."

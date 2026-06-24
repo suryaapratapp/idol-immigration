@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CalendarDays, CheckCircle2 } from "lucide-react";
+import { CalendarDays, CheckCircle2, FileText, GraduationCap, Plane, ShieldCheck, UserCheck } from "lucide-react";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { JsonLd } from "@/components/JsonLd";
-import { OfficialSourceNotice } from "@/components/OfficialSourceNotice";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
-import { VisaRulesDisclaimer } from "@/components/VisaRulesDisclaimer";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { countries, countryBySlug } from "@/data/countries";
 import { breadcrumbSchema, createMetadata, faqSchema } from "@/lib/seo";
@@ -64,7 +62,7 @@ export default async function CountryDetailPage({ params }: CountryPageProps) {
         title={`${country.flag} ${country.name} Guidance for Indian Applicants`}
         copy={country.overview}
       >
-        <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white/80 backdrop-blur">
+        <div className="inline-flex items-center gap-3 rounded-full border border-stone-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
           <span className="text-2xl" aria-hidden="true">{country.flag}</span>
           {country.image.caption}
         </div>
@@ -80,32 +78,66 @@ export default async function CountryDetailPage({ params }: CountryPageProps) {
               copy="Idol compares the destination against your profile, family comfort, documents, budget and long-term goal."
             />
             <div className="mt-8 grid gap-5">
-              <div className="rounded-[8px] border border-slate-200 bg-mist/35 p-5">
+              <div className="rounded-[8px] border border-stone-200 bg-ivory p-5">
                 <div className="flex items-center gap-3 text-sm font-semibold text-ink">
-                  <CalendarDays className="h-5 w-5 text-ocean" aria-hidden="true" />
+                  <CalendarDays className="h-5 w-5 text-gold" aria-hidden="true" />
                   Last updated: {country.lastUpdated}
                 </div>
               </div>
-              <OfficialSourceNotice text={country.officialSourcePlaceholder} />
-              <VisaRulesDisclaimer />
+              <p className="rounded-[8px] border border-stone-200 bg-white p-5 text-sm leading-7 text-slate-600">
+                Eligibility criteria can change. Treat this as a planning snapshot and confirm the latest requirements before applying.
+              </p>
             </div>
           </div>
           <div className="grid gap-5">
-            <CountryInfo title="Best for" items={[country.bestFor]} />
-            <CountryInfo title="Popular routes" items={country.popularRoutes} />
-            <CountryInfo title="Common applicant profile" items={[country.commonProfile]} />
-            <CountryInfo title="What Indians usually worry about" items={country.worries} />
-            <CountryInfo title="How Idol helps" items={[country.howIdolHelps]} />
+            <CountryInfo icon={Plane} title="Types of visas available" items={country.visasAvailable} />
+            <CountryInfo icon={ShieldCheck} title="PR eligibility overview" items={[country.prEligibility]} />
+            <CountryInfo icon={UserCheck} title="Work visa eligibility overview" items={[country.workVisaEligibility]} />
+            <CountryInfo icon={GraduationCap} title="Student visa eligibility overview" items={[country.studentVisaEligibility]} />
+            <CountryInfo icon={GraduationCap} title="MBBS eligibility overview" items={[country.mbbsEligibility]} />
+            <CountryInfo icon={FileText} title="Basic document requirements" items={country.documentsOverview} />
+            <CountryInfo icon={CheckCircle2} title="Approximate process overview" items={country.processOverview} />
+            <CountryInfo icon={ShieldCheck} title={`Why choose ${country.name}`} items={country.whyChoose} />
           </div>
         </div>
       </section>
+
+      {country.pointsGrid ? (
+        <section className="bg-ivory py-16 sm:py-24">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <SectionHeader
+              eyebrow="Points eligibility"
+              title={country.pointsGrid.title}
+              copy={country.pointsGrid.minimum}
+              align="center"
+            />
+            <div className="mt-10 overflow-hidden rounded-[8px] border border-stone-200 bg-white shadow-sm">
+              <div className="grid bg-ink px-5 py-3 text-sm font-semibold text-white sm:grid-cols-[0.9fr_0.45fr_1.2fr]">
+                <p>Factor</p>
+                <p>Maximum</p>
+                <p>What it means</p>
+              </div>
+              {country.pointsGrid.rows.map((row) => (
+                <div className="grid gap-2 border-t border-stone-200 px-5 py-4 text-sm text-slate-600 sm:grid-cols-[0.9fr_0.45fr_1.2fr]" key={row.factor}>
+                  <p className="font-semibold text-ink">{row.factor}</p>
+                  <p>{row.maximum}</p>
+                  <p>{row.whatItMeans}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mx-auto mt-5 max-w-3xl text-center text-sm leading-7 text-slate-500">
+              {country.pointsGrid.note}
+            </p>
+          </div>
+        </section>
+      ) : null}
 
       <section className="bg-ivory py-16 sm:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="FAQ"
             title={`${country.name} Questions`}
-            copy="These answers are for planning. Specific country requirements should always be verified with official sources."
+            copy="These answers keep the first conversation simple and profile-focused."
             align="center"
           />
           <div className="mt-10">
@@ -126,7 +158,7 @@ export default async function CountryDetailPage({ params }: CountryPageProps) {
 
 function CountryVisual({ country }: { country: NonNullable<ReturnType<typeof countryBySlug>> }) {
   return (
-    <div className="mb-8 overflow-hidden rounded-[8px] border border-slate-200 bg-ink shadow-xl">
+    <div className="mb-8 overflow-hidden rounded-[8px] border border-stone-200 bg-ink shadow-xl">
       <div
         aria-label={country.image.alt}
         className="relative min-h-72 bg-cover bg-center"
@@ -155,12 +187,18 @@ function CountryVisual({ country }: { country: NonNullable<ReturnType<typeof cou
 type CountryInfoProps = {
   title: string;
   items: string[];
+  icon: typeof CheckCircle2;
 };
 
-function CountryInfo({ title, items }: CountryInfoProps) {
+function CountryInfo({ title, items, icon: Icon }: CountryInfoProps) {
   return (
-    <article className="rounded-[8px] border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 className="text-xl font-semibold text-ink">{title}</h2>
+    <article className="rounded-[8px] border border-stone-200 bg-white p-6 shadow-sm">
+      <div className="flex items-center gap-3">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-ivory text-gold">
+          <Icon className="h-5 w-5" aria-hidden="true" />
+        </span>
+        <h2 className="text-xl font-semibold text-ink">{title}</h2>
+      </div>
       <ul className="mt-4 grid gap-3">
         {items.map((item) => (
           <li className="flex gap-3 text-sm leading-7 text-slate-600" key={item}>

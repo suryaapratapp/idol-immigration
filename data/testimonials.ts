@@ -1,38 +1,80 @@
-export const testimonials = [
+export type GoogleReview = {
+  name: string;
+  rating: 5;
+  reviewText: string;
+  date: string;
+  source: "Google Review";
+  reviewUrl: string;
+};
+
+export const googleReviews: GoogleReview[] = [
   {
-    name: "Anonymized Canada PR client",
-    profession: "Skilled professional",
-    destination: "Canada",
-    result: "Canada PR guidance",
-    category: "Canada PR",
-    quote:
-      "Legacy testimonial category preserved from Idol's historical work. Final client wording should be verified from approved source material before publishing as a direct quote."
+    name: "abhishek rajput",
+    rating: 5,
+    date: "3 years ago",
+    source: "Google Review",
+    reviewUrl:
+      "https://www.google.com/maps/reviews/data=!4m5!14m4!1m3!1m2!1s114686158394808361415!2s0x390d199347d59fd5:0x1532079894e52495",
+    reviewText: "Idol Immigration is very professional towards their work."
   },
   {
-    name: "Anonymized study visa client",
-    profession: "Student",
-    destination: "Canada",
-    result: "Study visa support",
-    category: "Study Visa Canada",
-    quote:
-      "A conservative summary for the Canada study visa category, focused on course selection, funds clarity, SOP logic and parent confidence."
+    name: "Pooja Bhardwaj",
+    rating: 5,
+    date: "4 years ago",
+    source: "Google Review",
+    reviewUrl:
+      "https://www.google.com/maps/reviews/data=!4m5!14m4!1m3!1m2!1s111895123517445488637!2s0x390d199347d59fd5:0x1532079894e52495",
+    reviewText: "It has been a fabulous experience to connect with Idol Immigration."
   },
   {
-    name: "Anonymized Australia PR client",
-    profession: "Engineer",
-    destination: "Australia",
-    result: "PR pathway review",
-    category: "Australia PR",
-    quote:
-      "A conservative summary for the Australia PR category, focused on realistic profile review, document planning and pathway clarity."
-  },
-  {
-    name: "Anonymized PNP client",
-    profession: "Healthcare applicant",
-    destination: "Canada",
-    result: "PNP nomination guidance",
-    category: "PNP nominations",
-    quote:
-      "A conservative summary for PNP nomination guidance, focused on documentation readiness, route clarity and careful communication."
+    name: "Sachin thakur",
+    rating: 5,
+    date: "4 years ago",
+    source: "Google Review",
+    reviewUrl:
+      "https://www.google.com/maps/reviews/data=!4m5!14m4!1m3!1m2!1s101382230756120307221!2s0x390d199347d59fd5:0x1532079894e52495",
+    reviewText: "Very responsible and experienced people"
   }
 ];
+
+export type VideoTestimonial = {
+  title: string;
+  youtubeUrl: string;
+  clientName: string;
+  destinationCountry: string;
+  serviceType: string;
+  caption: string;
+  thumbnailImage: string;
+};
+
+export const videoTestimonials: VideoTestimonial[] = [
+  {
+    title: "Client Thank-You Video",
+    youtubeUrl: "",
+    clientName: "Client name to be added",
+    destinationCountry: "United Kingdom",
+    serviceType: "Study Visa",
+    caption: "Add the client's YouTube thank-you video link here.",
+    thumbnailImage: "/images/countries/uk.svg"
+  },
+  {
+    title: "Family Visa Success Video",
+    youtubeUrl: "",
+    clientName: "Client name to be added",
+    destinationCountry: "Canada",
+    serviceType: "Dependent Visa",
+    caption: "Replace this placeholder with a real client YouTube URL.",
+    thumbnailImage: "/images/countries/canada.svg"
+  },
+  {
+    title: "PR Journey Video",
+    youtubeUrl: "",
+    clientName: "Client name to be added",
+    destinationCountry: "Australia",
+    serviceType: "PR / Skilled Migration",
+    caption: "This card is ready for an embedded YouTube testimonial.",
+    thumbnailImage: "/images/countries/australia.svg"
+  }
+];
+
+export const testimonials = googleReviews;

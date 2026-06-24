@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { CountryCard } from "@/components/CountryCard";
-import { OfficialSourceNotice } from "@/components/OfficialSourceNotice";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
@@ -29,18 +28,15 @@ export default function CountriesPage() {
         copy="Every destination has different costs, timelines, documentation expectations and settlement realities. Idol helps Indian applicants compare options with practical clarity."
       />
 
-      <section className="relative overflow-hidden bg-midnight py-16 text-white sm:py-24">
-        <div className="absolute inset-0 premium-grid opacity-45" />
-        <div className="absolute inset-0 route-lines opacity-55" />
+      <section className="relative overflow-hidden bg-white py-16 text-ink sm:py-24">
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Destination comparison"
             title="Choose by Fit, Not Hype"
             copy="Country advice should be matched to your academics, work background, funds, family comfort and long-term plan."
             align="center"
-            dark
           />
-          <div className="mt-12 grid gap-5 lg:grid-cols-2">
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {countries.map((country) => (
               <CountryCard country={country} key={country.slug} />
             ))}
@@ -50,14 +46,11 @@ export default function CountriesPage() {
 
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <OfficialSourceNotice text="Country cards are strategic planning content, not final visa-rule instructions. Verify current official requirements before publishing detailed eligibility or checklist copy." />
-          <div className="mt-8">
-            <WhatsAppCTA
-              title="Need help comparing countries?"
-              copy="Send your academic profile, work history, budget and target timeline. Idol can help you compare the route more sensibly."
-              message="Hi Idol Immigration, I want country comparison guidance."
-            />
-          </div>
+          <WhatsAppCTA
+            title="Need help comparing countries?"
+            copy="Send your academic profile, work history, budget and target timeline. Idol can help you compare the route more sensibly."
+            message="Hi Idol Immigration, I want country comparison guidance."
+          />
         </div>
       </section>
     </>

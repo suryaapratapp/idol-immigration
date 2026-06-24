@@ -41,7 +41,7 @@ export const serviceFaqs: Record<string, FAQ[]> = {
   ],
   "visitor-visa": [
     {
-      question: "What usually weakens a visitor visa application?",
+      question: "What usually weakens a tourist or visitor visa application?",
       answer:
         "Common risk signals include unclear purpose of visit, weak home-country ties, funds mismatch, incomplete invitation details, inconsistent travel history or poor supporting documents."
     },
@@ -86,6 +86,18 @@ export const serviceFaqs: Record<string, FAQ[]> = {
       answer:
         "Yes. The team can review relationship chronology, supporting records, financial evidence and consistency across forms and statements."
       }
+  ],
+  "dependent-visa": [
+    {
+      question: "Who can apply for a dependent visa?",
+      answer:
+        "Dependent eligibility depends on the main applicant's visa category and the destination country's current rules. It often includes a spouse, partner or children, with relationship, funds and accommodation evidence."
+    },
+    {
+      question: "Can Idol help organize family documents?",
+      answer:
+        "Yes. Idol can review relationship proof, dependency records, financial evidence, sponsor documents and consistency across the family application."
+    }
   ],
   "visa-refusal-review": [
     {

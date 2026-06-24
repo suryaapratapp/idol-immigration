@@ -27,9 +27,9 @@ export function ResourceCard({ resource }: ResourceCardProps) {
       </p>
       <Link
         className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-ocean transition group-hover:text-ink"
-        href={`/resources/${resource.slug}`}
+        href={`/blogs/${resource.slug}`}
       >
-        Read guide
+        Read blog
         <ArrowRight className="h-4 w-4" aria-hidden="true" />
       </Link>
     </article>

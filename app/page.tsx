@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { ArrowRight, Brain, FileCheck2, HomeIcon, Landmark, Map, MessageCircle, ShieldCheck } from "lucide-react";
+import { ArrowRight, Brain, FileCheck2, HomeIcon, Map, MessageCircle, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { ComparisonTable } from "@/components/ComparisonTable";
 import { CountryCard } from "@/components/CountryCard";
 import { EligibilityQuestionCards } from "@/components/EligibilityQuestionCards";
 import { FAQAccordion } from "@/components/FAQAccordion";
-import { GlobalCommandCenter } from "@/components/GlobalCommandCenter";
 import { Hero } from "@/components/Hero";
 import { JsonLd } from "@/components/JsonLd";
 import { ProcessTimeline } from "@/components/ProcessTimeline";
@@ -20,19 +19,18 @@ import { generalFaqs } from "@/data/faqs";
 import { countries } from "@/data/countries";
 import { resources } from "@/data/resources";
 import { allServiceCards } from "@/data/services";
-import { site, whatsappLink } from "@/data/site";
-import { testimonials } from "@/data/testimonials";
+import { googleReviews } from "@/data/testimonials";
 import { createMetadata, faqSchema } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
   title: "Immigration Consultant for Indians",
   description:
-    "Premium study abroad, visitor visa, PR, skilled migration and overseas settlement guidance for Indian students, families and professionals.",
+    "Premium study abroad, tourist visa, PR, work visa, MBBS abroad, dependent visa and overseas settlement guidance for Indian applicants.",
   path: "/",
   keywords: [
     "immigration consultant for Indians",
     "study abroad consultant India",
-    "visitor visa consultant India",
+    "tourist visa consultant India",
     "PR visa consultant India",
     "overseas settlement support"
   ]
@@ -122,8 +120,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <GlobalCommandCenter />
-
       <section className="bg-ivory py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
@@ -138,19 +134,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-midnight py-16 text-white sm:py-24">
-        <div className="absolute inset-0 premium-grid opacity-45" />
-        <div className="absolute inset-0 route-lines opacity-55" />
-        <div className="absolute inset-0 bg-radial-fade" />
+      <section className="relative overflow-hidden bg-white py-16 text-ink sm:py-24">
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Compare your options"
             title="Countries Are Not Checkboxes. Each Route Has a Different Reality."
             copy="We compare destinations by applicant profile, cost comfort, route logic, documentation and settlement preparation."
             align="center"
-            dark
           />
-          <div className="mt-12 grid gap-5 lg:grid-cols-2">
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {countries.map((country, index) => (
               <Reveal delay={index * 0.04} key={country.slug}>
                 <CountryCard country={country} />
@@ -159,7 +151,6 @@ export default function HomePage() {
           </div>
           <div className="mt-10">
             <WhatsAppCTA
-              dark
               title="Need country comparison before you pay fees?"
               copy="Send your profile, budget range and goal. We will help you compare options more sensibly."
               message="Hi Idol Immigration, I want help comparing countries for my profile."
@@ -199,7 +190,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-ivory py-16 sm:py-24">
+      <section className="bg-ivory py-16 sm:py-24" id="services">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Services"
@@ -244,12 +235,12 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Success stories"
-            title="Client Stories, Written Without Exaggeration"
-            copy="Every case depends on individual facts and official criteria. These stories reflect guidance categories from Idol's historical work."
+            title="Real Google Reviews From Named Clients"
+            copy="Short, verified Google review excerpts are shown with reviewer names, star ratings and source labels."
             align="center"
           />
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {testimonials.map((testimonial) => (
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {googleReviews.map((testimonial) => (
               <TestimonialCard key={testimonial.name} testimonial={testimonial} />
             ))}
           </div>
@@ -260,15 +251,15 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <SectionHeader
-              eyebrow="Resources"
-              title="SEO-Ready Guides for Smarter Decisions"
-              copy="Each guide is structured for future CMS expansion and includes official-source reminders before publishing."
+              eyebrow="Blogs"
+              title="Clear Guides for Smarter Decisions"
+              copy="Readable blog guides for students, parents, professionals and families planning their next move."
             />
             <Link
               className="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 px-5 py-3 text-sm font-semibold text-ink transition hover:border-cyan"
-              href="/resources"
+              href="/blogs"
             >
-              View all resources
+              View all blogs
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
@@ -276,53 +267,6 @@ export default function HomePage() {
             {resources.slice(0, 6).map((resource) => (
               <ResourceCard key={resource.slug} resource={resource} />
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden bg-midnight py-16 text-white sm:py-24">
-        <div className="absolute inset-0 premium-grid opacity-35" />
-        <div className="absolute inset-0 route-lines opacity-45" />
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/45 to-transparent" />
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_0.9fr] lg:px-8">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan">
-              Contact
-            </p>
-            <h2 className="text-balance mt-4 text-3xl font-semibold sm:text-5xl">
-              Start with a WhatsApp Consultation
-            </h2>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-white/70">
-              Tell us your goal, target country, current city and concern. We
-              usually begin with WhatsApp so you can share your situation easily.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-midnight transition hover:bg-white"
-                href={whatsappLink()}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                Chat on WhatsApp
-              </a>
-              <a
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-gold"
-                href={`mailto:${site.email}`}
-              >
-                {site.email}
-              </a>
-            </div>
-          </div>
-          <div className="relative overflow-hidden rounded-[8px] border border-white/10 bg-white/[0.09] p-6 shadow-glow backdrop-blur">
-            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-gold via-cyan to-ocean" />
-            <Landmark className="h-9 w-9 text-gold" aria-hidden="true" />
-            <h3 className="mt-5 text-2xl font-semibold">Not just visa filing.</h3>
-            <p className="mt-4 text-sm leading-7 text-white/70">
-              Practical guidance for stronger documents, clearer country
-              comparison, realistic cost planning, pre-departure preparation and
-              settlement confidence after arrival.
-            </p>
           </div>
         </div>
       </section>
