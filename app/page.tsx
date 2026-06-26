@@ -118,6 +118,9 @@ export default function HomePage() {
               <p className="text-sm leading-7 text-slate-600">
                 Idol Immigration supports students, families, professionals and travellers looking for an immigration consultant in Gurugram, visa consultant in Gurugram, study abroad consultant in Gurugram, Canada PR consultant in Gurugram, Australia PR consultant in Gurugram and immigration consultant in Delhi NCR.
               </p>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                We work with full commitment to help applicants pursue their visa and study abroad dreams through stronger documents, clearer choices and transparent preparation, without making false approval promises.
+              </p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {localSeoLinks.map((link) => (
                   <Link

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Home } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
@@ -51,31 +52,46 @@ export default function BlogsPage() {
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             <Link
-              className="group flex h-full flex-col rounded-[8px] border border-gold/30 bg-ivory p-6 shadow-sm transition hover:-translate-y-1 hover:border-ocean hover:bg-white hover:shadow-xl"
+              className="group relative flex h-full flex-col overflow-hidden rounded-[8px] border border-stone-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-gold/60 hover:shadow-xl"
               href="/founders/uk-experience"
             >
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">
-                    Life Abroad
-                  </p>
-                  <h3 className="mt-3 text-xl font-semibold text-ink">
-                    Founder&apos;s UK Arrival & Life Guide
-                  </h3>
-                </div>
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white text-gold">
+              <div className="relative aspect-[16/10] overflow-hidden bg-ivory">
+                <Image
+                  src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=1400&q=85"
+                  alt="UK street and arrival planning for Indian students"
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
+                <span className="absolute left-4 top-4 grid h-11 w-11 place-items-center rounded-full border border-white/60 bg-white/95 text-gold shadow-lg">
                   <Home className="h-5 w-5" aria-hidden="true" />
                 </span>
+                <p className="absolute bottom-4 left-4 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-gold">
+                  Life Abroad
+                </p>
               </div>
-              <p className="mt-4 text-sm leading-7 text-slate-600">
-                A simple, newcomer-friendly guide to accommodation, bank account,
-                SIM, transport, groceries, part-time job readiness, scams, money
-                habits and emotional preparation in the UK.
-              </p>
-              <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-ocean transition group-hover:text-ink">
-                Read UK guide
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </span>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="text-xl font-semibold text-ink">
+                  Founder&apos;s UK Arrival & Life Guide
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-slate-600">
+                  A newcomer-friendly guide to accommodation, bank account,
+                  SIM, transport, groceries, part-time job readiness, scams,
+                  money habits and emotional preparation in the UK.
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {["UK", "Arrival", "Settlement"].map((badge) => (
+                    <span className="rounded-full border border-stone-200 bg-ivory px-3 py-1 text-xs font-semibold text-slate-600" key={badge}>
+                      {badge}
+                    </span>
+                  ))}
+                </div>
+                <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-ocean transition group-hover:text-ink">
+                  Read UK guide
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </span>
+              </div>
             </Link>
             {resources.map((resource) => (
               <ResourceCard resource={resource} key={resource.slug} />

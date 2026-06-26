@@ -124,6 +124,16 @@ export const countryFaqs: Record<string, FAQ[]> = {
       question: "Do you help with life after landing in the UK?",
       answer:
         "Yes. Idol can help students prepare for accommodation, local transport, bank account basics, CV readiness, part-time job expectations and settling confidence."
+    },
+    {
+      question: "Can Idol help with UK Skilled Worker Visa planning?",
+      answer:
+        "Yes. Idol can review job-offer details, sponsor information, salary fit, qualifications, English readiness and document gaps before applicants move forward."
+    },
+    {
+      question: "Do you guide families for UK visitor or dependent visa documents?",
+      answer:
+        "Yes. Guidance can cover invitation details, relationship evidence, funds, sponsor documents, travel purpose and India-tie documents for UK visitor or dependent visa planning."
     }
   ],
   canada: [
@@ -136,6 +146,16 @@ export const countryFaqs: Record<string, FAQ[]> = {
       question: "Do you discuss PR pathways for Canada?",
       answer:
         "Yes. Idol can discuss broad PR and skilled migration planning, but applicants should verify current program criteria through official Canadian government sources."
+    },
+    {
+      question: "Can Idol review my Canada 67 points grid and CRS score direction?",
+      answer:
+        "Yes. Idol can review age, education, language, work experience, adaptability and CRS improvement areas for Canada PR from India planning."
+    },
+    {
+      question: "Do you help with Canada visitor visa, super visa or spouse open work permit documents?",
+      answer:
+        "Yes. Idol can help applicants organize purpose, invitation, funds, relationship proof, sponsor documents and refusal-risk areas for Canada family and visitor routes."
     }
   ],
   australia: [
@@ -148,6 +168,16 @@ export const countryFaqs: Record<string, FAQ[]> = {
       question: "Can you assess my occupation profile?",
       answer:
         "Yes. Idol can review your education, work history, English readiness and occupation direction for route planning."
+    },
+    {
+      question: "Can Idol explain Australia 189, 190 and 491 visa differences?",
+      answer:
+        "Yes. Idol can explain the planning difference between Australia Subclass 189 visa, Subclass 190 visa and Subclass 491 visa, including points, nomination and regional factors."
+    },
+    {
+      question: "Do you help with Australia student visa and GTE review?",
+      answer:
+        "Yes. Idol can review course fit, funds, academic progression, GTE logic, documents and common Australia student visa refusal-risk signals."
     }
   ],
   usa: [
@@ -160,6 +190,16 @@ export const countryFaqs: Record<string, FAQ[]> = {
       question: "Do you provide interview preparation?",
       answer:
         "Yes. Interview preparation can cover clarity, confidence, purpose of travel, course logic and consistency with documents."
+    },
+    {
+      question: "Can Idol help with USA B1/B2 visa documents?",
+      answer:
+        "Yes. Idol can guide USA B1/B2 applicants on travel purpose, itinerary, funds, invitation, employment or business proof, family ties and interview readiness."
+    },
+    {
+      question: "Do you guide F1 visa applicants?",
+      answer:
+        "Yes. Idol can help F1 visa applicants review admission documents, I-20/SEVIS readiness, funds, academic intent and interview preparation."
     }
   ],
   "new-zealand": [
@@ -172,6 +212,11 @@ export const countryFaqs: Record<string, FAQ[]> = {
       question: "Do you compare New Zealand with Australia and Canada?",
       answer:
         "Yes. Idol can compare destination fit, cost comfort, academic profile and longer-term goals before recommending next steps."
+    },
+    {
+      question: "Can Idol help with New Zealand student visa documents?",
+      answer:
+        "Yes. Guidance can cover course fit, funds, genuine intent, provider documents, accommodation planning and official checklist readiness."
     }
   ],
   europe: [
@@ -184,6 +229,16 @@ export const countryFaqs: Record<string, FAQ[]> = {
       question: "Do European routes need language planning?",
       answer:
         "Often, yes. Depending on country and route, applicants may need English or local-language preparation. Idol can help you understand this early."
+    },
+    {
+      question: "Can Idol help with Germany Opportunity Card or job seeker visa planning?",
+      answer:
+        "Yes. Idol can review qualifications, work history, language readiness, funds and document planning for Germany Opportunity Card, Germany job seeker visa and Germany work visa routes."
+    },
+    {
+      question: "Do you help with Schengen tourist visa from India?",
+      answer:
+        "Yes. Idol can help prepare itinerary, travel insurance, hotel or invitation documents, funds, employment or business proof and return-intent evidence."
     }
   ]
 };

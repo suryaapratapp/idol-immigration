@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CalendarDays, CheckCircle2, FileText, GraduationCap, Plane, ShieldCheck, UserCheck } from "lucide-react";
+import { ArrowRight, CalendarDays, CheckCircle2, FileText, GraduationCap, Plane, ShieldCheck, UserCheck } from "lucide-react";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
+import { ResourceCard } from "@/components/ResourceCard";
 import { SectionHeader } from "@/components/SectionHeader";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { countries, countryBySlug } from "@/data/countries";
+import { resources } from "@/data/resources";
 import { breadcrumbSchema, createMetadata, faqSchema } from "@/lib/seo";
 
 type CountryPageProps = {
@@ -122,6 +125,8 @@ export default async function CountryDetailPage({ params }: CountryPageProps) {
     notFound();
   }
 
+  const relatedGuides = guidesForCountry(country.slug);
+
   return (
     <>
       <JsonLd
@@ -200,6 +205,41 @@ export default async function CountryDetailPage({ params }: CountryPageProps) {
         </section>
       ) : null}
 
+      {relatedGuides.length ? (
+        <section className="bg-white py-16 sm:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+              <SectionHeader
+                eyebrow="Related guides"
+                title={`${country.name} Blogs and Planning Guides`}
+                copy={`Read practical Idol Immigration guides connected to ${country.name} visa, study, PR, travel and settlement planning.`}
+              />
+              <Link
+                className="inline-flex w-fit items-center gap-2 rounded-full border border-stone-200 px-5 py-3 text-sm font-semibold text-ink transition hover:border-gold"
+                href="/blogs"
+              >
+                View all blogs
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
+            <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {relatedGuides.map((guide) => (
+                <ResourceCard resource={guide} key={guide.slug} />
+              ))}
+            </div>
+            {country.slug === "uk" ? (
+              <Link
+                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-ocean transition hover:text-ink"
+                href="/founders/uk-experience"
+              >
+                Read Founder&apos;s UK Arrival & Life Guide
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
+
       {country.pointsGrid ? (
         <section className="bg-ivory py-16 sm:py-24">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -252,6 +292,35 @@ export default async function CountryDetailPage({ params }: CountryPageProps) {
       </section>
     </>
   );
+}
+
+const countryGuideTerms: Record<string, string[]> = {
+  canada: ["canada", "crs", "express entry", "pnp"],
+  australia: ["australia", "189", "190", "491", "skillselect"],
+  uk: ["uk", "united kingdom", "student visa"],
+  usa: ["usa", "b1/b2", "f1", "student visa"],
+  europe: ["germany", "schengen", "europe", "eu blue card"],
+  "new-zealand": ["new zealand", "student visa", "study abroad"],
+  "uae-other-destinations": ["tourist visa", "visitor visa", "work visa"]
+};
+
+function guidesForCountry(slug: string) {
+  const terms = countryGuideTerms[slug] ?? [];
+
+  return resources
+    .filter((resource) => {
+      const haystack = [
+        resource.title,
+        resource.description,
+        resource.category,
+        resource.keywords.join(" ")
+      ]
+        .join(" ")
+        .toLowerCase();
+
+      return terms.some((term) => haystack.includes(term));
+    })
+    .slice(0, 6);
 }
 
 function CountryVisual({ country }: { country: NonNullable<ReturnType<typeof countryBySlug>> }) {

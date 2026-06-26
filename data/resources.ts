@@ -651,11 +651,6 @@ export const resourceBySlug = (slug: string) =>
   resources.find((resource) => resource.slug === slug);
 
 function seoTopicPlaceholders(): Resource[] {
-  const image = {
-    src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80",
-    alt: "Visa planning documents and destination research for Indian applicants"
-  };
-
   const topics: {
     slug: string;
     title: string;
@@ -802,61 +797,194 @@ function seoTopicPlaceholders(): Resource[] {
     }
   ];
 
-  return topics.map((topic): Resource => ({
+  const guideImages = [
+    {
+      src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=85",
+      alt: "Canada PR planning documents on a laptop"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1400&q=85",
+      alt: "Professional desk setup for Express Entry profile planning"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=85",
+      alt: "Calculator and papers for points grid assessment"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=85",
+      alt: "Applicant reviewing documents to improve CRS score"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1400&q=85",
+      alt: "Professional profile review for provincial nomination planning"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=85",
+      alt: "Australia skilled migration planning conversation"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=85",
+      alt: "Applicants comparing skilled visa options"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=85",
+      alt: "USA B1 B2 visitor visa interview preparation"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1400&q=85",
+      alt: "Traveller preparing Schengen tourist visa documents"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=1400&q=85",
+      alt: "Germany Opportunity Card and Europe work planning"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=85",
+      alt: "Indian professionals discussing Germany job seeker visa"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1400&q=85",
+      alt: "Student writing SOP for study visa"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=1400&q=85",
+      alt: "Study visa refusal review notes and documents"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1400&q=85",
+      alt: "Medical student planning MBBS abroad"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1400&q=85",
+      alt: "Students comparing best countries to study abroad"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=85",
+      alt: "Tourist visa travel checklist with passport and destination planning"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1400&q=85",
+      alt: "Family reviewing dependent visa documents together"
+    }
+  ];
+
+  return topics.map((topic, index): Resource => ({
     slug: topic.slug,
     title: topic.title,
     description: topic.description,
     category: topic.category,
-    readTime: "Prepared guide",
+    readTime: "12 min read",
     keywords: topic.keywords,
-    image,
+    image: guideImages[index],
     badges: topic.badges,
     quickSummary:
-      `${topic.title} is prepared as an editable SEO guide for Indian applicants who want practical, current and document-focused planning before they apply.`,
+      `${topic.title} gives Indian applicants a practical, document-focused way to understand the route before they apply or spend money on the wrong pathway.`,
     keyTakeaways: [
-      "Use the guide for planning, not as a substitute for current official requirements.",
-      "Your profile, funds, documents and purpose decide the right next step.",
-      "Idol Immigration can review the route and document logic before submission."
+      `Start by checking whether your profile actually fits ${topic.keywords[0]}.`,
+      "Document quality, funds, purpose and consistency often matter as much as basic eligibility.",
+      "A profile/CV review can help you identify weak areas before submission or reapplication."
     ],
-    sections: [
-      {
-        heading: "What this guide covers",
-        body: [
-          topic.description,
-          "The focus is practical: who the route is for, what documents usually matter, where applicants get confused and what should be checked before spending money."
-        ],
-        bullets: [
-          "Eligibility and profile-fit signals",
-          "Document planning and common gaps",
-          "Questions to ask before applying",
-          "When to consider a backup option"
-        ]
-      },
-      {
-        heading: "How Idol Immigration helps",
-        body: [
-          "Idol Immigration supports applicants with profile assessment, documentation support, application guidance, SOP or statement review, interview preparation where relevant and realistic route comparison.",
-          "The team avoids false promises and keeps guidance tied to the applicant's documents, timeline, family comfort and current official criteria."
-        ],
-        bullets: [
-          "Profile and route review",
-          "Document checklist and consistency check",
-          "Refusal-risk review before submission",
-          "Clear enquiry CTA for a personal consultation"
-        ]
-      }
-    ],
-    faqs: [
-      {
-        question: `Who should read ${topic.title}?`,
-        answer:
-          "Indian students, families, professionals or travellers who are comparing routes and want a simple starting point before a personal profile review."
-      },
-      {
-        question: "Can Idol Immigration help with documents for this topic?",
-        answer:
-          "Yes. Idol can review profile fit, document readiness, SOP or purpose logic and common weak areas. Final requirements should always be checked against current official sources."
-      }
-    ]
+    sections: buildGuideSections(topic),
+    faqs: buildGuideFaqs(topic)
   }));
+}
+
+function buildGuideSections(topic: {
+  title: string;
+  description: string;
+  category: string;
+  keywords: string[];
+}) {
+  const mainKeyword = topic.keywords[0];
+  const secondaryKeyword = topic.keywords[1] ?? topic.keywords[0];
+  const routeLabel = topic.title.replace(/:.*$/, "");
+
+  return [
+    {
+      heading: `Who ${routeLabel} is for`,
+      body: [
+        `${topic.description} This guide is written for Indian applicants who want a clear first understanding of ${mainKeyword} before they commit fees, book travel, choose a course or prepare a reapplication.`,
+        `The right route depends on your purpose, background, funds, family situation, travel history and documents. For some applicants, ${secondaryKeyword} may be the best direction; for others, a different country, intake, visa category or timing may be more sensible.`,
+        "Use this guide to prepare better questions for your consultation. A good decision should be based on profile fit, document strength and current official criteria, not pressure or online shortcuts."
+      ],
+      bullets: [
+        "Students should compare course logic, funds, SOP and post-study plans.",
+        "Professionals should review CV, work history, qualifications, English readiness and occupation fit.",
+        "Families should check relationship evidence, sponsorship, funds and timeline comfort.",
+        "Travellers should keep purpose, itinerary, funds and return ties simple and consistent."
+      ]
+    },
+    {
+      heading: "Eligibility signals and document planning",
+      body: [
+        `For ${mainKeyword}, eligibility is only the starting point. A file can still look weak if the documents do not clearly support the story, if funds are difficult to explain, or if the purpose does not match the applicant's previous history.`,
+        "Most strong applications have a simple structure: a believable purpose, consistent identity and background records, funds that match the plan, supporting documents that answer obvious questions, and a clear explanation where there are gaps or previous refusals.",
+        "Before you apply, make a document map. Put each claim beside the document that proves it. If a claim has no document, or a document creates a new question, fix that before submission."
+      ],
+      bullets: [
+        "Passport, identity and civil-status documents",
+        "Academic, employment, business or professional records",
+        "Funds, income, loan, sponsorship or tax documents where relevant",
+        "SOP, GTE, invitation, itinerary, CV, relationship proof or refusal history as needed"
+      ]
+    },
+    {
+      heading: "Common mistakes applicants should avoid",
+      body: [
+        `Applicants often weaken ${routeLabel} planning by copying generic templates, rushing near deadlines, hiding previous refusals, showing sudden funds without context, or choosing a route only because it sounds popular.`,
+        "Another common mistake is adding more documents without improving the logic. A large file is not automatically a strong file. The officer or decision-maker should be able to understand why you are applying, why now, who is paying, and why the route fits your background.",
+        "If your profile has a gap, course change, low funds, weak travel history, unclear job role or earlier refusal, the file should address that directly and calmly."
+      ],
+      bullets: [
+        "Do not use copied SOPs or generic purpose statements.",
+        "Do not ignore previous refusals, gaps or inconsistent dates.",
+        "Do not choose a route without checking funds, timeline and document readiness.",
+        "Do not rely on verbal promises; keep guidance tied to written requirements and evidence."
+      ]
+    },
+    {
+      heading: "How Idol Immigration helps",
+      body: [
+        `Idol Immigration supports applicants with profile assessment, CV or document review, route comparison, SOP or statement guidance, interview preparation where relevant and practical application planning for ${mainKeyword}.`,
+        "The consultation is designed to identify what is strong, what is weak and what should be improved before applying. This helps students, families, professionals and travellers avoid avoidable mistakes and make calmer decisions.",
+        "Idol Immigration is based in Gurugram and supports applicants across Delhi NCR, Haryana and India with transparent visa guidance, documentation support, study abroad counselling, PR pathway guidance and refusal-risk review."
+      ],
+      bullets: [
+        "Profile/CV review and route suitability discussion",
+        "Document checklist, consistency check and weak-area review",
+        "SOP, GTE, invitation, travel-purpose or refusal explanation support",
+        "Clear CTA to contact Idol Immigration for personalised visa guidance"
+      ]
+    }
+  ];
+}
+
+function buildGuideFaqs(topic: {
+  title: string;
+  keywords: string[];
+}) {
+  const mainKeyword = topic.keywords[0];
+
+  return [
+    {
+      question: `Who should read ${topic.title}?`,
+      answer:
+        `Indian applicants comparing ${mainKeyword} should read this guide before applying, reapplying or paying major fees. It is useful for students, families, skilled professionals and travellers who want route clarity.`
+    },
+    {
+      question: "Can Idol Immigration review my profile or CV for this route?",
+      answer:
+        "Yes. Idol can review your profile, CV, documents, funds, purpose, SOP or previous refusal concerns and suggest practical next steps based on your situation."
+    },
+    {
+      question: "Does a strong profile guarantee approval?",
+      answer:
+        "No. A strong profile and clean documents can improve preparation, but visa and immigration outcomes depend on official criteria, evidence and individual circumstances."
+    },
+    {
+      question: "What should I prepare before contacting Idol Immigration?",
+      answer:
+        "Prepare your passport details, education and work history, target country, budget, timeline, previous visa history and any offer letter, invitation, CV, SOP or refusal letter you already have."
+    }
+  ];
 }

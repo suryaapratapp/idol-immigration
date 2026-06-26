@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   ArrowRight,
   CheckCircle2,
@@ -122,27 +123,42 @@ export default function UkExperiencePage() {
               already explained the basics with honesty.
             </p>
           </div>
-          <div className="rounded-[8px] border border-slate-200 bg-ivory p-6 shadow-sm sm:p-8">
-            <div className="flex items-center gap-3">
-              <span className="grid h-12 w-12 place-items-center rounded-[8px] bg-ink text-gold">
-                <HeartHandshake className="h-5 w-5" aria-hidden="true" />
-              </span>
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-ocean">
-                  Founder-led reminder
-                </p>
-                <h2 className="text-2xl font-semibold text-ink">
-                  You Are Not Supposed To Know Everything On Day One
-                </h2>
-              </div>
+          <div className="overflow-hidden rounded-[8px] border border-slate-200 bg-ivory shadow-sm">
+            <div className="relative aspect-[16/10] bg-ink">
+              <Image
+                src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=1400&q=85"
+                alt="UK arrival and life guide for Indian students and newcomers"
+                fill
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
+              <p className="absolute bottom-5 left-5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-gold">
+                UK arrival guide
+              </p>
             </div>
-            <div className="mt-6 grid gap-3">
-              {ukExperienceHighlights.map((item) => (
-                <div className="flex gap-3 rounded-[8px] bg-white p-4 text-sm leading-7 text-slate-600" key={item}>
-                  <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-ocean" aria-hidden="true" />
-                  <p>{item}</p>
+            <div className="p-6 sm:p-8">
+              <div className="flex items-center gap-3">
+                <span className="grid h-12 w-12 place-items-center rounded-[8px] bg-ink text-gold">
+                  <HeartHandshake className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-ocean">
+                    Founder-led reminder
+                  </p>
+                  <h2 className="text-2xl font-semibold text-ink">
+                    You Are Not Supposed To Know Everything On Day One
+                  </h2>
                 </div>
-              ))}
+              </div>
+              <div className="mt-6 grid gap-3">
+                {ukExperienceHighlights.map((item) => (
+                  <div className="flex gap-3 rounded-[8px] bg-white p-4 text-sm leading-7 text-slate-600" key={item}>
+                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-ocean" aria-hidden="true" />
+                    <p>{item}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

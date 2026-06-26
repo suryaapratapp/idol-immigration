@@ -167,9 +167,11 @@ export default async function BlogDetailPage({ params }: BlogPageProps) {
               </p>
             </div>
             <WhatsAppCTA
-              title="Need a profile review?"
-              copy="A blog can help, but your documents and profile decide the route. Send your details on WhatsApp."
+              title="Profile / CV review"
+              copy="Send your profile, CV or key documents on WhatsApp for a practical route check."
               message={`Hi Idol Immigration, I read ${resource.title} and want profile guidance.`}
+              primaryLabel="Profile/CV review"
+              minimal
             />
           </aside>
         </div>
