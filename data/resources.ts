@@ -17,6 +17,10 @@ export type Resource = {
     body: string[];
     bullets?: string[];
   }[];
+  faqs?: {
+    question: string;
+    answer: string;
+  }[];
 };
 
 export const resources: Resource[] = [
@@ -639,8 +643,220 @@ export const resources: Resource[] = [
         ]
       }
     ]
-  }
+  },
+  ...seoTopicPlaceholders()
 ];
 
 export const resourceBySlug = (slug: string) =>
   resources.find((resource) => resource.slug === slug);
+
+function seoTopicPlaceholders(): Resource[] {
+  const image = {
+    src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80",
+    alt: "Visa planning documents and destination research for Indian applicants"
+  };
+
+  const topics: {
+    slug: string;
+    title: string;
+    description: string;
+    category: string;
+    keywords: string[];
+    badges: string[];
+  }[] = [
+    {
+      slug: "canada-pr-from-india-complete-guide",
+      title: "Canada PR from India: Complete Guide",
+      description: "A planning guide for Canada PR from India covering Express Entry, PNP, CRS score, documents, timelines and refusal-risk basics.",
+      category: "PR Updates",
+      keywords: ["Canada PR from India", "Canada Express Entry", "Canada PNP", "CRS score calculator"],
+      badges: ["Canada PR", "Express Entry", "PNP"]
+    },
+    {
+      slug: "how-canada-express-entry-works",
+      title: "How Canada Express Entry Works",
+      description: "Understand Canada Express Entry, profile creation, CRS ranking, draws, invitations, documents and practical readiness for Indian applicants.",
+      category: "PR Updates",
+      keywords: ["Canada Express Entry", "CRS score calculator", "Canada PR consultant in Gurugram"],
+      badges: ["Express Entry", "CRS", "ITA"]
+    },
+    {
+      slug: "canada-67-points-grid-explained",
+      title: "Canada 67 Points Grid Explained",
+      description: "A simple explanation of the Canada 67 points grid, factors, planning use and why CRS ranking still matters after eligibility.",
+      category: "PR Updates",
+      keywords: ["Canada 67 points grid", "Canada 67 points calculator", "Canada PR from India"],
+      badges: ["67 Points", "FSW", "Eligibility"]
+    },
+    {
+      slug: "how-to-improve-crs-score",
+      title: "How to Improve CRS Score",
+      description: "Practical ways to review language scores, education, experience, spouse factors, PNP options and documents for a stronger CRS profile.",
+      category: "PR Updates",
+      keywords: ["CRS score calculator", "Canada Express Entry", "Canada PNP"],
+      badges: ["CRS", "IELTS", "PNP"]
+    },
+    {
+      slug: "canada-pnp-guide-indian-applicants",
+      title: "Canada PNP Guide for Indian Applicants",
+      description: "A Canada PNP guide covering provincial fit, occupation demand, documents, nomination basics and how PNP can support Canada PR planning.",
+      category: "PR Updates",
+      keywords: ["Canada PNP", "Canada PR from India", "Canada PR consultant in Gurugram"],
+      badges: ["PNP", "Province", "Nomination"]
+    },
+    {
+      slug: "australia-65-points-calculator-explained",
+      title: "Australia 65 Points Calculator Explained",
+      description: "Understand the Australia 65 points grid, points-tested skilled migration factors, invitation reality and document planning for Indian applicants.",
+      category: "PR Updates",
+      keywords: ["Australia 65 points calculator", "Australia 65 points grid", "Australia PR from India"],
+      badges: ["65 Points", "Australia PR", "SkillSelect"]
+    },
+    {
+      slug: "difference-australia-189-190-491-visas",
+      title: "Difference Between Australia 189, 190 and 491 Visas",
+      description: "Compare Australia Subclass 189 visa, Subclass 190 visa and Subclass 491 visa by nomination, location, points and profile fit.",
+      category: "PR Updates",
+      keywords: ["Australia Subclass 189 visa", "Australia Subclass 190 visa", "Australia Subclass 491 visa"],
+      badges: ["189", "190", "491"]
+    },
+    {
+      slug: "usa-b1-b2-visa-documents-checklist",
+      title: "USA B1/B2 Visa Documents Checklist",
+      description: "A document checklist for USA B1/B2 visitor visa applicants covering purpose, funds, invitation, employment, travel history and interview readiness.",
+      category: "Tourist Visa",
+      keywords: ["USA B1/B2 visa consultant", "USA tourist visa", "USA visitor visa"],
+      badges: ["USA", "B1/B2", "Interview"]
+    },
+    {
+      slug: "schengen-tourist-visa-from-india",
+      title: "Schengen Tourist Visa from India",
+      description: "A Schengen tourist visa from India guide covering itinerary, hotel, travel insurance, funds, employment proof and return-intent documents.",
+      category: "Tourist Visa",
+      keywords: ["Schengen tourist visa from India", "tourist visa consultant", "visitor visa consultant"],
+      badges: ["Schengen", "Tourist Visa", "Documents"]
+    },
+    {
+      slug: "germany-opportunity-card-explained",
+      title: "Germany Opportunity Card Explained",
+      description: "Understand Germany Opportunity Card planning, points-style factors, qualification review, funds, language expectations and document readiness.",
+      category: "Work Visa",
+      keywords: ["Germany Opportunity Card", "Germany work visa", "Germany job seeker visa"],
+      badges: ["Germany", "Opportunity Card", "Work"]
+    },
+    {
+      slug: "germany-job-seeker-visa-guide",
+      title: "Germany Job Seeker Visa Guide",
+      description: "A practical Germany job seeker visa guide for Indian professionals reviewing qualifications, funds, experience, language and job-search readiness.",
+      category: "Work Visa",
+      keywords: ["Germany job seeker visa", "Germany work visa", "EU Blue Card"],
+      badges: ["Germany", "Job Seeker", "EU Blue Card"]
+    },
+    {
+      slug: "study-visa-sop-writing-tips",
+      title: "Study Visa SOP Writing Tips",
+      description: "SOP writing for study visa applicants, with tips on course fit, funds, future plan, personal voice, refusals and document consistency.",
+      category: "Visa Tips",
+      keywords: ["SOP writing for study visa", "study visa consultant", "study abroad consultant"],
+      badges: ["SOP", "Study Visa", "Documents"]
+    },
+    {
+      slug: "common-reasons-study-visa-refusal",
+      title: "Common Reasons for Study Visa Refusal",
+      description: "Common study visa refusal reasons including course mismatch, weak SOP, unclear funds, poor ties, gaps and inconsistent documents.",
+      category: "Visa Tips",
+      keywords: ["visa refusal review consultant", "financial documents for study visa", "SOP writing for study visa"],
+      badges: ["Refusal", "Study Visa", "Review"]
+    },
+    {
+      slug: "mbbs-abroad-for-indian-students",
+      title: "MBBS Abroad for Indian Students",
+      description: "A parent-friendly MBBS abroad guide covering Russia, Georgia, Kazakhstan, Uzbekistan, eligibility, budget, documents and visa support.",
+      category: "MBBS Abroad",
+      keywords: ["MBBS abroad for Indian students", "MBBS in Russia", "MBBS in Georgia", "MBBS in Kazakhstan", "MBBS in Uzbekistan"],
+      badges: ["MBBS", "Medical", "Students"]
+    },
+    {
+      slug: "best-countries-indian-students-study-abroad",
+      title: "Best Countries for Indian Students to Study Abroad",
+      description: "Compare Canada, UK, Australia, USA, New Zealand and Europe by course fit, cost, documents, work options and post-landing support.",
+      category: "Study Abroad",
+      keywords: ["study abroad consultant", "study abroad consultant in Gurugram", "pre-departure support"],
+      badges: ["Study Abroad", "Country Comparison", "Students"]
+    },
+    {
+      slug: "tourist-visa-documents-checklist",
+      title: "Tourist Visa Documents Checklist",
+      description: "A tourist visa document checklist for Indian travellers covering funds, itinerary, invitation, employment, family ties and travel history.",
+      category: "Tourist Visa",
+      keywords: ["tourist visa consultant", "visitor visa consultant", "tourist visa consultant in Gurugram"],
+      badges: ["Tourist Visa", "Checklist", "Travel"]
+    },
+    {
+      slug: "dependent-visa-guide-spouse-family",
+      title: "Dependent Visa Guide for Spouse and Family",
+      description: "A dependent visa guide for spouse and family applicants covering relationship evidence, funds, sponsor records and common risk areas.",
+      category: "Visa Tips",
+      keywords: ["dependent visa consultant in Gurugram", "dependent visa for spouse", "family visa consultant"],
+      badges: ["Dependent Visa", "Spouse", "Family"]
+    }
+  ];
+
+  return topics.map((topic): Resource => ({
+    slug: topic.slug,
+    title: topic.title,
+    description: topic.description,
+    category: topic.category,
+    readTime: "Prepared guide",
+    keywords: topic.keywords,
+    image,
+    badges: topic.badges,
+    quickSummary:
+      `${topic.title} is prepared as an editable SEO guide for Indian applicants who want practical, current and document-focused planning before they apply.`,
+    keyTakeaways: [
+      "Use the guide for planning, not as a substitute for current official requirements.",
+      "Your profile, funds, documents and purpose decide the right next step.",
+      "Idol Immigration can review the route and document logic before submission."
+    ],
+    sections: [
+      {
+        heading: "What this guide covers",
+        body: [
+          topic.description,
+          "The focus is practical: who the route is for, what documents usually matter, where applicants get confused and what should be checked before spending money."
+        ],
+        bullets: [
+          "Eligibility and profile-fit signals",
+          "Document planning and common gaps",
+          "Questions to ask before applying",
+          "When to consider a backup option"
+        ]
+      },
+      {
+        heading: "How Idol Immigration helps",
+        body: [
+          "Idol Immigration supports applicants with profile assessment, documentation support, application guidance, SOP or statement review, interview preparation where relevant and realistic route comparison.",
+          "The team avoids false promises and keeps guidance tied to the applicant's documents, timeline, family comfort and current official criteria."
+        ],
+        bullets: [
+          "Profile and route review",
+          "Document checklist and consistency check",
+          "Refusal-risk review before submission",
+          "Clear enquiry CTA for a personal consultation"
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: `Who should read ${topic.title}?`,
+        answer:
+          "Indian students, families, professionals or travellers who are comparing routes and want a simple starting point before a personal profile review."
+      },
+      {
+        question: "Can Idol Immigration help with documents for this topic?",
+        answer:
+          "Yes. Idol can review profile fit, document readiness, SOP or purpose logic and common weak areas. Final requirements should always be checked against current official sources."
+      }
+    ]
+  }));
+}

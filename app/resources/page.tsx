@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
-export default function ResourcesRedirectPage() {
+export default function BlogsRedirectPage() {
   redirect("/blogs");
 }

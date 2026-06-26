@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { site } from "@/data/site";
 import type { FAQ } from "@/data/faqs";
+import type { Service } from "@/data/services";
 
 type PageMeta = {
   title: string;
@@ -63,6 +64,8 @@ export function professionalServiceSchema() {
     url: site.url,
     email: site.email,
     telephone: site.whatsappNumber,
+    image: absoluteUrl("/images/global-journey-hero.png"),
+    priceRange: "$$",
     address: {
       "@type": "PostalAddress",
       streetAddress:
@@ -80,6 +83,14 @@ export function professionalServiceSchema() {
       worstRating: "1"
     },
     description: site.description,
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        opens: "10:00",
+        closes: "18:30"
+      }
+    ],
     areaServed: [
       "India",
       "United Kingdom",
@@ -121,6 +132,23 @@ export function professionalServiceSchema() {
       site.socials.facebook,
       site.socials.youtube
     ]
+  };
+}
+
+export function serviceSchema(service: Service) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.pageIntro,
+    serviceType: service.shortTitle,
+    provider: {
+      "@id": `${site.url}/#organization`,
+      "@type": "ProfessionalService",
+      name: site.name
+    },
+    areaServed: ["Gurugram", "Delhi NCR", "Haryana", "India"],
+    url: absoluteUrl(`/services/${service.slug}`)
   };
 }
 

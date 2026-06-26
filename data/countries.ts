@@ -23,6 +23,11 @@ export type Country = {
   documentsOverview: string[];
   processOverview: string[];
   whyChoose: string[];
+  routeHighlights?: {
+    title: string;
+    copy: string;
+    links?: { label: string; href: string }[];
+  }[];
   pointsGrid?: {
     title: string;
     minimum: string;
@@ -47,13 +52,13 @@ export const countries: Country[] = [
       caption: "UK planning with real arrival and settlement context."
     },
     bestFor: "Students seeking globally recognized education, shorter academic timelines and English-speaking exposure.",
-    popularRoutes: ["Study abroad", "Visitor visa", "Skilled work planning", "Family routes"],
+    popularRoutes: ["UK student visa for Indian students", "UK visitor visa", "UK Skilled Worker Visa", "UK dependent visa"],
     commonProfile:
       "Indian students, parents visiting children, skilled professionals and families comparing education plus settlement readiness.",
     worries: ["Course value", "Accommodation", "Part-time work readiness", "Living cost", "Confidence after arrival"],
     howIdolHelps:
-      "Idol combines India-side documentation clarity with founder-led UK life experience, helping applicants prepare beyond the visa file.",
-    visasAvailable: ["Student visa", "Tourist / visitor visa", "Skilled worker planning", "Dependent and family routes"],
+      "Idol combines India-side documentation clarity with founder-led UK life experience, helping applicants who need a UK visa consultant in Gurugram or UK study visa consultant support beyond the visa file.",
+    visasAvailable: ["UK Student Visa", "UK visitor visa", "UK Skilled Worker Visa", "UK dependent visa", "Study and work options"],
     prEligibility:
       "Long-term settlement normally depends on the route used, lawful residence, work history, sponsorship and current UK criteria.",
     workVisaEligibility:
@@ -65,8 +70,25 @@ export const countries: Country[] = [
     documentsOverview: ["Passport and identity documents", "CAS/admission or sponsorship evidence", "Funds, academic and employment records", "SOP, travel history and family documents where relevant"],
     processOverview: ["Profile and route review", "Course, sponsor or visit-purpose planning", "Document preparation", "Application and interview/readiness support"],
     whyChoose: ["Shorter course options for many students", "Large Indian student community", "Strong global education reputation", "Founder-led UK arrival guidance"],
+    routeHighlights: [
+      {
+        title: "UK Student Visa for Indian Students",
+        copy:
+          "Guidance for course selection, CAS readiness, funds, SOP logic, accommodation and UK study visa consultant support for Indian students."
+      },
+      {
+        title: "UK Skilled Worker Visa",
+        copy:
+          "Profile and document planning for applicants reviewing job offer, sponsor, salary, English and route-specific requirements."
+      },
+      {
+        title: "UK Visitor and Dependent Visa",
+        copy:
+          "Support for UK visitor visa, UK dependent visa, family visit purpose, relationship evidence, funds and India-tie documents."
+      }
+    ],
     overview:
-      "The UK is often attractive for Indian applicants who want strong academic options, international exposure and a practical English-speaking environment. Idol keeps guidance focused on route fit, funds, documents and realistic settlement preparation.",
+      "The UK is often attractive for Indian applicants who want strong academic options, international exposure and a practical English-speaking environment. Idol keeps guidance focused on UK student visa for Indian students, UK Skilled Worker Visa, UK visitor visa, UK dependent visa, route fit, funds, documents and realistic settlement preparation.",
     lastUpdated: "June 15, 2026",
     officialSourcePlaceholder: "Verify current UK requirements on GOV.UK before publishing final rule-specific copy.",
     faqs: countryFaqs.uk
@@ -82,13 +104,13 @@ export const countries: Country[] = [
       caption: "Canada comparison for study, family and long-term planning."
     },
     bestFor: "Students and skilled professionals who want structured study, family and long-term migration planning.",
-    popularRoutes: ["Study permit planning", "Visitor visa", "PR pathway discussion", "Family support"],
+    popularRoutes: ["Canada PR from India", "Canada Express Entry", "Canada PNP", "Canada study visa", "Canada visitor visa from India"],
     commonProfile:
       "Students with career-focused programs, families visiting relatives and skilled applicants exploring long-term options.",
     worries: ["Funds evidence", "SOP strength", "Course mismatch", "Changing rules", "PR expectations"],
     howIdolHelps:
-      "Idol reviews academic logic, funds, documentation and backup plans while keeping official-source verification central.",
-    visasAvailable: ["Study permit planning", "Tourist / visitor visa", "PR pathway consultation", "Work permit planning", "Dependent routes"],
+      "Idol reviews Canada PR from India, Canada Express Entry, Canada PNP, study visa, visitor visa, funds, documentation and backup plans while keeping official-source verification central.",
+    visasAvailable: ["Canada PR", "Canada Express Entry", "Canada PNP", "Canada study visa", "Canada visitor visa from India", "Canada work permit", "Spouse open work permit Canada", "Canada super visa", "Family sponsorship Canada"],
     prEligibility:
       "Canada PR planning commonly reviews age, education, skilled work, language scores, adaptability, provincial fit and live program criteria.",
     workVisaEligibility:
@@ -100,6 +122,23 @@ export const countries: Country[] = [
     documentsOverview: ["Passport and identity documents", "Academic records and admission documents", "Proof of funds and family income", "Employment, language, SOP and relationship documents where relevant"],
     processOverview: ["Eligibility and budget review", "Program or pathway shortlist", "Document and SOP planning", "Submission readiness and backup options"],
     whyChoose: ["Structured education options", "Strong Indian community", "Multiple long-term planning pathways", "Good fit for careful profile comparison"],
+    routeHighlights: [
+      {
+        title: "Canada PR, Express Entry and PNP",
+        copy:
+          "Planning support for Canada PR from India, Canada Express Entry, Canada PNP, CRS score calculator review and Canada 67 points calculator basics."
+      },
+      {
+        title: "Canada Study Visa and Visitor Visa",
+        copy:
+          "Guidance for Canada study visa, Canada visitor visa from India, SOP, funds, invitation, itinerary and home-country tie documents."
+      },
+      {
+        title: "Canada Work Permit, SOWP and Super Visa",
+        copy:
+          "Support for Canada work permit planning, spouse open work permit Canada, Canada super visa and family sponsorship Canada document readiness."
+      }
+    ],
     pointsGrid: {
       title: "Canada 67 Points Grid",
       minimum: "67 / 100 is the traditional Federal Skilled Worker selection threshold.",
@@ -114,7 +153,7 @@ export const countries: Country[] = [
       ]
     },
     overview:
-      "Canada remains a major consideration for Indian students and families, but planning must be careful because rules and program settings change. Idol focuses on clarity, documents and realistic alternatives.",
+      "Canada remains a major consideration for Indian students and families looking at Canada PR from India, Canada Express Entry, Canada PNP, Canada study visa, Canada visitor visa from India, spouse open work permit Canada and Canada super visa. Idol focuses on clarity, documents and realistic alternatives.",
     lastUpdated: "June 15, 2026",
     officialSourcePlaceholder: "Verify current Canada requirements on official Government of Canada / IRCC sources before publishing.",
     faqs: countryFaqs.canada
@@ -130,13 +169,13 @@ export const countries: Country[] = [
       caption: "Australia planning with profile, English and pathway clarity."
     },
     bestFor: "Skilled professionals, students and families comparing education, work and long-term settlement possibilities.",
-    popularRoutes: ["Study abroad", "Visitor visa", "General skilled migration planning", "Family routes"],
+    popularRoutes: ["Australia PR from India", "Australia Subclass 189 visa", "Australia Subclass 190 visa", "Australia Subclass 491 visa", "Australia student visa"],
     commonProfile:
       "Applicants with strong academics, trade or professional backgrounds, English readiness and interest in long-term options.",
     worries: ["Occupation fit", "English scores", "Evidence quality", "Cost", "Timeline uncertainty"],
     howIdolHelps:
-      "Idol helps applicants review profile strength, documents, English readiness and country fit before choosing a route.",
-    visasAvailable: ["Student visa", "Tourist / visitor visa", "Skilled migration planning", "Work visa planning", "Dependent and family routes"],
+      "Idol helps applicants review Australia PR from India, Australia skilled migration, SkillSelect, skills assessment, state nomination, student visa and tourist visa options before choosing a route.",
+    visasAvailable: ["Australia PR", "Skilled Independent Visa Subclass 189", "Skilled Nominated Visa Subclass 190", "Skilled Work Regional Visa Subclass 491", "Australia student visa", "Australia tourist visa", "Australia spouse visa", "Skills assessment"],
     prEligibility:
       "Skilled migration planning usually reviews age, English, occupation, skills assessment, work history, education and nomination options.",
     workVisaEligibility:
@@ -148,6 +187,28 @@ export const countries: Country[] = [
     documentsOverview: ["Passport and identity documents", "Academic, employment and English-test records", "Skills assessment or nomination documents where relevant", "Funds, SOP/GTE and family documents"],
     processOverview: ["Profile and occupation review", "Points and English readiness check", "Documents and route planning", "Application sequencing"],
     whyChoose: ["Recognized education system", "Skilled migration options for suitable profiles", "High quality of life", "Clear points-led planning framework"],
+    routeHighlights: [
+      {
+        title: "Australia PR and Skilled Migration",
+        copy:
+          "Profile review for Australia PR from India, Australia skilled migration, Australia 65 points calculator, SkillSelect and occupation-fit planning."
+      },
+      {
+        title: "Subclass 189, 190 and 491 Visas",
+        copy:
+          "Guidance on the difference between Australia Subclass 189 visa, Australia Subclass 190 visa and Australia Subclass 491 visa, including nomination and regional factors."
+      },
+      {
+        title: "Australia Student, Tourist and Spouse Visa",
+        copy:
+          "Support for Australia student visa, GTE review for Australia student visa, Australia tourist visa and Australia spouse visa document planning."
+      },
+      {
+        title: "Skills Assessment and State Nomination",
+        copy:
+          "Early review of occupation, assessing authority direction, skills assessment records, English readiness and state nomination possibilities."
+      }
+    ],
     pointsGrid: {
       title: "Australia 65 Points Grid",
       minimum: "65 points is the usual minimum for points-tested skilled visa consideration.",
@@ -162,7 +223,7 @@ export const countries: Country[] = [
       ]
     },
     overview:
-      "Australia can be attractive for study and skilled migration planning, but applicants need careful assessment of profile, documentation and official criteria before committing.",
+      "Australia can be attractive for Australia PR from India, Australia skilled migration, Australia student visa, Australia tourist visa and Australia spouse visa planning, but applicants need careful assessment of profile, documentation and official criteria before committing.",
     lastUpdated: "June 15, 2026",
     officialSourcePlaceholder: "Verify current Australia requirements on the Department of Home Affairs website before publishing.",
     faqs: countryFaqs.australia
@@ -178,13 +239,13 @@ export const countries: Country[] = [
       caption: "USA planning focused on purpose, documents and confidence."
     },
     bestFor: "Students, visitors and professionals who need strong interview clarity and purpose-driven documentation.",
-    popularRoutes: ["Student visa planning", "Visitor visa", "Interview preparation", "Business travel"],
+    popularRoutes: ["USA student visa", "F1 visa for Indian students", "USA B1/B2 visa consultant", "USA tourist visa", "USA visitor visa"],
     commonProfile:
       "Students targeting specialized programs, families visiting relatives and applicants needing interview confidence.",
     worries: ["Interview confidence", "Purpose clarity", "Funds", "Ties to India", "Course logic"],
     howIdolHelps:
       "Idol helps applicants prepare consistent documents and clearer interview answers without scripted or artificial responses.",
-    visasAvailable: ["Student visa", "Tourist / visitor visa", "Business visitor planning", "Interview preparation", "Dependent routes where applicable"],
+    visasAvailable: ["F1 Student Visa", "B1/B2 Visitor Visa", "USA tourist visa", "USA visitor visa", "Interview preparation", "Documentation guidance"],
     prEligibility:
       "US long-term immigration is route-specific and may involve employer, family, investment or exceptional-ability pathways.",
     workVisaEligibility:
@@ -196,8 +257,25 @@ export const countries: Country[] = [
     documentsOverview: ["Passport and appointment documents", "Admission, I-20 or invitation details", "Funds, income and sponsor documents", "Academic, employment and India-tie evidence"],
     processOverview: ["Purpose and profile review", "Document and DS/application readiness", "Interview preparation", "Travel or study plan finalization"],
     whyChoose: ["World-leading universities", "Strong specialist programs", "Large Indian diaspora", "Useful for students needing interview preparation"],
+    routeHighlights: [
+      {
+        title: "F1 Visa for Indian Students",
+        copy:
+          "USA student visa planning for admission, I-20/SEVIS readiness, funds, academic intent and interview preparation for visa."
+      },
+      {
+        title: "USA B1/B2 Visitor Visa",
+        copy:
+          "USA B1/B2 visa consultant support for tourism, family visits, business visits, purpose clarity, documentation guidance and India-tie evidence."
+      },
+      {
+        title: "USA Interview Preparation",
+        copy:
+          "Practice focused on clear, natural answers that match documents, travel purpose, study plan, funds and previous history."
+      }
+    ],
     overview:
-      "USA applications often depend on clear purpose, credible funds and confident communication. Idol supports applicants with practical preparation and document consistency.",
+      "USA applications often depend on clear purpose, credible funds and confident communication. Idol supports USA student visa, F1 visa for Indian students, USA B1/B2 visitor visa, USA tourist visa and USA visitor visa applicants with practical preparation and document consistency.",
     lastUpdated: "June 15, 2026",
     officialSourcePlaceholder: "Verify current USA requirements on official U.S. government sources before publishing.",
     faqs: countryFaqs.usa
@@ -248,13 +326,13 @@ export const countries: Country[] = [
       caption: "Europe needs country-specific comparison, not generic advice."
     },
     bestFor: "Students, visitors and professionals comparing Germany, Ireland and other European routes.",
-    popularRoutes: ["Study abroad", "Visitor visa", "Job seeker planning", "Business travel"],
+    popularRoutes: ["Germany Opportunity Card", "Germany job seeker visa", "Germany work visa", "EU Blue Card", "Schengen tourist visa from India"],
     commonProfile:
       "Applicants open to country comparison, language planning and route-specific cost/timeline review.",
     worries: ["Language requirements", "Country selection", "Job market readiness", "Documentation", "Changing policies"],
     howIdolHelps:
       "Idol helps applicants compare options and prepare route-specific questions before verifying official country requirements.",
-    visasAvailable: ["Study visa", "Tourist / Schengen visitor planning", "Job seeker or work route planning", "Business visitor routes", "Dependent routes"],
+    visasAvailable: ["Germany Opportunity Card", "Germany job seeker visa", "Germany work visa", "Germany student visa", "EU Blue Card", "Schengen tourist visa from India", "Europe study visa", "Europe work visa"],
     prEligibility:
       "Permanent residence depends heavily on the specific country, residence period, work status, language and integration criteria.",
     workVisaEligibility:
@@ -266,8 +344,30 @@ export const countries: Country[] = [
     documentsOverview: ["Passport and travel insurance where needed", "Admission, job, invitation or accommodation documents", "Funds and sponsor evidence", "Academic, language and employment records"],
     processOverview: ["Choose the exact country first", "Check language and recognition requirements", "Prepare documents", "Plan visa and arrival steps"],
     whyChoose: ["Wide range of study costs", "Country-specific work options", "Strong technical programs in some countries", "Good for applicants open to comparison"],
+    routeHighlights: [
+      {
+        title: "Germany Opportunity Card and Job Seeker Visa",
+        copy:
+          "Planning support for Germany Opportunity Card, Germany job seeker visa, qualification review, funds, language expectations and document sequencing."
+      },
+      {
+        title: "Germany Work Visa and EU Blue Card",
+        copy:
+          "Guidance for Germany work visa and EU Blue Card applicants reviewing employment, salary, qualifications and recognition requirements."
+      },
+      {
+        title: "Germany Student Visa and Europe Study Visa",
+        copy:
+          "Study route support for Germany student visa, Europe study visa, funds, admission, accommodation and country-specific checklist planning."
+      },
+      {
+        title: "Schengen Tourist Visa from India",
+        copy:
+          "Tourist / visitor visa document support for itinerary, hotel, insurance, funds, employment or business proof and return intent."
+      }
+    ],
     overview:
-      "Europe is not one single visa market. Idol keeps planning country-specific, practical and careful about official-source verification.",
+      "Europe is not one single visa market. Idol keeps planning country-specific for Germany Opportunity Card, Germany job seeker visa, Germany work visa, Germany student visa, EU Blue Card, Schengen tourist visa from India, Europe study visa and Europe work visa applicants.",
     lastUpdated: "June 15, 2026",
     officialSourcePlaceholder: "Verify requirements on the relevant official European country source before publishing.",
     faqs: countryFaqs.europe

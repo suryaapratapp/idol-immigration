@@ -102,7 +102,7 @@ export function Footer() {
       <div className="border-t border-stone-200 bg-white/70">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 text-xs leading-6 text-slate-500 sm:px-6 lg:flex-row lg:items-start lg:justify-between lg:px-8">
           <p className="max-w-4xl">
-            Disclaimer: Idol Immigration provides consultation and application support. Immigration rules, eligibility, documents, timelines and outcomes depend on official government criteria and individual circumstances. Information on this website is for general guidance and should be verified with current official sources before applying. We do not guarantee visa approval.
+            Disclaimer: Idol Immigration provides immigration consultation, documentation support, application guidance and study abroad support. For services requiring licensed representation, clients should verify the relevant authorised representative through the official regulatory body. Immigration rules, eligibility, documents, timelines and outcomes depend on official government criteria and individual circumstances. We do not guarantee visa approval.
           </p>
           <p className="shrink-0">Copyright {year} {site.shortName}.</p>
         </div>
@@ -123,7 +123,12 @@ function FooterColumn({ title, links }: FooterColumnProps) {
       <ul className="mt-5 grid gap-3">
         {links.map((link) => (
           <li key={link.href}>
-            <Link className="text-sm text-slate-600 transition hover:text-ink" href={link.href}>
+            <Link
+              className="text-sm text-slate-600 transition hover:text-ink"
+              href={link.href}
+              target={link.href.startsWith("http") ? "_blank" : undefined}
+              rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+            >
               {link.label}
             </Link>
           </li>

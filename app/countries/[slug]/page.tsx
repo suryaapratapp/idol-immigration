@@ -25,15 +25,92 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
     return {};
   }
 
-  return createMetadata({
+  const metaBySlug: Record<string, { title: string; description: string; keywords: string[] }> = {
+    canada: {
+      title: "Canada PR Consultant in Gurugram | Express Entry, PNP & Study Visa",
+      description:
+        "Canada PR consultant in Gurugram for Canada PR from India, Express Entry, PNP, 67 points grid, CRS score, study visa, visitor visa, work permit, SOWP and super visa.",
+      keywords: [
+        "Canada PR consultant in Gurugram",
+        "Canada PR from India",
+        "Canada Express Entry",
+        "Canada PNP",
+        "Canada 67 points grid",
+        "CRS score calculator",
+        "Canada study visa",
+        "Canada visitor visa from India"
+      ]
+    },
+    australia: {
+      title: "Australia PR Consultant in Gurugram | 65 Points, 189, 190 & 491 Visa",
+      description:
+        "Australia PR consultant in Gurugram for Australia PR from India, 65 points grid, Subclass 189, Subclass 190, Subclass 491, SkillSelect and student visa planning.",
+      keywords: [
+        "Australia PR consultant in Gurugram",
+        "Australia PR from India",
+        "Australia 65 points grid",
+        "Australia Subclass 189 visa",
+        "Australia Subclass 190 visa",
+        "Australia Subclass 491 visa"
+      ]
+    },
+    uk: {
+      title: "UK Visa Consultant in Gurugram | Student, Skilled Worker & Visitor Visa",
+      description:
+        "UK visa consultant in Gurugram for UK student visa for Indian students, UK Skilled Worker Visa, visitor visa, dependent visa and study-work planning.",
+      keywords: [
+        "UK student visa for Indian students",
+        "UK Skilled Worker Visa",
+        "UK visitor visa",
+        "UK dependent visa",
+        "UK study visa consultant",
+        "UK visa consultant in Gurugram"
+      ]
+    },
+    usa: {
+      title: "USA Visa Consultant in Gurugram | F1 Student & B1/B2 Visitor Visa",
+      description:
+        "USA visa consultant in Gurugram for USA student visa, F1 visa for Indian students, USA B1/B2 visa, tourist visa, visitor visa and interview preparation.",
+      keywords: [
+        "USA student visa",
+        "USA B1/B2 visa consultant",
+        "USA tourist visa",
+        "USA visitor visa",
+        "F1 visa for Indian students",
+        "USA visa consultant in Gurugram"
+      ]
+    },
+    europe: {
+      title: "Germany & Europe Visa Consultant | Opportunity Card, Job Seeker & Schengen",
+      description:
+        "Germany and Europe visa guidance for Germany Opportunity Card, Germany job seeker visa, Germany work visa, EU Blue Card, Germany student visa and Schengen tourist visa from India.",
+      keywords: [
+        "Germany Opportunity Card",
+        "Germany job seeker visa",
+        "Germany work visa",
+        "Germany student visa",
+        "EU Blue Card",
+        "Schengen tourist visa from India",
+        "Europe study visa",
+        "Europe work visa"
+      ]
+    }
+  };
+  const meta = metaBySlug[country.slug] ?? {
     title: `${country.name} Visa & Study Guidance`,
     description: country.overview,
-    path: `/countries/${country.slug}`,
     keywords: [
       `${country.name} visa consultant India`,
-      "immigration consultant for Indians",
-      "study abroad consultant India"
+      "immigration consultant in Gurugram",
+      "study abroad consultant in Gurugram"
     ]
+  };
+
+  return createMetadata({
+    title: meta.title,
+    description: meta.description,
+    path: `/countries/${country.slug}`,
+    keywords: meta.keywords
   });
 }
 
@@ -101,6 +178,27 @@ export default async function CountryDetailPage({ params }: CountryPageProps) {
           </div>
         </div>
       </section>
+
+      {country.routeHighlights?.length ? (
+        <section className="bg-white py-16 sm:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <SectionHeader
+              eyebrow="Key routes"
+              title={`${country.name} Visa Pathways We Help You Understand`}
+              copy="These sections are written for planning clarity. Final requirements should be checked on the latest official sources before applying."
+              align="center"
+            />
+            <div className="mt-12 grid gap-5 md:grid-cols-2">
+              {country.routeHighlights.map((route) => (
+                <article className="rounded-[8px] border border-stone-200 bg-ivory/70 p-6" key={route.title}>
+                  <h2 className="text-xl font-semibold text-ink">{route.title}</h2>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{route.copy}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {country.pointsGrid ? (
         <section className="bg-ivory py-16 sm:py-24">

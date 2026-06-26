@@ -25,7 +25,8 @@ export const site = {
     linkedin: "https://www.linkedin.com/company/idol-immigration/",
     facebook: "https://www.facebook.com/IMStudyabroad",
     youtube: "https://www.youtube.com/@idolimmigration"
-  }
+  },
+  trustpilotReviewsUrl: "https://www.trustpilot.com/review/idolimmigration.com"
 };
 
 export const whatsappLink = (message = site.whatsappText) =>
@@ -36,7 +37,8 @@ export const serviceNavLinks = [
   { label: "Tourist / Visitor Visa", href: "/services/visitor-visa" },
   { label: "PR & Skilled Migration", href: "/services/pr-skilled-migration" },
   { label: "Work Visa", href: "/services/work-business-visa" },
-  { label: "Dependent Visa", href: "/services/dependent-visa" }
+  { label: "Dependent Visa", href: "/services/dependent-visa" },
+  { label: "MBBS Abroad", href: "/services/mbbs-abroad" }
 ];
 
 export const navLinks = [
@@ -52,7 +54,8 @@ export const footerQuickLinks = [
   { label: "Refund Policy", href: "/refund-policy" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms & Conditions", href: "/terms-conditions" },
-  { label: "FAQs", href: "/faqs" }
+  { label: "FAQs", href: "/faqs" },
+  { label: "Trustpilot Reviews", href: site.trustpilotReviewsUrl }
 ];
 
 export const stats = [

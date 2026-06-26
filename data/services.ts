@@ -47,6 +47,21 @@ export const services: Service[] = [
     cta: "Plan my study route",
     whatsappMessage: "Hi Idol Immigration, I want study abroad guidance.",
     keywords: ["study abroad consultant India", "UK student visa consultant India"],
+    eligibilityOverview: [
+      "A clear academic goal with country and course fit",
+      "Funds, sponsor details and documents that match the selected study route",
+      "English, SOP and admission readiness for Canada study visa, UK study visa, Australia student visa, USA student visa or New Zealand student visa"
+    ],
+    documentsOverview: [
+      "Passport, academic records, English scores and admission documents",
+      "Financial documents for study visa, sponsor income and loan records where relevant",
+      "SOP writing for study visa, GTE review for Australia student visa and scholarship guidance documents"
+    ],
+    whyChoose: [
+      "Study abroad consultant in Gurugram with country, course and university admission assistance",
+      "Support for SOP, GTE, financial documents, scholarship guidance and pre-departure support",
+      "Post-landing support, accommodation support abroad and interview preparation for visa"
+    ],
     pageIntro:
       "Study abroad planning is not just admission paperwork. Idol helps students and families understand the right academic direction, financial comfort, visa readiness and real-life preparation before making a major international decision.",
     outcome:
@@ -93,7 +108,16 @@ export const services: Service[] = [
     ],
     cta: "Review my tourist visa",
     whatsappMessage: "Hi Idol Immigration, I want tourist or visitor visa guidance.",
-    keywords: ["tourist visa consultant India", "visitor visa consultant India"],
+    keywords: [
+      "tourist visa consultant in Gurugram",
+      "visitor visa consultant",
+      "Canada visitor visa from India",
+      "Schengen tourist visa from India",
+      "USA B1/B2 visa consultant",
+      "UK visitor visa",
+      "Australia tourist visa",
+      "Canada super visa"
+    ],
     pageIntro:
       "A tourist or visitor visa application should make the trip easy to understand. Idol helps applicants present purpose, funds, travel dates and family context in a consistent, well-documented way.",
     outcome:
@@ -125,9 +149,24 @@ export const services: Service[] = [
     ],
     cta: "Check my PR options",
     whatsappMessage: "Hi Idol Immigration, I want PR or skilled migration guidance.",
-    keywords: ["PR visa consultant India", "immigration consultant for Indians"],
+    keywords: [
+      "Canada PR consultant in Gurugram",
+      "Australia PR consultant in Gurugram",
+      "Canada PR from India",
+      "Canada Express Entry",
+      "Canada PNP",
+      "Canada 67 points calculator",
+      "Canada 67 points grid",
+      "CRS score calculator",
+      "Australia PR from India",
+      "Australia 65 points calculator",
+      "Australia 65 points grid",
+      "Australia Subclass 189 visa",
+      "Australia Subclass 190 visa",
+      "Australia Subclass 491 visa"
+    ],
     pageIntro:
-      "PR planning needs more than enthusiasm. Idol helps skilled applicants understand eligibility signals, documentation gaps, cost comfort, timelines and country fit before choosing a route.",
+      "PR planning needs more than enthusiasm. Idol helps skilled applicants compare Canada PR from India, Canada Express Entry, Canada PNP, CRS score calculator signals, Canada 67 points grid basics, Australia PR from India and Australia 65 points grid planning before choosing a route.",
     outcome:
       "A realistic route map that shows where your profile is strong, where it is weak and what to improve next.",
     faqs: serviceFaqs["pr-skilled-migration"]
@@ -157,7 +196,32 @@ export const services: Service[] = [
     ],
     cta: "Discuss business route",
     whatsappMessage: "Hi Idol Immigration, I want work or business visa guidance.",
-    keywords: ["business visa consultant India", "start-up visa guidance"],
+    eligibilityOverview: [
+      "A genuine employment, business, investor, start-up or skilled work purpose",
+      "Documents that support occupation, employer, funds, business background or professional experience",
+      "Route fit for Canada work permit, UK Skilled Worker Visa, Germany work visa, EU Blue Card or other country-specific options"
+    ],
+    documentsOverview: [
+      "Passport, work experience, education and professional records",
+      "Employment offer, sponsor, business, funds or investment documents where relevant",
+      "Purpose statement, travel history and official checklist documents"
+    ],
+    whyChoose: [
+      "Work visa consultant support for Canada, UK, Germany and Europe routes",
+      "Profile-first guidance for Germany Opportunity Card, Germany job seeker visa and EU Blue Card planning",
+      "Careful document review without making false approval promises"
+    ],
+    keywords: [
+      "work visa consultant",
+      "Canada work permit",
+      "UK Skilled Worker Visa",
+      "Germany work visa",
+      "Germany Opportunity Card",
+      "Germany job seeker visa",
+      "EU Blue Card",
+      "business visa consultant India",
+      "start-up visa guidance"
+    ],
     pageIntro:
       "Work and business routes require careful intent, evidence and route selection. Idol helps applicants understand what their profile can support before preparing documents.",
     outcome:
@@ -189,7 +253,14 @@ export const services: Service[] = [
     ],
     cta: "Prepare family application",
     whatsappMessage: "Hi Idol Immigration, I want spouse or family visa guidance.",
-    keywords: ["spouse visa consultant", "spouse open work permit guidance"],
+    keywords: [
+      "family sponsorship Canada",
+      "dependent visa for spouse",
+      "family visa consultant",
+      "spouse open work permit Canada",
+      "spouse visa consultant",
+      "spouse open work permit guidance"
+    ],
     pageIntro:
       "Family applications are personal and document-heavy. Idol helps couples and families organize evidence clearly so the story, documents and purpose stay consistent.",
     outcome:
@@ -235,7 +306,14 @@ export const services: Service[] = [
     ],
     cta: "Plan dependent visa",
     whatsappMessage: "Hi Idol Immigration, I want dependent visa guidance.",
-    keywords: ["dependent visa consultant India", "family visa consultant India"],
+    keywords: [
+      "dependent visa consultant in Gurugram",
+      "dependent visa for spouse",
+      "family visa consultant",
+      "UK dependent visa",
+      "dependent visa consultant India",
+      "family visa consultant India"
+    ],
     pageIntro:
       "Dependent visa applications need clear relationship evidence, financial planning and consistency with the main applicant's route. Idol helps families organize the file carefully before applying.",
     outcome:
@@ -267,7 +345,13 @@ export const services: Service[] = [
     ],
     cta: "Review my refusal",
     whatsappMessage: "Hi Idol Immigration, I had a visa refusal and need review help.",
-    keywords: ["visa refusal help India"],
+    keywords: [
+      "visa refusal review consultant",
+      "visa refusal help India",
+      "SOP writing for study visa",
+      "financial documents for study visa",
+      "interview preparation for visa"
+    ],
     pageIntro:
       "A refusal is stressful, but the next step should be careful. Idol reviews what happened, where the application looked weak and whether a stronger reapplication or alternate pathway makes sense.",
     outcome:
@@ -286,7 +370,18 @@ export const services: Service[] = [
     commonMistakes: ["Course mismatch", "Funds mismatch", "Generic study statements"],
     cta: "Start student visa prep",
     whatsappMessage: "Hi Idol Immigration, I want student visa application support.",
-    keywords: ["student visa consultant India"],
+    keywords: [
+      "study visa consultant",
+      "Canada study visa",
+      "UK study visa",
+      "Australia student visa",
+      "USA student visa",
+      "New Zealand student visa",
+      "university admission assistance",
+      "SOP writing for study visa",
+      "GTE review for Australia student visa",
+      "financial documents for study visa"
+    ],
     pageIntro:
       "Student visa support turns a study plan into a coherent application file, with attention to academic logic, finances and document consistency.",
     outcome: "A more organized application with fewer preventable gaps.",
@@ -304,7 +399,7 @@ export const services: Service[] = [
     commonMistakes: ["Memorized answers", "Unclear plans", "Weak communication confidence"],
     cta: "Improve my readiness",
     whatsappMessage: "Hi Idol Immigration, I want IELTS, PTE or interview preparation.",
-    keywords: ["IELTS training for visa applicants"],
+    keywords: ["IELTS PTE preparation", "interview preparation for visa", "IELTS training for visa applicants"],
     pageIntro:
       "Communication confidence matters. Idol helps applicants prepare clearer answers and stronger English readiness for study, migration and interview situations.",
     outcome: "Better preparation, clearer answers and less panic before the next step.",
@@ -322,7 +417,13 @@ export const services: Service[] = [
     commonMistakes: ["Landing without local plan", "Underestimating setup costs", "Late accommodation search"],
     cta: "Prepare before landing",
     whatsappMessage: "Hi Idol Immigration, I want settlement support before moving abroad.",
-    keywords: ["overseas settlement support", "study abroad with accommodation support"],
+    keywords: [
+      "post-landing support",
+      "pre-departure support",
+      "accommodation support abroad",
+      "overseas settlement support",
+      "study abroad with accommodation support"
+    ],
     pageIntro:
       "Your first weeks abroad can feel confusing. Idol helps you prepare for the practical realities before you land.",
     outcome: "A calmer first month with clearer local-life preparation.",
@@ -334,6 +435,71 @@ export const featuredServices = services.slice(0, 6);
 
 export const allServiceCards = [
   ...services,
+  {
+    slug: "mbbs-abroad",
+    title: "MBBS Abroad Guidance",
+    shortTitle: "MBBS Abroad",
+    eyebrow: "Medical aspirants",
+    summary:
+      "Compare MBBS abroad options for Indian students with country, university, eligibility, documents, budget and visa planning.",
+    whoFor: [
+      "Indian students exploring MBBS abroad after Class 12",
+      "Families comparing MBBS in Russia, Georgia, Kazakhstan and Uzbekistan",
+      "Applicants who want admission and visa support before committing fees"
+    ],
+    helpsWith: [
+      "Country and university comparison",
+      "Eligibility, document and budget planning",
+      "Admission support, visa support and pre-departure guidance"
+    ],
+    commonMistakes: [
+      "Choosing only by lowest fee without checking recognition and language",
+      "Ignoring living cost, climate and safety considerations",
+      "Submitting incomplete academic, financial or identity documents"
+    ],
+    eligibilityOverview: [
+      "Class 12 science background and destination-specific academic criteria",
+      "NEET, age, language and university-specific requirements where applicable",
+      "Budget and documents that support admission, travel and visa planning"
+    ],
+    documentsOverview: [
+      "Passport, photographs, Class 10 and Class 12 marksheets and NEET records where relevant",
+      "Admission forms, university offer documents and fee receipts",
+      "Financial proof, medical documents and visa checklist items"
+    ],
+    whyChoose: [
+      "MBBS abroad consultant in Gurugram for Indian students and parents",
+      "Guidance for MBBS in Russia, MBBS in Georgia, MBBS in Kazakhstan and MBBS in Uzbekistan",
+      "Admission support, visa support and practical pre-departure planning"
+    ],
+    cta: "Compare MBBS abroad options",
+    whatsappMessage: "Hi Idol Immigration, I want MBBS abroad guidance.",
+    keywords: [
+      "MBBS abroad consultant",
+      "MBBS abroad consultant in Gurugram",
+      "MBBS in Russia",
+      "MBBS in Georgia",
+      "MBBS in Kazakhstan",
+      "MBBS in Uzbekistan",
+      "MBBS abroad for Indian students"
+    ],
+    pageIntro:
+      "Idol Immigration helps families compare MBBS abroad for Indian students across popular destinations, eligibility, documents, budget, university fit and visa readiness.",
+    outcome:
+      "A clearer MBBS abroad shortlist with practical admission, visa and pre-departure next steps.",
+    faqs: [
+      {
+        question: "Which countries are popular for MBBS abroad?",
+        answer:
+          "Indian students often compare Russia, Georgia, Kazakhstan, Uzbekistan and other destinations. The right choice depends on eligibility, recognition, fees, language, living conditions and family comfort."
+      },
+      {
+        question: "Can Idol help with admission and visa documents?",
+        answer:
+          "Yes. Idol can help families understand admission requirements, document checklists, visa support needs and pre-departure preparation before the student travels."
+      }
+    ]
+  },
   {
     slug: "sop-statement-review",
     title: "SOP / GTE / Statement Review",

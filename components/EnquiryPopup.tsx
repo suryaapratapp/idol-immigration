@@ -83,7 +83,7 @@ export function EnquiryPopup() {
       <div
         aria-labelledby="enquiry-popup-title"
         aria-modal="true"
-        className="relative w-full max-w-xl overflow-hidden rounded-[8px] border border-stone-200 bg-white shadow-2xl"
+        className="relative max-h-[calc(100dvh-24px)] w-full max-w-xl overflow-hidden rounded-[8px] border border-stone-200 bg-white shadow-2xl"
         role="dialog"
       >
         <button

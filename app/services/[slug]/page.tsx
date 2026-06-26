@@ -9,7 +9,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { allServiceCards, serviceBySlug } from "@/data/services";
 import { whatsappLink } from "@/data/site";
-import { breadcrumbSchema, createMetadata, faqSchema } from "@/lib/seo";
+import { breadcrumbSchema, createMetadata, faqSchema, serviceSchema } from "@/lib/seo";
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -27,9 +27,51 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     return {};
   }
 
-  return createMetadata({
+  const metaBySlug: Record<string, { title: string; description: string }> = {
+    "study-abroad": {
+      title: "Study Abroad Consultant in Gurugram | UK, Canada, Australia, USA",
+      description:
+        "Study abroad consultant in Gurugram for Canada study visa, UK study visa, Australia student visa, USA student visa, admissions, SOP writing and pre-departure support."
+    },
+    "visitor-visa": {
+      title: "Tourist / Visitor Visa Consultant in Gurugram | Canada, UK, USA, Schengen",
+      description:
+        "Tourist visa consultant in Gurugram for Canada visitor visa from India, UK visitor visa, USA B1/B2 visa, Australia tourist visa and Schengen tourist visa from India."
+    },
+    "dependent-visa": {
+      title: "Dependent Visa Consultant in Gurugram | Spouse & Family Visa Support",
+      description:
+        "Dependent visa consultant in Gurugram for spouse, children and family visa support, including spouse open work permit Canada and relationship document review."
+    },
+    "mbbs-abroad": {
+      title: "MBBS Abroad Consultant in Gurugram | Russia, Georgia, Kazakhstan, Uzbekistan",
+      description:
+        "MBBS abroad consultant in Gurugram for Indian students comparing MBBS in Russia, Georgia, Kazakhstan, Uzbekistan, admission support, documents and visa guidance."
+    },
+    "visa-refusal-review": {
+      title: "Visa Refusal Review Consultant | Reapplication & Document Review",
+      description:
+        "Visa refusal review consultant for study, tourist, visitor, work and family visa refusals, with SOP, funds, purpose and documentation risk review."
+    },
+    "pr-skilled-migration": {
+      title: "Canada PR & Australia PR Consultant in Gurugram | Skilled Migration",
+      description:
+        "PR consultant in Gurugram for Canada PR from India, Canada Express Entry, Canada PNP, Australia PR from India, 189, 190 and 491 skilled migration planning."
+    },
+    "work-business-visa": {
+      title: "Work Visa Consultant in Gurugram | Canada, UK, Germany & EU Blue Card",
+      description:
+        "Work visa consultant in Gurugram for Canada work permit, UK Skilled Worker Visa, Germany work visa, Germany Opportunity Card, Germany job seeker visa and EU Blue Card planning."
+    }
+  };
+  const meta = metaBySlug[service.slug] ?? {
     title: service.title,
-    description: service.pageIntro,
+    description: service.pageIntro
+  };
+
+  return createMetadata({
+    title: meta.title,
+    description: meta.description,
     path: `/services/${service.slug}`,
     keywords: service.keywords
   });
@@ -52,6 +94,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       <JsonLd
         data={[
           faqSchema(service.faqs),
+          serviceSchema(service),
           breadcrumbSchema([
             { name: "Home", href: "/" },
             { name: "Services", href: "/services" },

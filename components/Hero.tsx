@@ -23,16 +23,13 @@ export function Hero() {
         <div className="max-w-3xl">
           <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-gold shadow-sm">
             <Star className="h-3.5 w-3.5 fill-current" aria-hidden="true" />
-            Premium immigration consultant for Indians
+            Premium immigration consultant in Gurugram
           </p>
           <h1 className="text-balance text-4xl font-semibold tracking-normal sm:text-6xl lg:text-7xl">
-            Move Abroad With Clarity, Confidence and Class.
+            Premium Immigration & Study Abroad Consultant in Gurugram
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-            Idol Immigration helps Indian students, families and professionals
-            plan study abroad, PR, work visa, tourist visa, MBBS abroad and
-            dependent visa journeys with clear eligibility review, document
-            planning and practical guidance.
+            Idol Immigration helps students, professionals, families and travellers with study visas, PR pathways, work visas, tourist / visitor visas, dependent visas, MBBS abroad guidance, SOP support and visa refusal reviews.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
@@ -62,7 +59,7 @@ export function Hero() {
             <div className="relative aspect-[4/3]">
               <Image
                 src="/images/global-journey-hero.png"
-                alt="Premium global migration planning visual for Indian applicants"
+                alt="Immigration consultant in Gurugram guiding Indian applicants for study visa, PR, work visa and tourist visa"
                 fill
                 priority
                 sizes="(min-width: 1024px) 45vw, 100vw"

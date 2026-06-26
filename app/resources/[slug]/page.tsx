@@ -1,10 +1,10 @@
 import { redirect } from "next/navigation";
 
-type ResourceRedirectPageProps = {
+type BlogRedirectPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export default async function ResourceRedirectPage({ params }: ResourceRedirectPageProps) {
+export default async function BlogRedirectPage({ params }: BlogRedirectPageProps) {
   const { slug } = await params;
   redirect(`/blogs/${slug}`);
 }

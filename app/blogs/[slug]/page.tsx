@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { CheckCircle2, Sparkles } from "lucide-react";
+import { FAQAccordion } from "@/components/FAQAccordion";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { ResourceCard } from "@/components/ResourceCard";
 import { SectionHeader } from "@/components/SectionHeader";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { resourceBySlug, resources } from "@/data/resources";
-import { absoluteUrl, createMetadata } from "@/lib/seo";
+import { absoluteUrl, createMetadata, faqSchema } from "@/lib/seo";
 import { site } from "@/data/site";
 
 type BlogPageProps = {
@@ -44,26 +45,30 @@ export default async function BlogDetailPage({ params }: BlogPageProps) {
   }
 
   const related = resources.filter((item) => item.slug !== resource.slug).slice(0, 3);
+  const blogFaqs = resource.faqs ?? defaultBlogFaqs(resource.title);
 
   return (
     <>
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          headline: resource.title,
-          description: resource.description,
-          mainEntityOfPage: absoluteUrl(`/blogs/${resource.slug}`),
-          author: {
-            "@type": "Organization",
-            name: site.name
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: resource.title,
+            description: resource.description,
+            mainEntityOfPage: absoluteUrl(`/blogs/${resource.slug}`),
+            author: {
+              "@type": "Organization",
+              name: site.name
+            },
+            publisher: {
+              "@type": "Organization",
+              name: site.name,
+              url: site.url
+            }
           },
-          publisher: {
-            "@type": "Organization",
-            name: site.name,
-            url: site.url
-          }
-        }}
+          faqSchema(blogFaqs)
+        ]}
       />
       <PageHero
         eyebrow={resource.category}
@@ -139,6 +144,12 @@ export default async function BlogDetailPage({ params }: BlogPageProps) {
                 </section>
               ))}
             </div>
+            <div className="mt-10 rounded-[8px] border border-stone-200 bg-ivory p-5">
+              <h2 className="text-xl font-semibold text-ink">FAQs</h2>
+              <div className="mt-5">
+                <FAQAccordion faqs={blogFaqs} />
+              </div>
+            </div>
             </div>
           </div>
           <aside className="grid h-fit gap-5">
@@ -176,4 +187,19 @@ export default async function BlogDetailPage({ params }: BlogPageProps) {
       </section>
     </>
   );
+}
+
+function defaultBlogFaqs(title: string) {
+  return [
+    {
+      question: `Is ${title} enough to apply on my own?`,
+      answer:
+        "Use the guide as a planning starting point. Visa rules and document expectations can change, so check current official sources and get a profile-specific review before submitting."
+    },
+    {
+      question: "Can Idol Immigration review my documents?",
+      answer:
+        "Yes. Idol can review your profile, purpose, funds, documents, SOP or interview readiness and point out common gaps before you apply."
+    }
+  ];
 }

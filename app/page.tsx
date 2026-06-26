@@ -23,16 +23,21 @@ import { googleReviews } from "@/data/testimonials";
 import { createMetadata, faqSchema } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Immigration Consultant for Indians",
+  title: "Immigration Consultant in Gurugram | Study Visa, PR, Work Visa",
   description:
-    "Premium study abroad, tourist visa, PR, work visa, MBBS abroad, dependent visa and overseas settlement guidance for Indian applicants.",
+    "Idol Immigration is a trusted visa and study abroad consultant in Gurugram, helping with Canada PR, Australia PR, study visa, work visa, tourist visa, dependent visa, MBBS abroad and visa refusal review.",
   path: "/",
   keywords: [
-    "immigration consultant for Indians",
-    "study abroad consultant India",
-    "tourist visa consultant India",
-    "PR visa consultant India",
-    "overseas settlement support"
+    "best immigration consultant in Gurugram",
+    "immigration consultant in Gurugram",
+    "visa consultant in Gurugram",
+    "immigration consultant in Delhi NCR",
+    "study abroad consultant in Gurugram",
+    "Canada PR consultant in Gurugram",
+    "Australia PR consultant in Gurugram",
+    "tourist visa consultant in Gurugram",
+    "dependent visa consultant in Gurugram",
+    "MBBS abroad consultant in Gurugram"
   ]
 });
 
@@ -82,11 +87,52 @@ const practicalBlocks = [
   "Backup pathway planning: what to do if Plan A is weak."
 ];
 
+const localSeoLinks = [
+  { label: "Study visa consultant", href: "/services/study-abroad" },
+  { label: "Canada PR from India", href: "/countries/canada" },
+  { label: "Australia PR from India", href: "/countries/australia" },
+  { label: "Tourist / Visitor Visa", href: "/services/visitor-visa" },
+  { label: "Dependent Visa", href: "/services/dependent-visa" },
+  { label: "MBBS Abroad", href: "/services/mbbs-abroad" },
+  { label: "Visa Refusal Review", href: "/services/visa-refusal-review" }
+];
+
 export default function HomePage() {
   return (
     <>
       <JsonLd data={faqSchema(generalFaqs)} />
       <Hero />
+
+      <section className="bg-white py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 rounded-[8px] border border-stone-200 bg-ivory/70 p-6 sm:p-8 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">
+                Gurugram · Delhi NCR · Haryana · India
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold text-ink">
+                Local Visa Consultant in Gurugram for Global Plans
+              </h2>
+            </div>
+            <div>
+              <p className="text-sm leading-7 text-slate-600">
+                Idol Immigration supports students, families, professionals and travellers looking for an immigration consultant in Gurugram, visa consultant in Gurugram, study abroad consultant in Gurugram, Canada PR consultant in Gurugram, Australia PR consultant in Gurugram and immigration consultant in Delhi NCR.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {localSeoLinks.map((link) => (
+                  <Link
+                    className="rounded-full border border-stone-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-gold hover:text-ink"
+                    href={link.href}
+                    key={link.href}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="relative overflow-hidden bg-white py-16 sm:py-24" id="visa-options">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/35 to-transparent" />
