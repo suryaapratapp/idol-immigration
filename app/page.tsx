@@ -23,9 +23,9 @@ import { googleReviews } from "@/data/testimonials";
 import { createMetadata, faqSchema } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Immigration Consultant in Gurugram | Study Visa, PR, Work Visa",
+  title: "Immigration Consultant in Gurugram | Canada PR, Australia PR, Study Visa | Idol Immigration",
   description:
-    "Idol Immigration is a trusted visa and study abroad consultant in Gurugram, helping with Canada PR, Australia PR, study visa, work visa, tourist visa, dependent visa, MBBS abroad and visa refusal review.",
+    "Trusted immigration consultant in Gurugram for Canada PR, Australia PR, UK study visa, work visa and tourist visa. Honest eligibility review. Enquire on WhatsApp.",
   path: "/",
   keywords: [
     "best immigration consultant in Gurugram",

@@ -36,9 +36,18 @@ export const serviceNavLinks = [
   { label: "Study Abroad", href: "/services/study-abroad" },
   { label: "Tourist / Visitor Visa", href: "/services/visitor-visa" },
   { label: "PR & Skilled Migration", href: "/services/pr-skilled-migration" },
-  { label: "Work Visa", href: "/services/work-business-visa" },
+  { label: "Work & Business Visa", href: "/services/work-business-visa" },
+  { label: "Spouse & Family Visa", href: "/services/spouse-family-visa" },
   { label: "Dependent Visa", href: "/services/dependent-visa" },
-  { label: "MBBS Abroad", href: "/services/mbbs-abroad" }
+  { label: "Visa Refusal Review", href: "/services/visa-refusal-review" },
+  { label: "Student Visa", href: "/services/student-visa" },
+  { label: "IELTS, PTE & Interview Prep", href: "/services/ielts-pte-interview-preparation" },
+  { label: "Settlement Support", href: "/services/settlement-support" },
+  { label: "MBBS Abroad", href: "/services/mbbs-abroad" },
+  { label: "SOP & Statement Review", href: "/services/sop-statement-review" },
+  { label: "Accommodation Guidance", href: "/services/accommodation-guidance" },
+  { label: "Part-Time Job Guidance", href: "/services/part-time-job-guidance" },
+  { label: "Skills Before Moving", href: "/services/skill-development-before-moving" }
 ];
 
 export const navLinks = [

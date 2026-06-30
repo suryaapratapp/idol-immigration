@@ -29,39 +29,79 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   const metaBySlug: Record<string, { title: string; description: string }> = {
     "study-abroad": {
-      title: "Study Abroad Consultant in Gurugram | UK, Canada, Australia, USA",
+      title: "Study Abroad Consultant in Gurugram | UK, Canada, Australia | Idol Immigration",
       description:
-        "Study abroad consultant in Gurugram for Canada study visa, UK study visa, Australia student visa, USA student visa, admissions, SOP writing and pre-departure support."
+        "Plan your study abroad with a trusted consultant in Gurugram. UK, Canada, Australia, USA & Europe. Course shortlisting, SOP review and visa readiness support."
     },
     "visitor-visa": {
-      title: "Tourist / Visitor Visa Consultant in Gurugram | Canada, UK, USA, Schengen",
+      title: "Tourist & Visitor Visa Consultant in Gurugram | Idol Immigration",
       description:
-        "Tourist visa consultant in Gurugram for Canada visitor visa from India, UK visitor visa, USA B1/B2 visa, Australia tourist visa and Schengen tourist visa from India."
-    },
-    "dependent-visa": {
-      title: "Dependent Visa Consultant in Gurugram | Spouse & Family Visa Support",
-      description:
-        "Dependent visa consultant in Gurugram for spouse, children and family visa support, including spouse open work permit Canada and relationship document review."
-    },
-    "mbbs-abroad": {
-      title: "MBBS Abroad Consultant in Gurugram | Russia, Georgia, Kazakhstan, Uzbekistan",
-      description:
-        "MBBS abroad consultant in Gurugram for Indian students comparing MBBS in Russia, Georgia, Kazakhstan, Uzbekistan, admission support, documents and visa guidance."
-    },
-    "visa-refusal-review": {
-      title: "Visa Refusal Review Consultant | Reapplication & Document Review",
-      description:
-        "Visa refusal review consultant for study, tourist, visitor, work and family visa refusals, with SOP, funds, purpose and documentation risk review."
+        "Get expert tourist and visitor visa guidance in Gurugram for UK, Canada, USA, Europe and more. Itinerary, funds and document review. No false promises."
     },
     "pr-skilled-migration": {
-      title: "Canada PR & Australia PR Consultant in Gurugram | Skilled Migration",
+      title: "Canada PR & Australia PR Consultant in Gurugram | Idol Immigration",
       description:
-        "PR consultant in Gurugram for Canada PR from India, Canada Express Entry, Canada PNP, Australia PR from India, 189, 190 and 491 skilled migration planning."
+        "Honest PR and skilled migration guidance in Gurugram. Canada Express Entry, PNP, Australia 189/190/491. Eligibility check, document planning and backup routes."
     },
     "work-business-visa": {
-      title: "Work Visa Consultant in Gurugram | Canada, UK, Germany & EU Blue Card",
+      title: "Work Visa & Business Visa Consultant in Gurugram | Idol Immigration",
       description:
-        "Work visa consultant in Gurugram for Canada work permit, UK Skilled Worker Visa, Germany work visa, Germany Opportunity Card, Germany job seeker visa and EU Blue Card planning."
+        "Work visa, business visa, investor and start-up route guidance in Gurugram. UK Skilled Worker, Canada, Australia, Germany. Route review and document planning."
+    },
+    "dependent-visa": {
+      title: "Dependent Visa Help in Gurugram | Spouse & Family Visa | Idol Immigration",
+      description:
+        "Dependent visa guidance in Gurugram for spouses, children and eligible family members. Relationship evidence, funds review and consistency checks for UK, Canada, Australia."
+    },
+    "mbbs-abroad": {
+      title: "MBBS Abroad Consultant in Gurugram for Indian Students | Idol Immigration",
+      description:
+        "Compare MBBS abroad options - Russia, Philippines, Georgia, Kazakhstan and more. Country, university, eligibility and visa guidance from a Gurugram consultant."
+    },
+    "visa-refusal-review": {
+      title: "Visa Refusal Review & Reapplication Help in Gurugram | Idol Immigration",
+      description:
+        "Had a visa refusal? Get an honest second look in Gurugram. Refusal letter analysis, document gap review and reapplication readiness for UK, Canada, Australia and more."
+    },
+    "student-visa": {
+      title: "Student Visa Application Support in Gurugram | Idol Immigration",
+      description:
+        "Build a strong student visa file with guidance from Gurugram. Forms, SOP review, funds planning and country-specific document support for UK, Canada, Australia and USA."
+    },
+    "spouse-family-visa": {
+      title: "Spouse & Family Visa Consultant in Gurugram | Idol Immigration",
+      description:
+        "Spouse visa and family visa guidance in Gurugram. Relationship evidence, funds and consistency review for UK, Canada, Australia and dependent open work permits."
+    },
+    "ielts-pte-interview-preparation": {
+      title: "IELTS & PTE Prep in Gurugram | Visa Interview Coaching | Idol Immigration",
+      description:
+        "Prepare for IELTS, PTE and visa interviews with practical coaching in Gurugram / Delhi NCR. English confidence, interview practice and purpose clarity for students and visa applicants."
+    },
+    "settlement-support": {
+      title: "Post-Landing & Settlement Support for Indians Moving Abroad | Idol Immigration",
+      description:
+        "Get ready for your first weeks abroad. Accommodation planning, bank account, SIM, CV, part-time job readiness and first 30-day checklist - from your Gurugram consultant."
+    },
+    "sop-statement-review": {
+      title: "SOP & GTE Statement Review for Indian Visa Applicants | Idol Immigration",
+      description:
+        "Make your SOP, GTE or personal statement stronger. Story logic, course fit and risk signal review by an experienced immigration consultant in Gurugram."
+    },
+    "accommodation-guidance": {
+      title: "Accommodation Guidance Before Moving Abroad | Idol Immigration",
+      description:
+        "Find safe, affordable accommodation before arriving abroad. Temporary stays, room search basics, safety checks and budgeting guidance from Idol Immigration, Gurugram."
+    },
+    "part-time-job-guidance": {
+      title: "Part-Time Job Guidance Abroad for Indian Students | Idol Immigration",
+      description:
+        "Prepare for legal part-time work abroad. CV tips, interview confidence, skills planning and realistic expectations - guidance from Idol Immigration in Gurugram."
+    },
+    "skill-development-before-moving": {
+      title: "Skills to Build Before Moving Abroad | Pre-Departure Help | Idol Immigration",
+      description:
+        "Build English confidence, LinkedIn, digital skills and budgeting basics before moving abroad. Pre-departure skill guidance from Idol Immigration, Gurugram."
     }
   };
   const meta = metaBySlug[service.slug] ?? {

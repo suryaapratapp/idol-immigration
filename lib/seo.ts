@@ -22,10 +22,13 @@ export function createMetadata({
   const fullTitle = title.includes(site.shortName)
     ? title
     : `${title} | ${site.shortName}`;
+  const pageTitle = title.includes(site.shortName)
+    ? { absolute: title }
+    : title;
 
   return {
     metadataBase: new URL(site.url),
-    title,
+    title: pageTitle,
     description,
     keywords,
     alternates: {

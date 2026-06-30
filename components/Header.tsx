@@ -76,7 +76,7 @@ export function Header() {
                     ].join(" ")}
                   >
                     <div
-                      className="overflow-hidden rounded-[8px] border border-stone-200 bg-white p-2 shadow-2xl"
+                      className="max-h-[calc(100vh-6rem)] overflow-y-auto rounded-[8px] border border-stone-200 bg-white p-2 shadow-2xl"
                       role="menu"
                     >
                       <Link
