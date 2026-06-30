@@ -7,15 +7,16 @@ import { countries } from "@/data/countries";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Countries for Study, Visit, PR and Settlement",
+  title: "Study, PR & Work Visa by Country | Idol Immigration Gurugram",
   description:
-    "Compare UK, Canada, Australia, USA, New Zealand, Europe and UAE options with Idol Immigration.",
+    "Compare UK, Canada, Australia, USA, New Zealand, Europe and UAE options for Indian applicants. Study, PR, work and visitor visa guidance from Idol Immigration, Gurugram.",
   path: "/countries",
   keywords: [
+    "immigration consultant for Indians",
+    "countries to migrate from India",
     "UK student visa consultant India",
     "Canada study visa consultant",
-    "PR visa consultant India",
-    "immigration consultant for Indians"
+    "PR visa consultant India"
   ]
 });
 
