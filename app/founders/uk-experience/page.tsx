@@ -359,9 +359,16 @@ function UkLinkCard({ link }: { link: UkExperienceLink }) {
         <div className="min-w-0 flex-1">
           <div className="flex items-start justify-between gap-3">
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ocean">
-                {link.type ?? "resource"}
-              </p>
+              <div className="flex flex-wrap items-center gap-2">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ocean">
+                  {link.type ?? "resource"}
+                </p>
+                {link.recommended ? (
+                  <span className="rounded-full bg-gold/15 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-ink">
+                    Top recommended
+                  </span>
+                ) : null}
+              </div>
               <h3 className="mt-2 text-lg font-semibold text-ink">{link.name}</h3>
             </div>
             <ExternalLink className="h-4 w-4 shrink-0 text-slate-400 transition group-hover:text-ocean" aria-hidden="true" />

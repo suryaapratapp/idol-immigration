@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, Menu, MessageCircle, X } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { countries } from "@/data/countries";
 import { navLinks, serviceNavLinks, whatsappLink } from "@/data/site";
 
@@ -12,17 +12,48 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [countriesOpen, setCountriesOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
 
+  useEffect(() => {
+    setServicesOpen(false);
+    setCountriesOpen(false);
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    function closeDropdowns(event: MouseEvent) {
+      if (!headerRef.current?.contains(event.target as Node)) {
+        setServicesOpen(false);
+        setCountriesOpen(false);
+      }
+    }
+
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setServicesOpen(false);
+        setCountriesOpen(false);
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", closeDropdowns);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("mousedown", closeDropdowns);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-stone-200/80 bg-white/92 shadow-[0_12px_34px_rgba(15,23,42,0.06)] backdrop-blur-xl">
+    <header ref={headerRef} className="sticky top-0 z-50 border-b border-stone-200/80 bg-white/92 shadow-[0_12px_34px_rgba(15,23,42,0.06)] backdrop-blur-xl">
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           className="group flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           href="/"
           aria-label="Idol Immigration home"
         >
-          <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-[8px] border border-gold/40 bg-white shadow-[0_12px_30px_rgba(201,164,93,0.16)]">
+          <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-[8px] border border-gold/40 bg-white shadow-[0_12px_30px_rgba(224,122,95,0.16)]">
             <Image
               src="/images/logo-idol.png"
               alt="Idol Immigration logo"
@@ -55,7 +86,10 @@ export function Header() {
                         ? "bg-white text-ink shadow-sm ring-1 ring-gold/30"
                         : "text-slate-600 hover:bg-white hover:text-ink"
                     ].join(" ")}
-                    onClick={() => setServicesOpen((value) => !value)}
+                    onClick={() => {
+                      setServicesOpen((value) => !value);
+                      setCountriesOpen(false);
+                    }}
                     type="button"
                   >
                     {link.label}
@@ -117,7 +151,10 @@ export function Header() {
                         ? "bg-white text-ink shadow-sm ring-1 ring-gold/30"
                         : "text-slate-600 hover:bg-white hover:text-ink"
                     ].join(" ")}
-                    onClick={() => setCountriesOpen((value) => !value)}
+                    onClick={() => {
+                      setCountriesOpen((value) => !value);
+                      setServicesOpen(false);
+                    }}
                     type="button"
                   >
                     {link.label}

@@ -8,7 +8,7 @@ type TestimonialCardProps = {
 export function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
     <article className="relative flex h-full flex-col overflow-hidden rounded-[8px] border border-stone-200 bg-white p-6 shadow-[0_18px_55px_rgba(15,23,42,0.07)] transition hover:-translate-y-1 hover:border-gold/60 hover:shadow-[0_24px_70px_rgba(15,23,42,0.10)]">
-      <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-gold via-[#e9d8aa] to-ocean opacity-80" />
+      <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-gold via-cyan to-ocean opacity-80" />
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">

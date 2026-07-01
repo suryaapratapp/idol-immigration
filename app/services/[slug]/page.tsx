@@ -1,7 +1,19 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CheckCircle2, FileText, MessageCircle, ShieldCheck, UserCheck } from "lucide-react";
+import {
+  ArrowRight,
+  BriefcaseBusiness,
+  CarFront,
+  CheckCircle2,
+  Download,
+  ExternalLink,
+  FileText,
+  MessageCircle,
+  ShieldCheck,
+  UserCheck
+} from "lucide-react";
 import { FAQAccordion } from "@/components/FAQAccordion";
+import { BrandLogo } from "@/components/BrandLogo";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -154,19 +166,32 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         </a>
       </PageHero>
 
-      <section className="bg-white py-16 sm:py-24">
+      <section className="relative overflow-hidden bg-mist py-16 sm:py-24">
+        <div className="absolute inset-0 premium-grid opacity-45" />
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-          <div>
+          <div className="relative">
             <SectionHeader
               eyebrow="Service overview"
               title="What This Support Is Designed to Clarify"
               copy={service.outcome}
             />
-            <p className="mt-8 rounded-[8px] border border-stone-200 bg-ivory p-5 text-sm leading-7 text-slate-600">
+            <div className="mt-8 grid gap-4">
+              {[
+                ["Profile clarity", "We start with your goal, budget, timeline, documents and risk signals."],
+                ["Practical roadmap", "You leave with next steps, backup options and a clearer preparation sequence."],
+                ["Ongoing support", "For extra settlement, work-readiness or document help, reach out to us anytime."]
+              ].map(([title, copy]) => (
+                <div className="rounded-[8px] border border-white bg-white/85 p-5 shadow-sm" key={title}>
+                  <p className="text-sm font-semibold text-ink">{title}</p>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">{copy}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 rounded-[8px] border border-gold/25 bg-white/85 p-5 text-sm leading-7 text-slate-600">
               Eligibility criteria can change by country and visa category. Idol keeps the consultation easy to update by reviewing your latest profile, documents and intended route before advising next steps.
             </p>
           </div>
-          <div className="grid gap-5">
+          <div className="relative grid gap-5">
             <InfoBlock icon={ShieldCheck} title="What the service is" items={[service.summary]} />
             <InfoBlock icon={UserCheck} title="Who it is for" items={service.whoFor} />
             <InfoBlock
@@ -188,6 +213,8 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           </div>
         </div>
       </section>
+
+      <ServiceSpecificContent slug={service.slug} />
 
       <section className="bg-ivory py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -250,9 +277,9 @@ function defaultEligibility(service: string) {
 
 function InfoBlock({ title, items, icon: Icon }: InfoBlockProps) {
   return (
-    <article className="rounded-[8px] border border-stone-200 bg-ivory/70 p-6">
+    <article className="rounded-[8px] border border-stone-200 bg-white p-6 shadow-sm">
       <div className="flex items-center gap-3">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white text-gold">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-mist text-ocean">
           <Icon className="h-5 w-5" aria-hidden="true" />
         </span>
         <h2 className="text-xl font-semibold text-ink">{title}</h2>
@@ -260,11 +287,246 @@ function InfoBlock({ title, items, icon: Icon }: InfoBlockProps) {
       <ul className="mt-5 grid gap-3">
         {items.map((item) => (
           <li className="flex gap-3 text-sm leading-7 text-slate-600" key={item}>
-            <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-gold" aria-hidden="true" />
+            <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-ocean" aria-hidden="true" />
             <span>{item}</span>
           </li>
         ))}
       </ul>
     </article>
+  );
+}
+
+function ServiceSpecificContent({ slug }: { slug: string }) {
+  if (slug === "skill-development-before-moving") {
+    return <SkillDevelopmentDetails />;
+  }
+
+  if (slug === "part-time-job-guidance") {
+    return <PartTimeJobDetails />;
+  }
+
+  return (
+    <section className="bg-midnight py-16 text-white sm:py-24">
+      <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
+        {[
+          ["Before you apply", "We help you understand what to prepare now so later decisions feel less rushed."],
+          ["During preparation", "You get practical guidance on documents, communication, timing and consistency."],
+          ["After the next step", "For settlement, skills, CV, housing or local-life support, reach out to us."]
+        ].map(([title, copy]) => (
+          <article className="rounded-[8px] border border-white/10 bg-white/[0.08] p-6 shadow-glow" key={title}>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan">{title}</p>
+            <p className="mt-4 text-sm leading-7 text-white/75">{copy}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+const drivingRules = [
+  {
+    title: "Check your right to drive",
+    copy:
+      "Before driving abroad, understand whether your Indian licence is accepted, whether you need an International Driving Permit, when a provisional licence is needed and what local insurance rules apply."
+  },
+  {
+    title: "Create a driving licence plan",
+    copy:
+      "We help you plan practical steps such as address proof, provisional licence application, theory preparation, supervised practice, test booking and safe first-car decisions."
+  },
+  {
+    title: "Learn road signs early",
+    copy:
+      "Traffic signs, road markings, speed limits and priority rules can feel different at first. Studying them before arrival reduces stress and helps you avoid expensive mistakes."
+  }
+];
+
+function SkillDevelopmentDetails() {
+  return (
+    <section className="bg-white py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SectionHeader
+          eyebrow="Driving rules"
+          title="Create a Driving Licence Plan Before You Move"
+          copy="Driving can be useful for work, accommodation, family life and local confidence, but every country has its own licence, insurance and road-safety rules."
+          align="center"
+        />
+        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+          {drivingRules.map((item) => (
+            <article className="rounded-[8px] border border-stone-200 bg-mist/60 p-6 shadow-sm" key={item.title}>
+              <span className="grid h-11 w-11 place-items-center rounded-full bg-white text-ocean">
+                <CarFront className="h-5 w-5" aria-hidden="true" />
+              </span>
+              <h2 className="mt-5 text-xl font-semibold text-ink">{item.title}</h2>
+              <p className="mt-3 text-sm leading-7 text-slate-600">{item.copy}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-8 grid gap-6 rounded-[8px] border border-gold/30 bg-ivory p-6 shadow-sm lg:grid-cols-[1fr_0.7fr] lg:p-8">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-ocean">
+              Official learning resource
+            </p>
+            <h2 className="mt-3 text-2xl font-semibold text-ink">
+              Know Your Traffic Signs
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
+              We have added the Department for Transport PDF, <span className="font-semibold text-ink">Know Your Traffic Signs</span>, published by GOV.UK / DFT. It is a helpful reference for road signs, signals, markings and driving awareness before you start learning or driving abroad.
+            </p>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
+              To know more about driving rules, licence steps, local setup, skill building, CV support and everything else you may need after moving abroad, please reach out to us. We can guide you through the practical details one step at a time.
+            </p>
+          </div>
+          <div className="flex flex-col justify-between rounded-[8px] border border-stone-200 bg-white p-5">
+            <div>
+              <FileText className="h-8 w-8 text-ocean" aria-hidden="true" />
+              <p className="mt-4 text-lg font-semibold text-ink">Download or open the PDF</p>
+              <p className="mt-2 text-sm leading-7 text-slate-600">
+                2023 edition, 172 pages, supplied as a learner reference for traffic-sign awareness.
+              </p>
+            </div>
+            <a
+              className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:bg-ocean"
+              href="/resources/know-your-traffic-signs-dft.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Download className="h-4 w-4" aria-hidden="true" />
+              Open Know Your Traffic Signs
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const jobPlatforms = [
+  {
+    name: "Indeed",
+    url: "https://uk.indeed.com/",
+    description: "Broad part-time, retail, customer service, hospitality and warehouse listings."
+  },
+  {
+    name: "Reed",
+    url: "https://www.reed.co.uk/jobs/part-time-jobs",
+    description: "UK job board with part-time, admin, reception and customer-support roles."
+  },
+  {
+    name: "Totaljobs",
+    url: "https://www.totaljobs.com/jobs/part-time",
+    description: "Part-time roles across retail, logistics, sales and service sectors."
+  },
+  {
+    name: "CV-Library",
+    url: "https://www.cv-library.co.uk/part-time-jobs",
+    description: "Large job board useful for CV upload and local part-time searches."
+  },
+  {
+    name: "StudentJob UK",
+    url: "https://www.studentjob.co.uk/",
+    description: "Student-focused part-time and graduate job listings."
+  },
+  {
+    name: "LinkedIn Jobs",
+    url: "https://www.linkedin.com/jobs/",
+    description: "Useful for building a profile, networking and finding student-friendly openings."
+  },
+  {
+    name: "The Caterer",
+    url: "https://www.thecaterer.com/jobs",
+    description: "Hospitality, kitchen, cafe and catering roles."
+  }
+];
+
+const partTimeJobs = [
+  ["Customer Service Representative", "Builds patience, clear communication, empathy and problem-solving under pressure."],
+  ["Retail Associate", "Improves confidence, teamwork, product knowledge and everyday customer conversation."],
+  ["Store Operations Associate", "Develops reliability, organisation, stock awareness and attention to detail."],
+  ["Receptionist", "Builds professional presence, phone confidence, scheduling discipline and calm communication."],
+  ["Kitchen Porter", "Strengthens stamina, discipline, teamwork and respect for fast-paced workplaces."],
+  ["Delivery Driver / Porter", "Develops punctuality, route awareness, accountability and practical independence."],
+  ["Sales Assistant", "Improves listening, persuasion, confidence and the ability to explain value simply."],
+  ["Barista / Cafe Assistant", "Builds multitasking, friendliness, speed, memory and service confidence."],
+  ["Warehouse Assistant", "Develops accuracy, safety awareness, time management and physical work discipline."],
+  ["Tutor / Academic Support Assistant", "Builds leadership, explanation skills, patience and subject confidence."]
+];
+
+function PartTimeJobDetails() {
+  return (
+    <section className="bg-white py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SectionHeader
+          eyebrow="Part-time job readiness"
+          title="Prepare for the Roles Students and Newcomers Actually Search For"
+          copy="We help you build the skills, CV and confidence needed for the type of part-time job you are interested in, while keeping expectations realistic and lawful."
+          align="center"
+        />
+
+        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {jobPlatforms.map((platform) => (
+            <a
+              className="group flex h-full gap-4 rounded-[8px] border border-stone-200 bg-mist/50 p-5 shadow-sm transition hover:-translate-y-1 hover:border-ocean hover:bg-white hover:shadow-xl"
+              href={platform.url}
+              key={platform.name}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BrandLogo name={platform.name} url={platform.url} />
+              <span>
+                <span className="flex items-center gap-2 text-lg font-semibold text-ink">
+                  {platform.name}
+                  <ExternalLink className="h-4 w-4 text-slate-400 transition group-hover:text-ocean" aria-hidden="true" />
+                </span>
+                <span className="mt-2 block text-sm leading-7 text-slate-600">{platform.description}</span>
+              </span>
+            </a>
+          ))}
+        </div>
+
+        <div className="mt-12 grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+          <article className="rounded-[8px] border border-gold/30 bg-ivory p-6 shadow-sm lg:p-8">
+            <BriefcaseBusiness className="h-9 w-9 text-ocean" aria-hidden="true" />
+            <h2 className="mt-5 text-2xl font-semibold text-ink">
+              CV, skills and job-type preparation
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
+              We will help you identify the type of part-time role you want, build the skills required for that role, prepare a simple local-style CV and practise answers that show reliability, confidence and willingness to learn.
+            </p>
+            <p className="mt-4 text-sm leading-7 text-slate-600">
+              We also help you pursue volunteer work within the first month where suitable opportunities are available. This can often be remote for around 1 day per week, helps you use your knowledge for a good cause, can be counted as work experience and may give you a reference for future full-time job applications.
+            </p>
+          </article>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {partTimeJobs.map(([job, benefit]) => (
+              <article className="rounded-[8px] border border-stone-200 bg-white p-5 shadow-sm" key={job}>
+                <h3 className="text-base font-semibold text-ink">{job}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{benefit}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-10 rounded-[8px] border border-stone-200 bg-midnight p-6 text-white shadow-glow sm:p-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
+            More support
+          </p>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-white/75">
+            To know more about job search, volunteer work, CV building, interview preparation, local rules and anything else you need support with, please reach out to us. We can help you plan the next practical step.
+          </p>
+          <a
+            className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-gold px-5 py-3 text-sm font-semibold text-ink transition hover:bg-white"
+            href={whatsappLink("Hi Idol Immigration, I want part-time job and volunteer work guidance.")}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Ask for job-readiness support
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </a>
+        </div>
+      </div>
+    </section>
   );
 }

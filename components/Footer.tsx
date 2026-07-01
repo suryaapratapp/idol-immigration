@@ -19,7 +19,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.15fr_0.7fr_0.95fr] lg:px-8">
         <div>
           <div className="flex items-center gap-3">
-            <span className="grid h-14 w-14 place-items-center overflow-hidden rounded-[8px] border border-gold/40 bg-white shadow-[0_14px_38px_rgba(201,164,93,0.16)]">
+            <span className="grid h-14 w-14 place-items-center overflow-hidden rounded-[8px] border border-gold/40 bg-white shadow-[0_14px_38px_rgba(224,122,95,0.16)]">
               <Image
                 src="/images/logo-idol.png"
                 alt="Idol Immigration logo"

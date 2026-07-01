@@ -4,6 +4,7 @@ export type UkExperienceLink = {
   description: string;
   type?: "official" | "company" | "marketplace" | "discount" | "community";
   referralNote?: string;
+  recommended?: boolean;
 };
 
 export type UkExperienceSection = {
@@ -248,7 +249,7 @@ export const ukExperienceSections: UkExperienceSection[] = [
       "For SIM cards, compare coverage in your postcode before choosing a cheap plan. Rural coverage can differ from city coverage.",
       "For broadband, check contract length, installation time, speed guarantee, cancellation fees and whether the property already has a line.",
       "For gas and electricity, submit meter readings on move-in day and keep photos. Ask landlord or agent who supplies the property.",
-      "The Octopus Energy link below is the founder referral link supplied for Idol users. Verify tariff, eligibility and terms before switching."
+      "Octopus Energy is listed as a top recommended option for newcomers who want a simple energy setup. Verify tariff, eligibility and terms before switching."
     ],
     links: [
       {
@@ -259,9 +260,11 @@ export const ukExperienceSections: UkExperienceSection[] = [
       },
       {
         name: "Lebara UK",
-        url: "https://www.lebara.co.uk/",
-        description: "SIM plans often used by international callers.",
+        url: "https://aklam.io/30tCVn6I",
+        description: "Top recommended SIM option for international callers. Get 50% off for the first 3 months where eligible.",
         type: "company",
+        referralNote: "Get 50% off for the first 3 months through this Lebara referral link, subject to eligibility and current terms.",
+        recommended: true
       },
       {
         name: "VOXI",
@@ -326,9 +329,10 @@ export const ukExperienceSections: UkExperienceSection[] = [
       {
         name: "Octopus Energy",
         url: octopusReferralUrl,
-        description: "Gas and electricity supplier. This is Idol's Octopus referral link.",
+        description: "Top recommended gas and electricity supplier for a simpler home-energy setup.",
         type: "company",
-        referralNote: "Referral link added: split the stated Octopus referral reward where eligible."
+        referralNote: "Get £50 off your electricity bill through this Octopus referral link, subject to eligibility and current terms.",
+        recommended: true
       },
       {
         name: "British Gas",

@@ -16,7 +16,7 @@ const routeChecks = [
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-white via-ivory to-mist text-ink">
-      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(201,164,93,0.14),transparent_34%,rgba(22,61,99,0.07))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(224,122,95,0.14),transparent_34%,rgba(36,104,95,0.08))]" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold/45 to-transparent" />
 
       <div className="relative mx-auto grid min-h-[calc(100vh-72px)] max-w-7xl items-center gap-12 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.02fr_0.98fr] lg:px-8">

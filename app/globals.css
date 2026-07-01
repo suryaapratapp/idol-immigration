@@ -13,8 +13,8 @@
 
 body {
   margin: 0;
-  background: #fbfaf6;
-  color: #0d1b2e;
+  background: #fffaf3;
+  color: #17201b;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
@@ -26,8 +26,8 @@ a {
 }
 
 ::selection {
-  background: #c9a45d;
-  color: #0b1726;
+  background: #e07a5f;
+  color: #17201b;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -50,16 +50,16 @@ a {
 
 .premium-grid {
   background-image:
-    linear-gradient(rgba(123, 211, 244, 0.09) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201, 164, 93, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(143, 220, 200, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(224, 122, 95, 0.09) 1px, transparent 1px),
     linear-gradient(135deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
   background-size: 56px 56px, 56px 56px, 112px 112px;
 }
 
 .route-lines {
   background-image:
-    linear-gradient(115deg, transparent 0 37%, rgba(123, 211, 244, 0.18) 37.2%, transparent 38% 100%),
-    linear-gradient(64deg, transparent 0 48%, rgba(201, 164, 93, 0.16) 48.2%, transparent 49% 100%),
+    linear-gradient(115deg, transparent 0 37%, rgba(143, 220, 200, 0.18) 37.2%, transparent 38% 100%),
+    linear-gradient(64deg, transparent 0 48%, rgba(224, 122, 95, 0.16) 48.2%, transparent 49% 100%),
     linear-gradient(151deg, transparent 0 58%, rgba(255, 255, 255, 0.12) 58.2%, transparent 59% 100%);
 }
 
@@ -75,8 +75,8 @@ a {
 
 .aurora-panel {
   background:
-    linear-gradient(135deg, rgba(123, 211, 244, 0.18), transparent 34%),
-    linear-gradient(225deg, rgba(201, 164, 93, 0.16), transparent 38%),
+    linear-gradient(135deg, rgba(143, 220, 200, 0.18), transparent 34%),
+    linear-gradient(225deg, rgba(224, 122, 95, 0.16), transparent 38%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent);
 }
 
