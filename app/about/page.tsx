@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { FounderCard } from "@/components/FounderCard";
@@ -37,6 +38,21 @@ export default function AboutPage() {
               title="Not Just Visa Filing. Real Guidance From People Who Have Lived the Journey."
               copy="The old consultancy model often stops at forms. Idol is designed to help applicants understand the full journey: route choice, documents, risk, cost, confidence and the first weeks abroad."
             />
+            <div className="mt-8 overflow-hidden rounded-[8px] border border-stone-200 bg-ink shadow-sm">
+              <div className="relative aspect-[16/10]">
+                <Image
+                  src="/images/site/family-consultation-at-home.png"
+                  alt="Family sitting together at home during immigration consultation planning"
+                  fill
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
+                <p className="absolute bottom-4 left-4 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-gold">
+                  Family-first guidance
+                </p>
+              </div>
+            </div>
           </div>
           <div className="grid gap-5 text-sm leading-7 text-slate-600">
             <p>

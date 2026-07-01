@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { CountryCard } from "@/components/CountryCard";
@@ -52,6 +53,40 @@ export default function HomePage() {
     <>
       <JsonLd data={faqSchema(generalFaqs)} />
       <Hero />
+
+      <section className="bg-white py-16 sm:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+          <div className="overflow-hidden rounded-[8px] border border-stone-200 bg-ink shadow-sm">
+            <div className="relative aspect-[16/11]">
+              <Image
+                src="/images/site/travel-planning-passport-map.jpg"
+                alt="Passport, laptop and travel map for immigration planning"
+                fill
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
+              <p className="absolute bottom-5 left-5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-gold">
+                Route planning
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center">
+            <SectionHeader
+              eyebrow="Profile-first planning"
+              title="Start With the Route, Documents and Reality Behind the Move"
+              copy="Every application sits inside a bigger decision: country fit, funds, family comfort, course or job direction, timelines and settlement preparation. Idol helps you understand that full picture before you commit."
+            />
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              {["Country fit", "Document readiness", "Arrival confidence"].map((item) => (
+                <div className="rounded-[8px] border border-stone-200 bg-ivory p-4 text-sm font-semibold text-ink" key={item}>
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-white py-16 sm:py-24" id="services">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -16,9 +16,24 @@ export function Header() {
   const pathname = usePathname();
 
   useEffect(() => {
+    setOpen(false);
+    const pendingDropdown = window.sessionStorage.getItem("idol-header-dropdown");
+    window.sessionStorage.removeItem("idol-header-dropdown");
+
+    if (pendingDropdown === "services" && pathname.startsWith("/services")) {
+      setServicesOpen(true);
+      setCountriesOpen(false);
+      return;
+    }
+
+    if (pendingDropdown === "countries" && pathname.startsWith("/countries")) {
+      setCountriesOpen(true);
+      setServicesOpen(false);
+      return;
+    }
+
     setServicesOpen(false);
     setCountriesOpen(false);
-    setOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -76,8 +91,19 @@ export function Header() {
               link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
             if (link.label === "Services") {
               return (
-                <div className="relative" key={link.href}>
-                  <button
+                <div
+                  className="relative"
+                  key={link.href}
+                  onFocusCapture={() => {
+                    setServicesOpen(true);
+                    setCountriesOpen(false);
+                  }}
+                  onMouseEnter={() => {
+                    setServicesOpen(true);
+                    setCountriesOpen(false);
+                  }}
+                >
+                  <Link
                     aria-expanded={servicesOpen}
                     aria-haspopup="menu"
                     className={[
@@ -86,11 +112,12 @@ export function Header() {
                         ? "bg-white text-ink shadow-sm ring-1 ring-gold/30"
                         : "text-slate-600 hover:bg-white hover:text-ink"
                     ].join(" ")}
+                    href="/services"
                     onClick={() => {
-                      setServicesOpen((value) => !value);
+                      window.sessionStorage.setItem("idol-header-dropdown", "services");
+                      setServicesOpen(true);
                       setCountriesOpen(false);
                     }}
-                    type="button"
                   >
                     {link.label}
                     <ChevronDown
@@ -100,7 +127,7 @@ export function Header() {
                       ].join(" ")}
                       aria-hidden="true"
                     />
-                  </button>
+                  </Link>
                   <div
                     className={[
                       "absolute left-0 top-full w-80 pt-3 transition",
@@ -141,8 +168,19 @@ export function Header() {
 
             if (link.label === "Countries") {
               return (
-                <div className="relative" key={link.href}>
-                  <button
+                <div
+                  className="relative"
+                  key={link.href}
+                  onFocusCapture={() => {
+                    setCountriesOpen(true);
+                    setServicesOpen(false);
+                  }}
+                  onMouseEnter={() => {
+                    setCountriesOpen(true);
+                    setServicesOpen(false);
+                  }}
+                >
+                  <Link
                     aria-expanded={countriesOpen}
                     aria-haspopup="menu"
                     className={[
@@ -151,11 +189,12 @@ export function Header() {
                         ? "bg-white text-ink shadow-sm ring-1 ring-gold/30"
                         : "text-slate-600 hover:bg-white hover:text-ink"
                     ].join(" ")}
+                    href="/countries"
                     onClick={() => {
-                      setCountriesOpen((value) => !value);
+                      window.sessionStorage.setItem("idol-header-dropdown", "countries");
+                      setCountriesOpen(true);
                       setServicesOpen(false);
                     }}
-                    type="button"
                   >
                     {link.label}
                     <ChevronDown
@@ -165,7 +204,7 @@ export function Header() {
                       ].join(" ")}
                       aria-hidden="true"
                     />
-                  </button>
+                  </Link>
                   <div
                     className={[
                       "absolute left-0 top-full w-80 pt-3 transition",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -44,6 +45,33 @@ export default function SuccessStoriesPage() {
         title="Client Reviews and Video Testimonials"
         copy="Verified Google review excerpts and a polished video area where client thank-you videos can be embedded from YouTube."
       />
+
+      <section className="bg-ivory py-16 sm:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+          <div className="overflow-hidden rounded-[8px] border border-stone-200 bg-ink shadow-sm">
+            <div className="relative aspect-[16/10]">
+              <Image
+                src="/images/site/canada-passport-family.png"
+                alt="Family smiling while holding Canadian passports"
+                fill
+                sizes="(min-width: 1024px) 52vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
+              <p className="absolute bottom-4 left-4 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-gold">
+                Client milestones
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center">
+            <SectionHeader
+              eyebrow="Outcome stories"
+              title="Every Review Represents a Bigger Personal Milestone"
+              copy="Behind each testimonial is a decision, a document trail, a family conversation and a next chapter. Idol keeps the process grounded so applicants understand what they are preparing for."
+            />
+          </div>
+        </div>
+      </section>
 
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
