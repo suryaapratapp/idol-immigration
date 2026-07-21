@@ -17,21 +17,6 @@ export function Header() {
 
   useEffect(() => {
     setOpen(false);
-    const pendingDropdown = window.sessionStorage.getItem("idol-header-dropdown");
-    window.sessionStorage.removeItem("idol-header-dropdown");
-
-    if (pendingDropdown === "services" && pathname.startsWith("/services")) {
-      setServicesOpen(true);
-      setCountriesOpen(false);
-      return;
-    }
-
-    if (pendingDropdown === "countries" && pathname.startsWith("/countries")) {
-      setCountriesOpen(true);
-      setServicesOpen(false);
-      return;
-    }
-
     setServicesOpen(false);
     setCountriesOpen(false);
   }, [pathname]);
@@ -102,6 +87,12 @@ export function Header() {
                     setServicesOpen(true);
                     setCountriesOpen(false);
                   }}
+                  onMouseLeave={() => setServicesOpen(false)}
+                  onBlurCapture={(event) => {
+                    if (!event.currentTarget.contains(event.relatedTarget as Node)) {
+                      setServicesOpen(false);
+                    }
+                  }}
                 >
                   <Link
                     aria-expanded={servicesOpen}
@@ -113,11 +104,6 @@ export function Header() {
                         : "text-ink hover:bg-ivory hover:text-gold"
                     ].join(" ")}
                     href="/services"
-                    onClick={() => {
-                      window.sessionStorage.setItem("idol-header-dropdown", "services");
-                      setServicesOpen(true);
-                      setCountriesOpen(false);
-                    }}
                   >
                     {link.label}
                     <ChevronDown
@@ -179,6 +165,12 @@ export function Header() {
                     setCountriesOpen(true);
                     setServicesOpen(false);
                   }}
+                  onMouseLeave={() => setCountriesOpen(false)}
+                  onBlurCapture={(event) => {
+                    if (!event.currentTarget.contains(event.relatedTarget as Node)) {
+                      setCountriesOpen(false);
+                    }
+                  }}
                 >
                   <Link
                     aria-expanded={countriesOpen}
@@ -190,11 +182,6 @@ export function Header() {
                         : "text-ink hover:bg-ivory hover:text-gold"
                     ].join(" ")}
                     href="/countries"
-                    onClick={() => {
-                      window.sessionStorage.setItem("idol-header-dropdown", "countries");
-                      setCountriesOpen(true);
-                      setServicesOpen(false);
-                    }}
                   >
                     {link.label}
                     <ChevronDown

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CalendarClock, ChartNoAxesCombined, Scale, SearchCheck } from "lucide-react";
+import { ArrowRight, Calculator, CalendarClock, ChartNoAxesCombined, Scale, SearchCheck } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -9,12 +9,12 @@ import { absoluteUrl, createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
   title: "Free Immigration Planning Tools",
-  description: "Use Idol Immigration's free deadline, occupation, country comparison and Express Entry tools to turn international plans into practical next steps.",
+  description: "Use Idol Immigration's free deadline, occupation, country comparison, CRS and Express Entry tools to turn international plans into practical next steps.",
   path: "/tools",
   keywords: ["immigration tools", "study abroad planner", "Express Entry tracker", "compare countries"]
 });
 
-const icons = [CalendarClock, SearchCheck, Scale, ChartNoAxesCombined];
+const icons = [CalendarClock, SearchCheck, Scale, Calculator, ChartNoAxesCombined];
 
 export default function ToolsPage() {
   const schema = {
@@ -39,7 +39,7 @@ export default function ToolsPage() {
       <PageHero
         eyebrow="MOMENTUM TOOLS"
         title="Turn international ambition into a decision you can act on."
-        copy="Four focused tools translate dates, occupation signals, country trade-offs and Express Entry data into a personalised starting point. Results are instant, private and free."
+        copy="Five focused tools translate dates, occupation signals, country trade-offs and Express Entry points into a personalised starting point. Results are instant, private and free."
       />
       <section className="bg-ivory py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

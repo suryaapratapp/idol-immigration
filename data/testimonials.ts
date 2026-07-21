@@ -137,33 +137,6 @@ export const videoTestimonials: VideoTestimonial[] = [
     serviceType: "Study Visa",
     caption: "Shambhavi Gupta shares her Canadian Study Visa experience with Idol Immigration.",
     thumbnailImage: "/images/countries/canada-photo.jpg"
-  },
-  {
-    title: "Client Thank-You Video",
-    youtubeUrl: "",
-    clientName: "Client name to be added",
-    destinationCountry: "United Kingdom",
-    serviceType: "Study Visa",
-    caption: "Add the client's YouTube thank-you video link here.",
-    thumbnailImage: "/images/countries/uk.svg"
-  },
-  {
-    title: "Family Visa Success Video",
-    youtubeUrl: "",
-    clientName: "Client name to be added",
-    destinationCountry: "Canada",
-    serviceType: "Dependent Visa",
-    caption: "Replace this placeholder with a real client YouTube URL.",
-    thumbnailImage: "/images/countries/canada.svg"
-  },
-  {
-    title: "PR Journey Video",
-    youtubeUrl: "",
-    clientName: "Client name to be added",
-    destinationCountry: "Australia",
-    serviceType: "PR / Skilled Migration",
-    caption: "This card is ready for an embedded YouTube testimonial.",
-    thumbnailImage: "/images/countries/australia.svg"
   }
 ];
 

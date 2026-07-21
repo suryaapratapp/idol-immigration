@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { AIAdvisorSpotlight } from "@/components/AIAdvisorSpotlight";
 import { CountryCard } from "@/components/CountryCard";
 import { GoogleReviewsSlider } from "@/components/GoogleReviewsSlider";
 import { Hero } from "@/components/Hero";
+import { HorizontalCardRail } from "@/components/HorizontalCardRail";
 import { JsonLd } from "@/components/JsonLd";
-import { Reveal } from "@/components/Reveal";
+import { MomentumToolsSpotlight } from "@/components/MomentumToolsSpotlight";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ServiceCard } from "@/components/ServiceCard";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
@@ -40,19 +40,6 @@ metadata.title = {
   absolute: "#1 Best Immigration & Study Abroad Consultant in India"
 };
 
-const homepageServiceSlugs = [
-  "study-abroad",
-  "visitor-visa",
-  "pr-skilled-migration",
-  "work-business-visa",
-  "dependent-visa",
-  "mbbs-abroad"
-];
-
-const homepageServices = allServiceCards.filter((service) =>
-  homepageServiceSlugs.includes(service.slug)
-);
-
 export default function HomePage() {
   return (
     <>
@@ -60,40 +47,6 @@ export default function HomePage() {
       <Hero />
 
       <AIAdvisorSpotlight />
-
-      <section className="bg-white py-16 sm:py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-          <div className="overflow-hidden rounded-[8px] border border-stone-200 bg-ink shadow-sm">
-            <div className="relative aspect-[16/11]">
-              <Image
-                src="/images/site/travel-planning-passport-map.jpg"
-                alt="Passport, laptop and travel map for immigration planning"
-                fill
-                sizes="(min-width: 1024px) 45vw, 100vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
-              <p className="absolute bottom-5 left-5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-gold">
-                Route planning
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col justify-center">
-            <SectionHeader
-              eyebrow="Profile-first planning"
-              title="Start With the Route, Documents and Reality Behind the Move"
-              copy="Every application sits inside a bigger decision: country fit, funds, family comfort, course or job direction, timelines and settlement preparation. Idol helps you understand that full picture before you commit."
-            />
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              {["Country fit", "Document readiness", "Arrival confidence"].map((item) => (
-                <div className="rounded-[8px] border border-stone-200 bg-ivory p-4 text-sm font-semibold text-ink" key={item}>
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section className="bg-white py-16 sm:py-24" id="services">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -111,12 +64,12 @@ export default function HomePage() {
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {homepageServices.map((service, index) => (
-              <Reveal delay={index * 0.03} key={service.slug}>
-                <ServiceCard service={service} compact />
-              </Reveal>
-            ))}
+          <div className="mt-8">
+            <HorizontalCardRail label="core services">
+              {allServiceCards.map((service) => (
+                <ServiceCard service={service} compact key={service.slug} />
+              ))}
+            </HorizontalCardRail>
           </div>
         </div>
       </section>
@@ -137,15 +90,17 @@ export default function HomePage() {
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {countries.map((country, index) => (
-              <Reveal delay={index * 0.04} key={country.slug}>
-                <CountryCard country={country} />
-              </Reveal>
-            ))}
+          <div className="mt-8">
+            <HorizontalCardRail label="countries" itemClassName="min-w-[78%] sm:min-w-[270px] lg:min-w-[285px]">
+              {countries.map((country) => (
+                <CountryCard country={country} compact key={country.slug} />
+              ))}
+            </HorizontalCardRail>
           </div>
         </div>
       </section>
+
+      <MomentumToolsSpotlight />
 
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

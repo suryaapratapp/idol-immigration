@@ -21,6 +21,13 @@ export const momentumTools = [
     action: "Compare my options"
   },
   {
+    slug: "crs-score-calculator",
+    eyebrow: "POINTS INTELLIGENCE",
+    title: "CRS Score Calculator",
+    description: "Calculate an indicative Express Entry CRS score with a transparent breakdown and practical ways to strengthen it.",
+    action: "Calculate my CRS"
+  },
+  {
     slug: "express-entry-tracker",
     eyebrow: "LIVE DATA",
     title: "Express Entry Draw Tracker",

@@ -84,9 +84,9 @@ export default function ServicesPage() {
             copy="Every card includes who it is for, what Idol helps with and common mistakes to avoid."
             align="center"
           />
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {allServiceCards.map((service) => (
-              <ServiceCard service={service} key={service.slug} />
+              <ServiceCard service={service} compact key={service.slug} />
             ))}
           </div>
           <div className="mt-10">

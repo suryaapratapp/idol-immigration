@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/intake-deadline-planner",
     "/tools/occupation-in-demand",
     "/tools/compare-countries",
+    "/tools/crs-score-calculator",
     "/tools/express-entry-tracker",
     "/blogs",
     "/success-stories",

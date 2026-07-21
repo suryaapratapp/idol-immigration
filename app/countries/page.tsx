@@ -87,9 +87,9 @@ export default function CountriesPage() {
             copy="Country advice should be matched to your academics, work background, funds, family comfort and long-term plan."
             align="center"
           />
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {countries.map((country) => (
-              <CountryCard country={country} key={country.slug} />
+              <CountryCard country={country} compact key={country.slug} />
             ))}
           </div>
         </div>

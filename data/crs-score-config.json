@@ -1,0 +1,34 @@
+{
+  "version": "2026.06.22",
+  "lastUpdated": "2026-06-22",
+  "officialSource": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score/crs-criteria.html",
+  "officialCalculator": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score.html#calculator",
+  "maxScore": 1200,
+  "jobOfferPoints": 0,
+  "age": {
+    "withSpouse": { "18": 90, "19": 95, "20": 100, "21": 100, "22": 100, "23": 100, "24": 100, "25": 100, "26": 100, "27": 100, "28": 100, "29": 100, "30": 95, "31": 90, "32": 85, "33": 80, "34": 75, "35": 70, "36": 65, "37": 60, "38": 55, "39": 50, "40": 45, "41": 35, "42": 25, "43": 15, "44": 5 },
+    "withoutSpouse": { "18": 99, "19": 105, "20": 110, "21": 110, "22": 110, "23": 110, "24": 110, "25": 110, "26": 110, "27": 110, "28": 110, "29": 110, "30": 105, "31": 99, "32": 94, "33": 88, "34": 83, "35": 77, "36": 72, "37": 66, "38": 61, "39": 55, "40": 50, "41": 39, "42": 28, "43": 17, "44": 6 }
+  },
+  "education": {
+    "lessSecondary": { "withSpouse": 0, "withoutSpouse": 0, "spouse": 0, "transferTier": 0 },
+    "secondary": { "withSpouse": 28, "withoutSpouse": 30, "spouse": 2, "transferTier": 0 },
+    "oneYear": { "withSpouse": 84, "withoutSpouse": 90, "spouse": 6, "transferTier": 1 },
+    "twoYear": { "withSpouse": 91, "withoutSpouse": 98, "spouse": 7, "transferTier": 1 },
+    "bachelor": { "withSpouse": 112, "withoutSpouse": 120, "spouse": 8, "transferTier": 1 },
+    "twoOrMore": { "withSpouse": 119, "withoutSpouse": 128, "spouse": 9, "transferTier": 2 },
+    "masters": { "withSpouse": 126, "withoutSpouse": 135, "spouse": 10, "transferTier": 2 },
+    "doctorate": { "withSpouse": 140, "withoutSpouse": 150, "spouse": 10, "transferTier": 2 }
+  },
+  "firstLanguage": {
+    "withSpouse": { "0": 0, "4": 6, "5": 6, "6": 8, "7": 16, "8": 22, "9": 29, "10": 32 },
+    "withoutSpouse": { "0": 0, "4": 6, "5": 6, "6": 9, "7": 17, "8": 23, "9": 31, "10": 34 }
+  },
+  "secondLanguage": { "0": 0, "4": 0, "5": 1, "6": 1, "7": 3, "8": 3, "9": 6, "10": 6 },
+  "canadianExperience": {
+    "withSpouse": { "0": 0, "1": 35, "2": 46, "3": 56, "4": 63, "5": 70 },
+    "withoutSpouse": { "0": 0, "1": 40, "2": 53, "3": 64, "4": 72, "5": 80 },
+    "spouse": { "0": 0, "1": 5, "2": 7, "3": 8, "4": 9, "5": 10 }
+  },
+  "spouseLanguage": { "0": 0, "4": 0, "5": 1, "6": 1, "7": 3, "8": 3, "9": 5, "10": 5 },
+  "additional": { "sibling": 15, "frenchBasic": 25, "frenchStrongEnglish": 50, "canadianEducationShort": 15, "canadianEducationLong": 30, "provincialNomination": 600, "maximum": 600 }
+}

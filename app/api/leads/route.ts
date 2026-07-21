@@ -6,6 +6,7 @@ const tools = new Set<MomentumTool>([
   "intake-deadline-planner",
   "occupation-in-demand",
   "compare-countries",
+  "crs-score-calculator",
   "express-entry-tracker"
 ]);
 

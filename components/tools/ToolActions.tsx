@@ -6,11 +6,13 @@ import { buildWhatsAppUrl } from "@/lib/momentumTools";
 export function ToolActions({
   summary,
   downloading,
+  downloadLabel = "Download my plan (PDF)",
   onDownload,
   onWhatsApp
 }: {
   summary: string;
   downloading?: boolean;
+  downloadLabel?: string;
   onDownload: () => void;
   onWhatsApp: () => void;
 }) {
@@ -33,7 +35,7 @@ export function ToolActions({
         type="button"
       >
         {downloading ? <LoaderCircle className="h-4 w-4 animate-spin" aria-hidden="true" /> : <Download className="h-4 w-4" aria-hidden="true" />}
-        {downloading ? "Preparing PDF..." : "Download my plan (PDF)"}
+        {downloading ? "Preparing PDF..." : downloadLabel}
       </button>
     </div>
   );

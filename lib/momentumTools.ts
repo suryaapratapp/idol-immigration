@@ -4,6 +4,7 @@ export type MomentumTool =
   | "intake-deadline-planner"
   | "occupation-in-demand"
   | "compare-countries"
+  | "crs-score-calculator"
   | "express-entry-tracker";
 
 export type ToolLeadPayload = {

@@ -37,7 +37,7 @@ export default async function ExpressEntryTrackerPage() {
   return (
     <>
       <JsonLd data={[schema, faqSchema(faqs)]} />
-      <PageHero eyebrow="MOMENTUM TOOL 04" title="Read the latest Express Entry cutoffs in context." copy="Filter recent official IRCC rounds, see how cutoffs have moved and test your CRS against comparable invitation history without confusing PNP, CEC and category-based draws." />
+      <PageHero eyebrow="MOMENTUM TOOL 05" title="Read the latest Express Entry cutoffs in context." copy="Filter recent official IRCC rounds, see how cutoffs have moved and test your CRS against comparable invitation history without confusing PNP, CEC and category-based draws." />
       <section className="bg-ivory py-14 sm:py-20"><div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><ExpressEntryTracker data={data} /></div></section>
       <section className="border-t border-slate-200 bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
