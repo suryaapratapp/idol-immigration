@@ -1,0 +1,116 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-21",
+  "budgetBands": [
+    { "id": "under-15", "label": "Under ₹15 lakh" },
+    { "id": "15-25", "label": "₹15-25 lakh" },
+    { "id": "25-40", "label": "₹25-40 lakh" },
+    { "id": "40-plus", "label": "₹40 lakh+" }
+  ],
+  "fields": ["Technology", "Healthcare", "Engineering", "Business & Finance", "Skilled trades", "Education"],
+  "weights": {
+    "study": { "cost": 25, "settlement": 15, "jobs": 20, "ease": 15, "postStudy": 25 },
+    "work": { "cost": 15, "settlement": 20, "jobs": 30, "ease": 25, "postStudy": 10 },
+    "pr": { "cost": 10, "settlement": 35, "jobs": 25, "ease": 25, "postStudy": 5 }
+  },
+  "profiles": [
+    {
+      "id": "canada",
+      "name": "Canada",
+      "flag": "🇨🇦",
+      "officialSource": "https://www.canada.ca/en/services/immigration-citizenship.html",
+      "cost": { "label": "₹24-42L typical first-year study plan", "budgetScores": { "under-15": 38, "15-25": 64, "25-40": 86, "40-plus": 92 }, "note": "Tuition, city and proof-of-funds requirements can make a low budget tight." },
+      "settlement": { "label": "Multiple federal and provincial pathways", "scores": { "study": 78, "work": 82, "pr": 88 }, "note": "Long-term options are structured but depend heavily on current programme settings and profile score." },
+      "jobs": { "Technology": 82, "Healthcare": 90, "Engineering": 84, "Business & Finance": 76, "Skilled trades": 89, "Education": 85 },
+      "jobNote": "Demand varies sharply by province; regulated professions need licensing.",
+      "easeBase": 72,
+      "purposeFit": { "study": 82, "work": 76, "pr": 86 },
+      "familyFit": 5,
+      "postStudy": { "score": 86, "label": "PGWP can support eligible graduates", "note": "Programme, institution and field eligibility must be verified before enrolment." }
+    },
+    {
+      "id": "australia",
+      "name": "Australia",
+      "flag": "🇦🇺",
+      "officialSource": "https://immi.homeaffairs.gov.au/",
+      "cost": { "label": "₹28-48L typical first-year study plan", "budgetScores": { "under-15": 30, "15-25": 55, "25-40": 82, "40-plus": 94 }, "note": "Tuition and living costs favour applicants with a stronger starting budget." },
+      "settlement": { "label": "Points-tested, state and regional pathways", "scores": { "study": 76, "work": 82, "pr": 87 }, "note": "Occupation fit, skills assessment, points and nomination control practical timelines." },
+      "jobs": { "Technology": 83, "Healthcare": 92, "Engineering": 90, "Business & Finance": 73, "Skilled trades": 91, "Education": 88 },
+      "jobNote": "Healthcare, engineering and trades can be strong where licensing and assessment align.",
+      "easeBase": 68,
+      "purposeFit": { "study": 80, "work": 82, "pr": 88 },
+      "familyFit": 4,
+      "postStudy": { "score": 84, "label": "Graduate work options for eligible study", "note": "Duration and eligibility depend on qualification, location and current rules." }
+    },
+    {
+      "id": "united-kingdom",
+      "name": "United Kingdom",
+      "flag": "🇬🇧",
+      "officialSource": "https://www.gov.uk/browse/visas-immigration",
+      "cost": { "label": "₹24-42L typical first-year study plan", "budgetScores": { "under-15": 36, "15-25": 66, "25-40": 88, "40-plus": 93 }, "note": "Shorter master's programmes can reduce total duration, though London costs are high." },
+      "settlement": { "label": "Sponsored work route can lead to settlement", "scores": { "study": 66, "work": 78, "pr": 70 }, "note": "Settlement usually relies on moving into and maintaining a qualifying work route." },
+      "jobs": { "Technology": 80, "Healthcare": 92, "Engineering": 80, "Business & Finance": 84, "Skilled trades": 67, "Education": 79 },
+      "jobNote": "Sponsorship concentration and live salary thresholds shape the real job market.",
+      "easeBase": 76,
+      "purposeFit": { "study": 89, "work": 78, "pr": 67 },
+      "familyFit": 1,
+      "postStudy": { "score": 82, "label": "Graduate route after eligible study", "note": "The route is time-limited and does not itself guarantee sponsorship or settlement." }
+    },
+    {
+      "id": "usa",
+      "name": "USA",
+      "flag": "🇺🇸",
+      "officialSource": "https://travel.state.gov/content/travel/en/us-visas.html",
+      "cost": { "label": "₹30-60L+ typical first-year study plan", "budgetScores": { "under-15": 22, "15-25": 46, "25-40": 72, "40-plus": 94 }, "note": "Scholarships can change the picture, but a conservative plan needs substantial funds." },
+      "settlement": { "label": "Employer and family routes are less predictable", "scores": { "study": 52, "work": 58, "pr": 48 }, "note": "Long-term outcomes can depend on employer sponsorship, quotas and route-specific waits." },
+      "jobs": { "Technology": 94, "Healthcare": 84, "Engineering": 91, "Business & Finance": 90, "Skilled trades": 62, "Education": 72 },
+      "jobNote": "The market is deep, but work authorisation and sponsorship can be the binding constraint.",
+      "easeBase": 58,
+      "purposeFit": { "study": 82, "work": 66, "pr": 50 },
+      "familyFit": 0,
+      "postStudy": { "score": 76, "label": "OPT / STEM OPT for eligible graduates", "note": "Duration depends on programme classification and compliance, with sponsorship still a separate step." }
+    },
+    {
+      "id": "new-zealand",
+      "name": "New Zealand",
+      "flag": "🇳🇿",
+      "officialSource": "https://www.immigration.govt.nz/",
+      "cost": { "label": "₹22-38L typical first-year study plan", "budgetScores": { "under-15": 42, "15-25": 70, "25-40": 90, "40-plus": 93 }, "note": "Costs can be more manageable than some peers, but programme and city still matter." },
+      "settlement": { "label": "Skilled and Green List pathways", "scores": { "study": 73, "work": 80, "pr": 82 }, "note": "Occupation and accredited-employer alignment are key to long-term options." },
+      "jobs": { "Technology": 72, "Healthcare": 91, "Engineering": 83, "Business & Finance": 67, "Skilled trades": 88, "Education": 86 },
+      "jobNote": "The market is smaller, with strong signals in selected healthcare, construction and trade roles.",
+      "easeBase": 74,
+      "purposeFit": { "study": 78, "work": 81, "pr": 82 },
+      "familyFit": 6,
+      "postStudy": { "score": 83, "label": "Post-study work for eligible qualifications", "note": "Length and work conditions depend on qualification and current settings." }
+    },
+    {
+      "id": "europe",
+      "name": "Europe",
+      "flag": "🇪🇺",
+      "officialSource": "https://www.make-it-in-germany.com/en/visa-residence",
+      "cost": { "label": "₹12-30L range, highly country-dependent", "budgetScores": { "under-15": 78, "15-25": 91, "25-40": 94, "40-plus": 94 }, "note": "Germany and selected continental options can offer lower tuition, but funds and local costs still apply." },
+      "settlement": { "label": "Country-specific skilled work and Blue Card routes", "scores": { "study": 72, "work": 81, "pr": 76 }, "note": "There is no single Europe visa; language and national rules determine the route." },
+      "jobs": { "Technology": 87, "Healthcare": 84, "Engineering": 91, "Business & Finance": 72, "Skilled trades": 86, "Education": 66 },
+      "jobNote": "Germany-focused signals favour engineering, IT and selected shortage roles; local language widens options.",
+      "easeBase": 65,
+      "purposeFit": { "study": 83, "work": 84, "pr": 73 },
+      "familyFit": 4,
+      "postStudy": { "score": 80, "label": "Country-specific graduate job-search routes", "note": "Rights and duration vary by country; local language often drives conversion to work." }
+    },
+    {
+      "id": "uae",
+      "name": "UAE",
+      "flag": "🇦🇪",
+      "officialSource": "https://u.ae/en/information-and-services/visa-and-emirates-id",
+      "cost": { "label": "₹18-35L typical first-year study plan", "budgetScores": { "under-15": 52, "15-25": 82, "25-40": 92, "40-plus": 94 }, "note": "Proximity and tax context can help, though tuition and Dubai housing vary widely." },
+      "settlement": { "label": "Residence is usually tied to work, study or investment", "scores": { "study": 45, "work": 62, "pr": 34 }, "note": "It is stronger for near-term work and residence than conventional permanent settlement." },
+      "jobs": { "Technology": 79, "Healthcare": 78, "Engineering": 82, "Business & Finance": 88, "Skilled trades": 76, "Education": 74 },
+      "jobNote": "Commercial, construction and service sectors can be active, with employer quality varying substantially.",
+      "easeBase": 80,
+      "purposeFit": { "study": 66, "work": 85, "pr": 38 },
+      "familyFit": 2,
+      "postStudy": { "score": 55, "label": "Institution and employer-led transitions", "note": "Post-study conversion is less standardised than in major study destinations." }
+    }
+  ]
+}
