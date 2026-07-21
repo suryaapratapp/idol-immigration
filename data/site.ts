@@ -56,12 +56,14 @@ export const navLinks = [
   { label: "Services", href: "/services" },
   { label: "Countries", href: "/countries" },
   { label: "AI Advisor", href: "/ai-pathway-advisor" },
+  { label: "Tools", href: "/tools" },
   { label: "Success Stories", href: "/success-stories" },
   { label: "Blogs", href: "/blogs" }
 ];
 
 export const footerQuickLinks = [
   { label: "AI Pathway Advisor", href: "/ai-pathway-advisor" },
+  { label: "Momentum Tools", href: "/tools" },
   { label: "Refund Policy", href: "/refund-policy" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms & Conditions", href: "/terms-conditions" },

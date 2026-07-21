@@ -5,6 +5,7 @@ import { EnquiryPopup } from "@/components/EnquiryPopup";
 import { FloatingWhatsAppButton } from "@/components/FloatingWhatsAppButton";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { JsonLd } from "@/components/JsonLd";
 import { MobileBottomCTA } from "@/components/MobileBottomCTA";
 import { professionalServiceSchema } from "@/lib/seo";
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en-IN">
       <body>
+        <GoogleAnalytics />
         <JsonLd data={professionalServiceSchema()} />
         <Header />
         <main>{children}</main>
