@@ -1,0 +1,240 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-21",
+  "sources": {
+    "Canada": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/rounds-invitations/category-based-selection.html",
+    "Australia": "https://immi.homeaffairs.gov.au/visas/working-in-australia/regional-migration/occupations",
+    "United Kingdom": "https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-immigration-salary-list",
+    "Germany": "https://www.make-it-in-germany.com/en/visa-residence/opportunity-card/job-search"
+  },
+  "occupations": [
+    {
+      "id": "software-engineer",
+      "title": "Software Engineer",
+      "sector": "Technology",
+      "synonyms": ["software developer", "full stack developer", "backend developer", "frontend developer", "programmer", "web developer"],
+      "countries": {
+        "Canada": { "status": "eligible", "classification": "NOC 21232 | TEER 1", "list": "Not a current 2026 category occupation", "routes": ["Federal Skilled Worker", "Canadian Experience Class", "Provincial Nominee Program"], "note": "Express Entry eligibility still depends on programme criteria and CRS." },
+        "Australia": { "status": "in-demand", "classification": "ANZSCO 261313", "list": "MLTSSL", "routes": ["Subclass 189", "Subclass 190", "Subclass 491"], "note": "A skills assessment and current occupation instrument must be checked." },
+        "United Kingdom": { "status": "eligible", "classification": "Skilled Worker eligible occupation", "list": "Not on the Immigration Salary List", "routes": ["Skilled Worker", "Global Talent where eligible"], "note": "Requires an eligible sponsored role meeting live salary rules." },
+        "Germany": { "status": "in-demand", "classification": "IT / STEM shortage relevance", "list": "Opportunity Card points relevance", "routes": ["Opportunity Card", "EU Blue Card", "Skilled worker visa"], "note": "Qualification, salary and language evidence shape the route." }
+      }
+    },
+    {
+      "id": "cybersecurity-specialist",
+      "title": "Cybersecurity Specialist",
+      "sector": "Technology",
+      "synonyms": ["cyber security analyst", "security engineer", "soc analyst", "information security specialist", "infosec analyst"],
+      "countries": {
+        "Canada": { "status": "in-demand", "classification": "NOC 21220 | TEER 1", "list": "2026 STEM category", "routes": ["Category-based Express Entry", "Federal Skilled Worker", "Provincial Nominee Program"], "note": "One year of eligible experience is required for the renewed 2026 category." },
+        "Australia": { "status": "in-demand", "classification": "ICT security specialist", "list": "Skilled occupation instruments", "routes": ["Subclass 189", "Subclass 190", "Subclass 491"], "note": "Confirm the current assessing authority and instrument." },
+        "United Kingdom": { "status": "eligible", "classification": "Skilled Worker eligible occupation", "list": "Not on the Immigration Salary List", "routes": ["Skilled Worker", "Global Talent where eligible"], "note": "Sponsorship and salary thresholds apply." },
+        "Germany": { "status": "in-demand", "classification": "IT / STEM shortage relevance", "list": "Opportunity Card points relevance", "routes": ["Opportunity Card", "EU Blue Card"], "note": "Strong technical evidence and recognised qualifications improve fit." }
+      }
+    },
+    {
+      "id": "data-scientist",
+      "title": "Data Scientist",
+      "sector": "Technology",
+      "synonyms": ["data analyst", "machine learning engineer", "ai engineer", "business intelligence analyst", "bi analyst"],
+      "countries": {
+        "Canada": { "status": "eligible", "classification": "NOC 21211 | TEER 1", "list": "Not a current 2026 category occupation", "routes": ["Federal Skilled Worker", "Canadian Experience Class", "Provincial Nominee Program"], "note": "The duties, rather than the title alone, determine the NOC." },
+        "Australia": { "status": "eligible", "classification": "Data / ICT occupation mapping", "list": "Occupation-specific assessment required", "routes": ["Subclass 190", "Subclass 491", "Employer sponsored"], "note": "The best ANZSCO mapping depends on actual duties." },
+        "United Kingdom": { "status": "eligible", "classification": "Skilled Worker eligible occupation", "list": "Not on the Immigration Salary List", "routes": ["Skilled Worker", "Global Talent where eligible"], "note": "Employer sponsorship is normally required." },
+        "Germany": { "status": "in-demand", "classification": "IT / STEM shortage relevance", "list": "Opportunity Card points relevance", "routes": ["Opportunity Card", "EU Blue Card"], "note": "Advanced technical qualifications can support the route." }
+      }
+    },
+    {
+      "id": "it-business-analyst",
+      "title": "IT Business Analyst",
+      "sector": "Technology",
+      "synonyms": ["business systems analyst", "systems analyst", "it consultant", "functional consultant", "product analyst"],
+      "countries": {
+        "Canada": { "status": "eligible", "classification": "NOC 21221 | TEER 1", "list": "Not a current 2026 category occupation", "routes": ["Federal Skilled Worker", "Canadian Experience Class", "Provincial Nominee Program"], "note": "CRS and programme eligibility still control invitation chances." },
+        "Australia": { "status": "in-demand", "classification": "ANZSCO 261111", "list": "MLTSSL", "routes": ["Subclass 189", "Subclass 190", "Subclass 491"], "note": "ACS skills assessment is commonly relevant." },
+        "United Kingdom": { "status": "eligible", "classification": "Skilled Worker eligible occupation", "list": "Not on the Immigration Salary List", "routes": ["Skilled Worker"], "note": "The sponsored job must meet the appropriate occupation and salary rules." },
+        "Germany": { "status": "eligible", "classification": "Qualified IT employment", "list": "Opportunity Card relevance", "routes": ["Opportunity Card", "EU Blue Card", "Skilled worker visa"], "note": "Role duties and qualification recognition should be checked." }
+      }
+    },
+    {
+      "id": "registered-nurse",
+      "title": "Registered Nurse",
+      "sector": "Healthcare",
+      "synonyms": ["staff nurse", "nurse", "registered psychiatric nurse", "clinical nurse", "icu nurse"],
+      "countries": {
+        "Canada": { "status": "in-demand", "classification": "NOC 31301 | TEER 1", "list": "2026 healthcare and social services category", "routes": ["Category-based Express Entry", "Provincial Nominee Program", "Federal Skilled Worker"], "note": "Professional licensing is separate from immigration selection." },
+        "Australia": { "status": "in-demand", "classification": "ANZSCO 2544 group", "list": "MLTSSL", "routes": ["Subclass 189", "Subclass 190", "Subclass 491"], "note": "AHPRA registration and an appropriate skills assessment may be required." },
+        "United Kingdom": { "status": "in-demand", "classification": "Health and Care eligible occupation", "list": "Health and Care Worker route", "routes": ["Health and Care Worker", "Skilled Worker"], "note": "NMC registration and eligible sponsorship are usually required." },
+        "Germany": { "status": "in-demand", "classification": "Regulated shortage profession", "list": "Recognition required", "routes": ["Skilled worker visa", "Recognition partnership"], "note": "Recognition and German-language requirements are central." }
+      }
+    },
+    {
+      "id": "physiotherapist",
+      "title": "Physiotherapist",
+      "sector": "Healthcare",
+      "synonyms": ["physical therapist", "physio", "sports physiotherapist", "rehabilitation therapist"],
+      "countries": {
+        "Canada": { "status": "in-demand", "classification": "NOC 31202 | TEER 1", "list": "2026 healthcare and social services category", "routes": ["Category-based Express Entry", "Provincial Nominee Program"], "note": "Provincial professional licensing is a separate step." },
+        "Australia": { "status": "in-demand", "classification": "ANZSCO 252511", "list": "MLTSSL", "routes": ["Subclass 189", "Subclass 190", "Subclass 491"], "note": "Registration and skills assessment requirements apply." },
+        "United Kingdom": { "status": "eligible", "classification": "Health and Care eligible occupation", "list": "Not on the Immigration Salary List", "routes": ["Health and Care Worker", "Skilled Worker"], "note": "HCPC registration is typically needed." },
+        "Germany": { "status": "in-demand", "classification": "Regulated healthcare profession", "list": "Recognition required", "routes": ["Skilled worker visa", "Recognition visa"], "note": "Professional recognition and German are material." }
+      }
+    },
+    {
+      "id": "pharmacist",
+      "title": "Pharmacist",
+      "sector": "Healthcare",
+      "synonyms": ["clinical pharmacist", "hospital pharmacist", "community pharmacist", "retail pharmacist"],
+      "countries": {
+        "Canada": { "status": "in-demand", "classification": "NOC 31120 | TEER 1", "list": "2026 healthcare and social services category", "routes": ["Category-based Express Entry", "Provincial Nominee Program"], "note": "Provincial licensing remains mandatory to practise." },
+        "Australia": { "status": "in-demand", "classification": "ANZSCO 2515 group", "list": "MLTSSL / regional pathways", "routes": ["Subclass 190", "Subclass 491", "Employer sponsored"], "note": "Pharmacy registration and assessment apply." },
+        "United Kingdom": { "status": "eligible", "classification": "Health and Care eligible occupation", "list": "Not on the Immigration Salary List", "routes": ["Health and Care Worker", "Skilled Worker"], "note": "GPhC registration and sponsorship are separate requirements." },
+        "Germany": { "status": "in-demand", "classification": "Regulated healthcare profession", "list": "Recognition required", "routes": ["Skilled worker visa", "Recognition visa"], "note": "Recognition and German-language proficiency are required." }
+      }
+    },
+    {
+      "id": "medical-doctor",
+      "title": "Medical Doctor",
+      "sector": "Healthcare",
+      "synonyms": ["doctor", "physician", "general practitioner", "gp", "surgeon", "medical officer"],
+      "countries": {
+        "Canada": { "status": "in-demand", "classification": "NOC 31100-31102 | TEER 1", "list": "2026 healthcare category; separate Canadian-experience physician category", "routes": ["Category-based Express Entry", "Provincial Nominee Program"], "note": "The physician-specific category requires Canadian work experience; licensing is separate." },
+        "Australia": { "status": "in-demand", "classification": "ANZSCO 253 group", "list": "Skilled occupation instruments", "routes": ["Subclass 189", "Subclass 190", "Employer sponsored"], "note": "Medical registration and specialist assessment apply." },
+        "United Kingdom": { "status": "in-demand", "classification": "Health and Care eligible occupation", "list": "Health and Care Worker route", "routes": ["Health and Care Worker"], "note": "GMC registration and an eligible sponsored role are normally required." },
+        "Germany": { "status": "in-demand", "classification": "Regulated shortage profession", "list": "Recognition required", "routes": ["Skilled worker visa", "EU Blue Card where applicable"], "note": "Licensing recognition and German are central." }
+      }
+    },
+    {
+      "id": "civil-engineer",
+      "title": "Civil Engineer",
+      "sector": "Engineering",
+      "synonyms": ["structural engineer", "site engineer", "transport engineer", "geotechnical engineer"],
+      "countries": {
+        "Canada": { "status": "in-demand", "classification": "NOC 21300 | TEER 1", "list": "2026 STEM category", "routes": ["Category-based Express Entry", "Federal Skilled Worker", "Provincial Nominee Program"], "note": "One year of eligible occupation experience is required for the category." },
+        "Australia": { "status": "in-demand", "classification": "ANZSCO 233211", "list": "MLTSSL", "routes": ["Subclass 189", "Subclass 190", "Subclass 491"], "note": "Engineers Australia assessment is commonly relevant." },
+        "United Kingdom": { "status": "eligible", "classification": "Skilled Worker eligible occupation", "list": "Not on the Immigration Salary List", "routes": ["Skilled Worker"], "note": "Sponsorship and current going-rate rules apply." },
+        "Germany": { "status": "in-demand", "classification": "Engineering shortage relevance", "list": "Opportunity Card points relevance", "routes": ["Opportunity Card", "EU Blue Card"], "note": "Qualification comparability and the role salary should be checked." }
+      }
+    },
+    {
+      "id": "mechanical-engineer",
+      "title": "Mechanical Engineer",
+      "sector": "Engineering",
+      "synonyms": ["design engineer", "maintenance engineer", "manufacturing engineer", "automotive engineer"],
+      "countries": {
+        "Canada": { "status": "in-demand", "classification": "NOC 21301 | TEER 1", "list": "2026 STEM category", "routes": ["Category-based Express Entry", "Federal Skilled Worker", "Provincial Nominee Program"], "note": "Duties must align with the declared NOC." },
+        "Australia": { "status": "in-demand", "classification": "ANZSCO 233512", "list": "MLTSSL", "routes": ["Subclass 189", "Subclass 190", "Subclass 491"], "note": "A positive engineering skills assessment is commonly required." },
+        "United Kingdom": { "status": "eligible", "classification": "Skilled Worker eligible occupation", "list": "Not on the Immigration Salary List", "routes": ["Skilled Worker"], "note": "Requires eligible sponsorship and salary." },
+        "Germany": { "status": "in-demand", "classification": "Engineering shortage relevance", "list": "Opportunity Card points relevance", "routes": ["Opportunity Card", "EU Blue Card"], "note": "Germany can be strong where qualification and role alignment are clear." }
+      }
+    },
+    {
+      "id": "electrical-engineer",
+      "title": "Electrical Engineer",
+      "sector": "Engineering",
+      "synonyms": ["electronics engineer", "power systems engineer", "control engineer", "instrumentation engineer"],
+      "countries": {
+        "Canada": { "status": "in-demand", "classification": "NOC 21310 | TEER 1", "list": "2026 STEM category", "routes": ["Category-based Express Entry", "Federal Skilled Worker", "Provincial Nominee Program"], "note": "One year of eligible experience is required for category selection." },
+        "Australia": { "status": "in-demand", "classification": "ANZSCO 233311", "list": "MLTSSL", "routes": ["Subclass 189", "Subclass 190", "Subclass 491"], "note": "Skills assessment and points requirements apply." },
+        "United Kingdom": { "status": "eligible", "classification": "Skilled Worker eligible occupation", "list": "Not on the Immigration Salary List", "routes": ["Skilled Worker"], "note": "Requires a qualifying sponsored position." },
+        "Germany": { "status": "in-demand", "classification": "Engineering shortage relevance", "list": "Opportunity Card points relevance", "routes": ["Opportunity Card", "EU Blue Card"], "note": "Technical qualifications and salary can support fit." }
+      }
+    },
+    {
+      "id": "accountant",
+      "title": "Accountant",
+      "sector": "Finance",
+      "synonyms": ["chartered accountant", "auditor", "management accountant", "tax accountant", "financial accountant"],
+      "countries": {
+        "Canada": { "status": "eligible", "classification": "NOC 11100 | TEER 1", "list": "Not a current 2026 category occupation", "routes": ["Federal Skilled Worker", "Canadian Experience Class", "Provincial Nominee Program"], "note": "Professional designation can improve employability but is distinct from immigration eligibility." },
+        "Australia": { "status": "eligible", "classification": "ANZSCO 2211 group", "list": "Skilled occupation instruments", "routes": ["Subclass 190", "Subclass 491", "Employer sponsored"], "note": "Invitation competitiveness and assessment criteria can be demanding." },
+        "United Kingdom": { "status": "eligible", "classification": "Skilled Worker eligible occupation", "list": "Not on the Immigration Salary List", "routes": ["Skilled Worker"], "note": "Employer sponsorship and going-rate rules apply." },
+        "Germany": { "status": "eligible", "classification": "Qualified professional role", "list": "Opportunity Card relevance", "routes": ["Opportunity Card", "Skilled worker visa"], "note": "German language and local accounting knowledge materially affect employability." }
+      }
+    },
+    {
+      "id": "secondary-teacher",
+      "title": "Secondary School Teacher",
+      "sector": "Education",
+      "synonyms": ["high school teacher", "school teacher", "secondary teacher", "subject teacher", "maths teacher", "science teacher"],
+      "countries": {
+        "Canada": { "status": "in-demand", "classification": "NOC 41220 | TEER 1", "list": "2026 education category", "routes": ["Category-based Express Entry", "Provincial Nominee Program"], "note": "Provincial teacher certification is separate from immigration selection." },
+        "Australia": { "status": "in-demand", "classification": "ANZSCO 241411", "list": "MLTSSL", "routes": ["Subclass 189", "Subclass 190", "Subclass 491"], "note": "AITSL assessment and teacher registration may apply." },
+        "United Kingdom": { "status": "eligible", "classification": "Skilled Worker eligible occupation", "list": "Education sponsorship route", "routes": ["Skilled Worker"], "note": "School sponsorship and role-specific qualification rules apply." },
+        "Germany": { "status": "eligible", "classification": "Regulated education profession", "list": "Recognition and language required", "routes": ["Skilled worker visa", "Recognition route"], "note": "Strong German and state recognition are usually critical." }
+      }
+    },
+    {
+      "id": "early-childhood-teacher",
+      "title": "Early Childhood Educator",
+      "sector": "Education",
+      "synonyms": ["early childhood teacher", "nursery teacher", "preschool teacher", "kindergarten teacher", "ece"],
+      "countries": {
+        "Canada": { "status": "in-demand", "classification": "NOC 42202 | TEER 2", "list": "2026 education category", "routes": ["Category-based Express Entry", "Provincial Nominee Program"], "note": "Provincial certification may be needed for employment." },
+        "Australia": { "status": "in-demand", "classification": "ANZSCO 241111", "list": "MLTSSL", "routes": ["Subclass 189", "Subclass 190", "Subclass 491"], "note": "Qualification content and assessment are important." },
+        "United Kingdom": { "status": "eligible", "classification": "Role-dependent Skilled Worker eligibility", "list": "Not on the Immigration Salary List", "routes": ["Skilled Worker where occupation and sponsor qualify"], "note": "The exact role level must be checked." },
+        "Germany": { "status": "in-demand", "classification": "Regulated childcare profession", "list": "Recognition and language required", "routes": ["Skilled worker visa", "Recognition route"], "note": "Recognition and German are usually required." }
+      }
+    },
+    {
+      "id": "electrician",
+      "title": "Electrician",
+      "sector": "Skilled trades",
+      "synonyms": ["industrial electrician", "electrical technician", "wireman", "maintenance electrician"],
+      "countries": {
+        "Canada": { "status": "in-demand", "classification": "NOC 72200 / 72201 | TEER 2", "list": "2026 trade category", "routes": ["Category-based Express Entry", "Federal Skilled Trades", "Provincial Nominee Program"], "note": "Trade certification and provincial rules may apply." },
+        "Australia": { "status": "in-demand", "classification": "ANZSCO 341111", "list": "MLTSSL", "routes": ["Subclass 189", "Subclass 190", "Subclass 491"], "note": "Licensing and a trade skills assessment are usually required." },
+        "United Kingdom": { "status": "eligible", "classification": "Role-dependent Skilled Worker eligibility", "list": "Not on the Immigration Salary List", "routes": ["Skilled Worker where occupation and sponsor qualify"], "note": "Check occupation level, sponsor and salary." },
+        "Germany": { "status": "in-demand", "classification": "Skilled trade shortage relevance", "list": "Opportunity Card relevance", "routes": ["Opportunity Card", "Skilled worker visa"], "note": "Vocational qualification recognition is important." }
+      }
+    },
+    {
+      "id": "welder",
+      "title": "Welder",
+      "sector": "Skilled trades",
+      "synonyms": ["welding technician", "fabricator welder", "pipe welder", "mig welder", "tig welder"],
+      "countries": {
+        "Canada": { "status": "in-demand", "classification": "NOC 72106 | TEER 2", "list": "2026 trade category", "routes": ["Category-based Express Entry", "Federal Skilled Trades", "Provincial Nominee Program"], "note": "Trade evidence and duties must align with the NOC." },
+        "Australia": { "status": "in-demand", "classification": "ANZSCO 322313", "list": "MLTSSL", "routes": ["Subclass 189", "Subclass 190", "Subclass 491"], "note": "A trade skills assessment is commonly required." },
+        "United Kingdom": { "status": "in-demand", "classification": "SOC 5213 for qualifying welding trades", "list": "Immigration Salary List only for qualifying high-integrity pipe welders", "routes": ["Skilled Worker"], "note": "The Salary List concession is narrow and requires specified experience." },
+        "Germany": { "status": "in-demand", "classification": "Skilled trade shortage relevance", "list": "Opportunity Card relevance", "routes": ["Opportunity Card", "Skilled worker visa"], "note": "Vocational recognition and practical evidence matter." }
+      }
+    },
+    {
+      "id": "plumber",
+      "title": "Plumber",
+      "sector": "Skilled trades",
+      "synonyms": ["plumbing technician", "pipe fitter", "gas fitter", "maintenance plumber"],
+      "countries": {
+        "Canada": { "status": "in-demand", "classification": "NOC 72300 | TEER 2", "list": "2026 trade category", "routes": ["Category-based Express Entry", "Federal Skilled Trades", "Provincial Nominee Program"], "note": "Certification and province-specific rules can apply." },
+        "Australia": { "status": "in-demand", "classification": "ANZSCO 334111", "list": "MLTSSL", "routes": ["Subclass 189", "Subclass 190", "Subclass 491"], "note": "Licensing and trade assessment are normally required." },
+        "United Kingdom": { "status": "eligible", "classification": "Role-dependent Skilled Worker eligibility", "list": "Not on the Immigration Salary List", "routes": ["Skilled Worker where occupation and sponsor qualify"], "note": "The exact sponsored role must meet skill and salary rules." },
+        "Germany": { "status": "in-demand", "classification": "Skilled trade shortage relevance", "list": "Opportunity Card relevance", "routes": ["Opportunity Card", "Skilled worker visa"], "note": "Qualification recognition and German can be important." }
+      }
+    },
+    {
+      "id": "construction-manager",
+      "title": "Construction Project Manager",
+      "sector": "Construction",
+      "synonyms": ["construction manager", "project manager construction", "site manager", "building project manager"],
+      "countries": {
+        "Canada": { "status": "in-demand", "classification": "NOC 70010 | TEER 0", "list": "2026 trade category", "routes": ["Category-based Express Entry", "Federal Skilled Worker", "Provincial Nominee Program"], "note": "Managerial duties and qualifying experience must be evidenced." },
+        "Australia": { "status": "in-demand", "classification": "ANZSCO 133111", "list": "MLTSSL", "routes": ["Subclass 189", "Subclass 190", "Subclass 491"], "note": "Assessment looks closely at qualification and senior duties." },
+        "United Kingdom": { "status": "eligible", "classification": "Skilled Worker eligible occupation", "list": "Not on the Immigration Salary List", "routes": ["Skilled Worker"], "note": "A qualifying sponsored role and salary are required." },
+        "Germany": { "status": "eligible", "classification": "Qualified construction management", "list": "Opportunity Card relevance", "routes": ["Opportunity Card", "EU Blue Card where salary qualifies"], "note": "Qualification and role seniority shape the route." }
+      }
+    },
+    {
+      "id": "graphic-designer",
+      "title": "Graphic Designer",
+      "sector": "Creative",
+      "synonyms": ["visual designer", "multimedia designer", "brand designer", "digital designer", "ui designer"],
+      "countries": {
+        "Canada": { "status": "eligible", "classification": "NOC 52120 | TEER 2", "list": "Not a current 2026 category occupation", "routes": ["Federal Skilled Worker where eligible", "Provincial Nominee Program"], "note": "Portfolio strength does not replace programme eligibility." },
+        "Australia": { "status": "eligible", "classification": "ANZSCO 232411", "list": "STSOL / state-dependent pathways", "routes": ["Subclass 190", "Subclass 491", "Employer sponsored"], "note": "State nomination availability varies." },
+        "United Kingdom": { "status": "in-demand", "classification": "SOC 2142", "list": "Immigration Salary List", "routes": ["Skilled Worker"], "note": "The current list has a removal date and live salary rules still apply." },
+        "Germany": { "status": "eligible", "classification": "Qualified creative profession", "list": "Opportunity Card relevance", "routes": ["Opportunity Card", "Skilled worker visa"], "note": "Portfolio, language and employer demand shape practical prospects." }
+      }
+    }
+  ]
+}
