@@ -111,16 +111,16 @@ export function EnquiryPopup() {
   }
 
   return (
-    <div className="fixed inset-0 z-[80] grid place-items-center bg-ink/65 px-3 py-3 backdrop-blur-sm sm:px-4">
+    <div className="fixed inset-0 z-[80] grid place-items-center bg-ink/65 px-2 py-2 backdrop-blur-sm sm:px-3">
       <div
         aria-labelledby="enquiry-popup-title"
         aria-modal="true"
-        className="relative max-h-[calc(100dvh-24px)] w-full max-w-4xl overflow-y-auto rounded-[20px] border border-slate-300 bg-white shadow-2xl"
+        className="relative max-h-[calc(100dvh-16px)] w-full max-w-[574px] overflow-hidden rounded-[20px] border border-slate-300 bg-white shadow-2xl"
         role="dialog"
       >
         <button
           aria-label="Close enquiry form"
-          className="absolute right-4 top-4 z-10 grid h-9 w-9 place-items-center border border-slate-300 bg-white text-slate-500 transition hover:border-gold hover:text-ink"
+          className="absolute right-3 top-3 z-10 grid h-8 w-8 place-items-center border border-slate-300 bg-white text-slate-500 transition hover:border-gold hover:text-ink"
           onClick={close}
           ref={closeButtonRef}
           type="button"
@@ -128,8 +128,8 @@ export function EnquiryPopup() {
           <X className="h-4 w-4" aria-hidden="true" />
         </button>
 
-        <div className="flex items-center gap-4 border-b border-slate-200 bg-white px-5 py-5 sm:px-8">
-          <span className="grid h-16 w-16 shrink-0 place-items-center overflow-hidden rounded-full border border-slate-200 bg-white">
+        <div className="flex items-center gap-3 border-b border-slate-200 bg-white px-4 py-2">
+          <span className="grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-full border border-slate-200 bg-white">
             <Image
               src="/images/logo-idol.png"
               alt="Idol Immigration logo"
@@ -142,20 +142,20 @@ export function EnquiryPopup() {
             <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-gold">
               Idol Immigration Services
             </p>
-            <h2 className="mt-1 pr-10 text-2xl font-extrabold tracking-normal text-ink sm:text-3xl" id="enquiry-popup-title">
+            <h2 className="mt-0.5 pr-10 text-xl font-extrabold tracking-normal text-ink" id="enquiry-popup-title">
               Quick Enquiry
             </h2>
           </div>
         </div>
 
-        <form className="grid gap-4 p-5 sm:p-8" onSubmit={handleSubmit}>
+        <form className="grid gap-2 p-3 sm:p-4" onSubmit={handleSubmit}>
           <Field name="name" placeholder="Name*" required />
           <Field name="email" placeholder="Email*" required type="email" />
 
-          <div className="grid gap-4 sm:grid-cols-[0.32fr_0.68fr]">
+          <div className="grid grid-cols-[0.32fr_0.68fr] gap-2">
             <select
               aria-label="Country code"
-              className="h-14 border border-slate-300 bg-white px-5 text-lg font-semibold text-ink focus:border-gold focus:ring-gold"
+              className="h-11 border border-slate-300 bg-white px-3 text-sm font-semibold text-ink focus:border-gold focus:ring-gold"
               defaultValue="+91"
               name="countryCode"
             >
@@ -173,7 +173,7 @@ export function EnquiryPopup() {
           <Select name="country" options={countryOptions} required />
 
           <button
-            className="mx-auto mt-1 inline-flex min-h-16 items-center justify-center bg-ink px-10 py-4 text-xl font-extrabold text-white shadow-[0_14px_34px_rgba(7,29,51,0.18)] transition hover:bg-gold"
+            className="mx-auto inline-flex min-h-12 items-center justify-center bg-ink px-7 py-2 text-base font-extrabold text-white shadow-[0_14px_34px_rgba(7,29,51,0.18)] transition hover:bg-gold"
             type="submit"
           >
             Submit
@@ -195,7 +195,7 @@ function Field({ name, placeholder, required = false, type = "text" }: FieldProp
   return (
     <input
       aria-label={placeholder.replace("*", "")}
-      className="h-14 border border-slate-300 bg-white px-5 text-lg font-medium text-ink placeholder:text-slate-500 focus:border-gold focus:ring-gold"
+      className="h-11 border border-slate-300 bg-white px-3 text-sm font-medium text-ink placeholder:text-slate-500 focus:border-gold focus:ring-gold"
       name={name}
       placeholder={placeholder}
       required={required}
@@ -210,7 +210,7 @@ function Select({ name, options, required = false }: { name: string; options: st
   return (
     <select
       aria-label={placeholder.replace("*", "")}
-      className="h-14 border border-slate-300 bg-white px-5 text-lg font-medium text-ink focus:border-gold focus:ring-gold"
+      className="h-11 border border-slate-300 bg-white px-3 text-sm font-medium text-ink focus:border-gold focus:ring-gold"
       defaultValue=""
       name={name}
       required={required}
