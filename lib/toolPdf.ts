@@ -5,7 +5,7 @@ export type ToolPdfSection = {
   lines: string[];
 };
 
-type ToolPdfOptions = {
+export type ToolPdfOptions = {
   fileName: string;
   title: string;
   eyebrow: string;
@@ -36,6 +36,7 @@ function safeText(value: string) {
 }
 
 async function getLogoDataUrl() {
+  if (typeof window === "undefined" || typeof FileReader === "undefined") return undefined;
   try {
     const response = await fetch("/images/logo-idol.png");
     const blob = await response.blob();
@@ -50,7 +51,7 @@ async function getLogoDataUrl() {
   }
 }
 
-export async function downloadToolPdf(options: ToolPdfOptions) {
+export async function createToolPdfDocument(options: ToolPdfOptions) {
   const { jsPDF } = await import("jspdf");
   const logoDataUrl = await getLogoDataUrl();
   const doc = new jsPDF({ compress: true, format: "a4", orientation: "portrait", unit: "mm" });
@@ -140,10 +141,11 @@ export async function downloadToolPdf(options: ToolPdfOptions) {
   doc.text(summaryLines, page.left, y);
   y += summaryLines.length * 4.4 + 8;
 
-  options.sections.forEach((section) => {
+  options.sections.forEach((section, sectionIndex) => {
     const prepared = section.lines.map((line) => split(line, page.contentWidth - 14, 8.7));
     const height = 17 + prepared.reduce((total, lines) => total + lines.length * 4 + 2.5, 0);
-    ensureSpace(Math.min(height, 65));
+    const reserveForDataNote = sectionIndex === options.sections.length - 1 && options.dataNote ? 8 : 0;
+    ensureSpace(Math.min(height, 65) + reserveForDataNote);
     doc.setFillColor(248, 250, 252);
     doc.setDrawColor(226, 232, 240);
     const availableHeight = Math.min(height, page.contentBottom - y);
@@ -170,12 +172,18 @@ export async function downloadToolPdf(options: ToolPdfOptions) {
   });
 
   if (options.dataNote) {
-    ensureSpace(20);
+    const noteLines = split(options.dataNote, page.contentWidth, 7.5);
+    ensureSpace(noteLines.length * 3.5 + 2);
     doc.setFont("helvetica", "italic");
     doc.setFontSize(7.5);
     doc.setTextColor(100, 116, 139);
-    doc.text(split(options.dataNote, page.contentWidth, 7.5), page.left, y);
+    doc.text(noteLines, page.left, y);
   }
 
+  return doc;
+}
+
+export async function downloadToolPdf(options: ToolPdfOptions) {
+  const doc = await createToolPdfDocument(options);
   doc.save(options.fileName);
 }
