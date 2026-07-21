@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-20",
+  "officialSource": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/ministerial-instructions/express-entry-rounds.html",
+  "officialDataFeed": "https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_en.json",
+  "draws": [
+    { "round": 427, "date": "2026-07-20", "category": "Provincial Nominee Program", "type": "pnp", "invitationsIssued": 511, "crsCutoff": 744 },
+    { "round": 426, "date": "2026-07-10", "category": "Senior managers with Canadian work experience", "type": "category", "invitationsIssued": 500, "crsCutoff": 392 },
+    { "round": 425, "date": "2026-07-09", "category": "French-language proficiency", "type": "category", "invitationsIssued": 5000, "crsCutoff": 420 },
+    { "round": 424, "date": "2026-07-07", "category": "Canadian Experience Class", "type": "cec", "invitationsIssued": 2000, "crsCutoff": 517 },
+    { "round": 423, "date": "2026-07-06", "category": "Provincial Nominee Program", "type": "pnp", "invitationsIssued": 534, "crsCutoff": 708 },
+    { "round": 422, "date": "2026-06-25", "category": "Healthcare and social services occupations", "type": "category", "invitationsIssued": 4000, "crsCutoff": 475 },
+    { "round": 421, "date": "2026-06-24", "category": "Physicians with Canadian work experience", "type": "category", "invitationsIssued": 271, "crsCutoff": 223 },
+    { "round": 420, "date": "2026-06-23", "category": "Canadian Experience Class", "type": "cec", "invitationsIssued": 4000, "crsCutoff": 516 },
+    { "round": 419, "date": "2026-06-22", "category": "Provincial Nominee Program", "type": "pnp", "invitationsIssued": 955, "crsCutoff": 730 },
+    { "round": 418, "date": "2026-05-28", "category": "French-language proficiency", "type": "category", "invitationsIssued": 4500, "crsCutoff": 409 },
+    { "round": 417, "date": "2026-05-27", "category": "Canadian Experience Class", "type": "cec", "invitationsIssued": 3000, "crsCutoff": 518 },
+    { "round": 416, "date": "2026-05-25", "category": "Provincial Nominee Program", "type": "pnp", "invitationsIssued": 334, "crsCutoff": 805 },
+    { "round": 415, "date": "2026-05-11", "category": "Provincial Nominee Program", "type": "pnp", "invitationsIssued": 380, "crsCutoff": 798 },
+    { "round": 414, "date": "2026-04-29", "category": "French-language proficiency", "type": "category", "invitationsIssued": 4000, "crsCutoff": 400 },
+    { "round": 413, "date": "2026-04-28", "category": "Canadian Experience Class", "type": "cec", "invitationsIssued": 2000, "crsCutoff": 514 },
+    { "round": 412, "date": "2026-04-27", "category": "Provincial Nominee Program", "type": "pnp", "invitationsIssued": 473, "crsCutoff": 795 }
+  ]
+}
