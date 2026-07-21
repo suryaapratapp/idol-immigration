@@ -9,18 +9,23 @@ import {
   ChevronRight,
   CircleAlert,
   Download,
+  ExternalLink,
   FileCheck2,
   FileText,
   Gauge,
+  Globe2,
   LoaderCircle,
   LockKeyhole,
   MessageCircle,
+  PlaneTakeoff,
   RefreshCw,
   Route,
   ScanSearch,
+  ShieldCheck,
   Sparkles,
   Target,
-  UploadCloud
+  UploadCloud,
+  WalletCards
 } from "lucide-react";
 import { ChangeEvent, FormEvent, useRef, useState } from "react";
 import {
@@ -29,7 +34,7 @@ import {
   type AdvisorAnalysis,
   type AdvisorProfile
 } from "@/lib/pathwayAdvisor";
-import { whatsappLink } from "@/data/site";
+import { site, whatsappLink } from "@/data/site";
 
 const emptyProfile: AdvisorProfile = {
   goal: "explore",
@@ -62,7 +67,7 @@ TypeScript, React, Node.js, SQL, AWS, Git, Agile delivery
 CERTIFICATIONS
 AWS Cloud Practitioner`;
 
-type ResultTab = "routes" | "career" | "plan";
+type ResultTab = "routes" | "career" | "move" | "plan";
 
 export function AIPathwayAdvisor() {
   const [profile, setProfile] = useState<AdvisorProfile>(emptyProfile);
@@ -72,6 +77,8 @@ export function AIPathwayAdvisor() {
   const [fileName, setFileName] = useState("");
   const [fileError, setFileError] = useState("");
   const [formError, setFormError] = useState("");
+  const [pdfStatus, setPdfStatus] = useState<"idle" | "building">("idle");
+  const [pdfError, setPdfError] = useState("");
   const resultsRef = useRef<HTMLDivElement>(null);
 
   function updateProfile<Key extends keyof AdvisorProfile>(key: Key, value: AdvisorProfile[Key]) {
@@ -147,15 +154,35 @@ export function AIPathwayAdvisor() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  function downloadReport() {
+  async function downloadReport() {
     if (!analysis) return;
-    const report = buildTextReport(profile, analysis);
-    const url = URL.createObjectURL(new Blob([report], { type: "text/plain;charset=utf-8" }));
-    const anchor = document.createElement("a");
-    anchor.href = url;
-    anchor.download = `${analysis.reportId.toLowerCase()}-pathway-report.txt`;
-    anchor.click();
-    URL.revokeObjectURL(url);
+    setPdfStatus("building");
+    setPdfError("");
+
+    try {
+      const [logoDataUrl, { createPathwayReportPdf }] = await Promise.all([
+        loadImageDataUrl("/images/logo-idol.png"),
+        import("@/lib/pathwayReportPdf")
+      ]);
+      const report = await createPathwayReportPdf(
+        profile,
+        analysis,
+        {
+          name: site.name,
+          shortName: site.shortName,
+          email: site.email,
+          phone: site.phoneDisplay,
+          address: site.address,
+          website: site.url
+        },
+        logoDataUrl
+      );
+      report.save(`${analysis.reportId.toLowerCase()}-pathway-report.pdf`);
+    } catch {
+      setPdfError("The PDF could not be prepared. Please try again.");
+    } finally {
+      setPdfStatus("idle");
+    }
   }
 
   const consultantMessage = analysis
@@ -204,29 +231,16 @@ export function AIPathwayAdvisor() {
               </div>
 
               <div className="grid gap-5 sm:grid-cols-2">
-                <div className="grid gap-2 sm:col-span-2">
-                  <span className="text-sm font-bold text-ink">What is your main goal?</span>
-                  <span className="grid grid-cols-2 gap-2 lg:grid-cols-4">
-                    {advisorOptions.goals.map((option) => {
-                      const selected = profile.goal === option.value;
-                      return (
-                        <button
-                          className={[
-                            "min-h-12 border px-3 py-2 text-left text-sm font-semibold transition",
-                            selected
-                              ? "border-gold bg-gold text-white shadow-sm"
-                              : "border-slate-200 bg-white text-slate-600 hover:border-gold hover:text-ink"
-                          ].join(" ")}
-                          key={option.value}
-                          onClick={() => updateProfile("goal", option.value as AdvisorProfile["goal"])}
-                          type="button"
-                        >
-                          {option.label}
-                        </button>
-                      );
-                    })}
-                  </span>
-                </div>
+                <SelectField
+                  className="sm:col-span-2"
+                  label="What is your main goal?"
+                  onChange={(value) => {
+                    const goal = advisorOptions.goals.find((option) => option.label === value)?.value ?? "explore";
+                    updateProfile("goal", goal as AdvisorProfile["goal"]);
+                  }}
+                  options={advisorOptions.goals.map((option) => option.label)}
+                  value={goalLabel(profile.goal)}
+                />
 
                 <TextField
                   label="Current role or career area"
@@ -324,7 +338,7 @@ export function AIPathwayAdvisor() {
                       <span>{analysis.roleFamily}</span>
                     </div>
                     <h2 className="mt-4 max-w-3xl text-2xl font-extrabold sm:text-4xl">{analysis.headline}</h2>
-                    <p className="mt-3 max-w-3xl text-sm leading-7 text-white/70">Compare the ranked routes, career matches and action plan below, then take the report into a human consultation.</p>
+                    <p className="mt-3 max-w-3xl text-sm leading-7 text-white/70">Compare ranked routes, role matches, cost-aware European options, relocation preparation and your sequenced action plan.</p>
                   </div>
                   <div className="grid grid-cols-2 gap-3 sm:min-w-72">
                     <ScoreMetric label="Profile readiness" score={analysis.readiness} />
@@ -334,9 +348,10 @@ export function AIPathwayAdvisor() {
               </div>
 
               <div className="border-b border-slate-200 bg-white px-3 pt-3 sm:px-6">
-                <div className="grid grid-cols-3 gap-1" role="tablist" aria-label="Pathway report sections">
+                <div className="grid grid-cols-2 gap-1 sm:grid-cols-4" role="tablist" aria-label="Pathway report sections">
                   <ResultTabButton active={activeTab === "routes"} icon={Route} label="Country routes" onClick={() => setActiveTab("routes")} />
                   <ResultTabButton active={activeTab === "career"} icon={BriefcaseBusiness} label="Career & CV" onClick={() => setActiveTab("career")} />
+                  <ResultTabButton active={activeTab === "move"} icon={PlaneTakeoff} label="Before moving" onClick={() => setActiveTab("move")} />
                   <ResultTabButton active={activeTab === "plan"} icon={Target} label="90-day plan" onClick={() => setActiveTab("plan")} />
                 </div>
               </div>
@@ -344,6 +359,7 @@ export function AIPathwayAdvisor() {
               <div className="p-5 sm:p-7">
                 {activeTab === "routes" ? <RouteResults analysis={analysis} /> : null}
                 {activeTab === "career" ? <CareerResults analysis={analysis} /> : null}
+                {activeTab === "move" ? <BeforeMoveResults analysis={analysis} /> : null}
                 {activeTab === "plan" ? <ActionResults analysis={analysis} /> : null}
               </div>
 
@@ -357,15 +373,16 @@ export function AIPathwayAdvisor() {
                     <RefreshCw className="h-4 w-4" aria-hidden="true" />
                     Adjust profile
                   </button>
-                  <button className="inline-flex min-h-11 items-center justify-center gap-2 border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-ink transition hover:border-gold" onClick={downloadReport} type="button">
-                    <Download className="h-4 w-4" aria-hidden="true" />
-                    Download report
+                  <button className="inline-flex min-h-11 items-center justify-center gap-2 border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-ink transition hover:border-gold disabled:cursor-wait disabled:opacity-60" disabled={pdfStatus === "building"} onClick={downloadReport} type="button">
+                    {pdfStatus === "building" ? <LoaderCircle className="h-4 w-4 animate-spin" aria-hidden="true" /> : <Download className="h-4 w-4" aria-hidden="true" />}
+                    {pdfStatus === "building" ? "Preparing PDF..." : "Download PDF"}
                   </button>
                   <a className="inline-flex min-h-11 items-center justify-center gap-2 bg-gold px-4 py-2 text-sm font-extrabold text-white transition hover:bg-ink" href={whatsappLink(consultantMessage)} rel="noreferrer" target="_blank">
                     <MessageCircle className="h-4 w-4" aria-hidden="true" />
                     Review with an expert
                   </a>
                 </div>
+                {pdfError ? <p className="text-xs font-semibold text-red-700 lg:text-right">{pdfError}</p> : null}
               </div>
             </div>
           </div>
@@ -384,9 +401,9 @@ function TextField({ label, onChange, placeholder, value }: { label: string; onC
   );
 }
 
-function SelectField({ label, onChange, options, value }: { label: string; onChange: (value: string) => void; options: string[]; value: string }) {
+function SelectField({ className = "", label, onChange, options, value }: { className?: string; label: string; onChange: (value: string) => void; options: string[]; value: string }) {
   return (
-    <label className="grid gap-2">
+    <label className={["grid gap-2", className].join(" ")}>
       <span className="text-sm font-bold text-ink">{label}</span>
       <select className="h-12 border-slate-300 bg-white px-4 text-sm font-medium text-ink focus:border-gold focus:ring-gold" onChange={(event) => onChange(event.target.value)} value={value}>
         {options.map((option) => <option key={option}>{option}</option>)}
@@ -453,6 +470,21 @@ function ResultTabButton({ active, icon: Icon, label, onClick }: { active: boole
 function RouteResults({ analysis }: { analysis: AdvisorAnalysis }) {
   return (
     <div>
+      <div>
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold">Profile intelligence</p>
+        <h3 className="mt-2 text-2xl font-extrabold text-ink">What is shaping your shortlist</h3>
+        <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+          {analysis.profileSignals.map((signal) => (
+            <article className="border border-slate-200 bg-ivory p-4" key={signal.label}>
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-400">{signal.label}</p>
+              <p className="mt-2 text-sm font-extrabold text-ink">{signal.value}</p>
+              <p className="mt-2 text-xs leading-5 text-slate-600">{signal.detail}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-10 border-t border-slate-200 pt-8">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold">Ranked route shortlist</p>
@@ -460,7 +492,7 @@ function RouteResults({ analysis }: { analysis: AdvisorAnalysis }) {
         </div>
         <p className="text-xs font-semibold text-slate-500">Indicative fit, not legal eligibility</p>
       </div>
-      <div className="mt-6 grid gap-4 lg:grid-cols-3">
+      <div className="mt-6 grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
         {analysis.routes.map((route, index) => (
           <article className="flex h-full flex-col border border-slate-200 bg-white p-5 shadow-sm" key={route.country}>
             <div className="flex items-start justify-between gap-4">
@@ -484,6 +516,10 @@ function RouteResults({ analysis }: { analysis: AdvisorAnalysis }) {
                 </li>
               ))}
             </ul>
+            <div className="mt-5 border-l-2 border-gold bg-ivory px-3 py-3">
+              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-slate-400">Priority next move</p>
+              <p className="mt-1 text-xs leading-5 text-slate-600">{route.nextMove}</p>
+            </div>
             <div className="mt-auto pt-5">
               <Link className="inline-flex items-center gap-2 text-sm font-bold text-gold transition hover:text-ink" href={`/countries/${route.slug}`}>
                 Explore this destination
@@ -492,6 +528,40 @@ function RouteResults({ analysis }: { analysis: AdvisorAnalysis }) {
             </div>
           </article>
         ))}
+      </div>
+      </div>
+
+      <div className="mt-10 border-t border-slate-200 pt-8">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold">Cost-aware Europe</p>
+            <h3 className="mt-2 text-2xl font-extrabold text-ink">European countries to research on a lower budget</h3>
+          </div>
+          <span className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500"><WalletCards className="h-4 w-4 text-gold" aria-hidden="true" />Costs and funding need live checks</span>
+        </div>
+        <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-600">This list prioritises cost-aware research, not the cheapest promise. Course, city, funding, proof-of-funds and career outcomes still need to be compared together.</p>
+        <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {analysis.europeOptions.map((option, index) => (
+            <article className="flex h-full flex-col border border-slate-200 bg-white p-5" key={option.country}>
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <span className="grid h-10 w-10 place-items-center bg-ink text-xs font-extrabold text-white">{option.code}</span>
+                  <div>
+                    <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-gold">#{index + 1} {option.budgetFit}</p>
+                    <h4 className="mt-1 font-extrabold text-ink">{option.country}</h4>
+                  </div>
+                </div>
+                <span className="text-sm font-extrabold text-ink">{option.fit}%</span>
+              </div>
+              <p className="mt-4 text-sm leading-6 text-slate-600">{option.why}</p>
+              <div className="mt-4 bg-ivory p-3 text-xs leading-5 text-slate-600"><strong className="text-ink">Research next:</strong> {option.action}</div>
+              <a className="mt-auto inline-flex items-center gap-2 pt-5 text-xs font-bold text-gold transition hover:text-ink" href={option.officialUrl} rel="noreferrer" target="_blank">
+                Open official source
+                <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+              </a>
+            </article>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -516,11 +586,25 @@ function CareerResults({ analysis }: { analysis: AdvisorAnalysis }) {
               <div className="mt-4 flex flex-wrap gap-2">
                 {role.skills.map((skill) => <span className="border border-slate-200 bg-ivory px-2.5 py-1 text-xs font-semibold text-slate-600" key={skill}>{skill}</span>)}
               </div>
+              <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-slate-100 pt-4">
+                <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-slate-400">Best markets</span>
+                {role.bestMarkets.map((market) => <span className="bg-ink px-2 py-1 text-[11px] font-bold text-white" key={market}>{market}</span>)}
+              </div>
+              <p className="mt-4 border-l-2 border-gold pl-3 text-xs leading-5 text-slate-600"><strong className="text-ink">Priority action:</strong> {role.priorityAction}</p>
             </article>
           ))}
         </div>
       </div>
       <div className="grid content-start gap-5">
+        <div className="border border-slate-200 bg-white p-5">
+          <div className="flex items-center gap-3">
+            <Globe2 className="h-5 w-5 text-gold" aria-hidden="true" />
+            <p className="font-extrabold text-ink">Detected and recommended skills</p>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {analysis.detectedSkills.map((skill) => <span className="border border-slate-200 bg-ivory px-2.5 py-1 text-xs font-semibold text-slate-600" key={skill}>{skill}</span>)}
+          </div>
+        </div>
         <div className="border border-slate-200 bg-ivory p-5">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
@@ -534,6 +618,40 @@ function CareerResults({ analysis }: { analysis: AdvisorAnalysis }) {
         </div>
         <InsightList icon={Check} items={analysis.strengths} title="Strong signals" tone="positive" />
         <InsightList icon={CircleAlert} items={analysis.gaps} title="Priority gaps" tone="warning" />
+      </div>
+    </div>
+  );
+}
+
+function BeforeMoveResults({ analysis }: { analysis: AdvisorAnalysis }) {
+  return (
+    <div>
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold">Relocation readiness</p>
+          <h3 className="mt-2 text-2xl font-extrabold text-ink">What to complete before moving abroad</h3>
+        </div>
+        <span className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500"><ShieldCheck className="h-4 w-4 text-gold" aria-hidden="true" />Practical risk checks included</span>
+      </div>
+      <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-600">Work through these alongside the visa or admission process. The timing is a planning guide and should be adjusted to the destination and route.</p>
+      <div className="mt-7 grid gap-4 lg:grid-cols-2">
+        {analysis.preDeparture.map((area, index) => (
+          <article className="border border-slate-200 bg-white p-5" key={area.title}>
+            <div className="flex items-start justify-between gap-4">
+              <span className="grid h-9 w-9 shrink-0 place-items-center bg-gold text-sm font-extrabold text-white">{index + 1}</span>
+              <span className="text-right text-xs font-bold uppercase tracking-[0.12em] text-slate-400">{area.timing}</span>
+            </div>
+            <h4 className="mt-5 font-extrabold text-ink">{area.title}</h4>
+            <ul className="mt-4 grid gap-3">
+              {area.items.map((item) => (
+                <li className="flex gap-3 text-sm leading-6 text-slate-600" key={item}>
+                  <Check className="mt-1 h-4 w-4 shrink-0 text-emerald-600" aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
       </div>
     </div>
   );
@@ -621,37 +739,14 @@ function goalLabel(goal: AdvisorProfile["goal"]) {
   return advisorOptions.goals.find((option) => option.value === goal)?.label ?? goal;
 }
 
-function buildTextReport(profile: AdvisorProfile, analysis: AdvisorAnalysis) {
-  const lines = [
-    "IDOL IMMIGRATION - AI PATHWAY ADVISOR",
-    `Report: ${analysis.reportId}`,
-    "",
-    `Goal: ${goalLabel(profile.goal)}`,
-    `Current role: ${profile.currentRole}`,
-    `Profile readiness: ${analysis.readiness}/100`,
-    `CV strength: ${analysis.cvScore}/100`,
-    `Career family: ${analysis.roleFamily}`,
-    "",
-    "TOP INDICATIVE ROUTES",
-    ...analysis.routes.flatMap((route, index) => [
-      `${index + 1}. ${route.country} - ${route.route} (${route.fit}% indicative fit)`,
-      `   ${route.summary}`,
-      `   Next move: ${route.nextMove}`
-    ]),
-    "",
-    "ROLE MATCHES",
-    ...analysis.roleMatches.map((role) => `- ${role.title}: ${role.fit}%`),
-    "",
-    "PRIORITY GAPS",
-    ...analysis.gaps.map((gap) => `- ${gap}`),
-    "",
-    "90-DAY ACTION PLAN",
-    ...analysis.actionPlan.flatMap((phase) => [
-      `${phase.period}: ${phase.title}`,
-      ...phase.actions.map((action) => `- ${action}`)
-    ]),
-    "",
-    "Important: This automated report is for indicative planning only. It does not assess legal eligibility, guarantee employment or predict a visa decision. Confirm live requirements with official sources and a qualified adviser."
-  ];
-  return lines.join("\n");
+async function loadImageDataUrl(source: string) {
+  const response = await fetch(source);
+  if (!response.ok) throw new Error("Logo could not be loaded.");
+  const blob = await response.blob();
+  return new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result));
+    reader.onerror = () => reject(reader.error);
+    reader.readAsDataURL(blob);
+  });
 }
