@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { GoogleReviewsSlider } from "@/components/GoogleReviewsSlider";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
-import { TestimonialCard } from "@/components/TestimonialCard";
 import { VideoTestimonials } from "@/components/VideoTestimonials";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { googleReviews, videoTestimonials } from "@/data/testimonials";
@@ -81,10 +81,8 @@ export default function SuccessStoriesPage() {
             copy="These named review excerpts were verified from Google/Maps and are displayed with star ratings and source labels."
             align="center"
           />
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {googleReviews.map((testimonial) => (
-              <TestimonialCard testimonial={testimonial} key={testimonial.name} />
-            ))}
+          <div className="mt-12">
+            <GoogleReviewsSlider reviews={googleReviews} />
           </div>
         </div>
       </section>
@@ -94,7 +92,7 @@ export default function SuccessStoriesPage() {
           <SectionHeader
             eyebrow="Video testimonials"
             title="YouTube Video Stories"
-            copy="Add client YouTube links to turn these cards into embedded, on-site video testimonials."
+            copy="Watch real visa journeys and client experiences directly on the Idol Immigration YouTube channel."
             align="center"
           />
           <div className="mt-12">

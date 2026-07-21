@@ -35,8 +35,8 @@ export default function CountriesPage() {
           <div className="overflow-hidden rounded-[8px] border border-stone-200 bg-ink shadow-sm">
             <div className="relative h-full min-h-[320px] sm:min-h-[420px]">
               <Image
-                src="/images/site/canada-skyline-arrival.jpg"
-                alt="Applicant viewing the Toronto skyline while planning a move to Canada"
+                src="/images/countries/uae-photo.jpg"
+                alt="Dubai skyline used for international destination comparison"
                 fill
                 sizes="(min-width: 1024px) 58vw, 100vw"
                 className="object-cover object-center"
@@ -63,8 +63,8 @@ export default function CountriesPage() {
             <div className="overflow-hidden rounded-[8px] border border-stone-200 bg-ink shadow-sm">
               <div className="relative aspect-[16/9]">
                 <Image
-                  src="/images/site/graduates-skyline-celebration.jpg"
-                  alt="Graduates celebrating near an international city skyline"
+                  src="/images/countries/australia-photo.jpg"
+                  alt="Sydney skyline used for study and skilled migration outcomes"
                   fill
                   sizes="(min-width: 1024px) 40vw, 100vw"
                   className="object-cover"

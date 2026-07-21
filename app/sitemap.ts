@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services",
     "/settlement-support",
     "/countries",
+    "/ai-pathway-advisor",
     "/blogs",
     "/success-stories",
     "/contact",

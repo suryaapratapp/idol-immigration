@@ -47,8 +47,8 @@ export const countries: Country[] = [
     flag: "🇬🇧",
     region: "Europe",
     image: {
-      src: "/images/countries/uk.svg",
-      alt: "Warm illustrated view of London landmarks and the Thames",
+      src: "/images/countries/uk-photo.jpg",
+      alt: "United Kingdom flag outside a historic London building",
       caption: "UK planning with real arrival and settlement context."
     },
     bestFor: "Students seeking globally recognized education, shorter academic timelines and English-speaking exposure.",
@@ -99,8 +99,8 @@ export const countries: Country[] = [
     flag: "🇨🇦",
     region: "North America",
     image: {
-      src: "/images/countries/canada.svg",
-      alt: "Warm illustrated Canadian skyline with mountains and pine trees",
+      src: "/images/countries/canada-photo.jpg",
+      alt: "Canadian flags with red maple leaves",
       caption: "Canada comparison for study, family and long-term planning."
     },
     bestFor: "Students and skilled professionals who want structured study, family and long-term migration planning.",
@@ -164,8 +164,8 @@ export const countries: Country[] = [
     flag: "🇦🇺",
     region: "Oceania",
     image: {
-      src: "/images/countries/australia.svg",
-      alt: "Warm illustrated Sydney harbour and Opera House inspired scene",
+      src: "/images/countries/australia-photo.jpg",
+      alt: "Sydney Opera House and Harbour Bridge at night",
       caption: "Australia planning with profile, English and pathway clarity."
     },
     bestFor: "Skilled professionals, students and families comparing education, work and long-term settlement possibilities.",
@@ -234,8 +234,8 @@ export const countries: Country[] = [
     flag: "🇺🇸",
     region: "North America",
     image: {
-      src: "/images/countries/usa.svg",
-      alt: "Warm illustrated New York skyline and Statue of Liberty inspired scene",
+      src: "/images/countries/usa-photo.jpg",
+      alt: "United States flag waving outdoors",
       caption: "USA planning focused on purpose, documents and confidence."
     },
     bestFor: "Students, visitors and professionals who need strong interview clarity and purpose-driven documentation.",
@@ -286,8 +286,8 @@ export const countries: Country[] = [
     flag: "🇳🇿",
     region: "Oceania",
     image: {
-      src: "/images/countries/new-zealand.svg",
-      alt: "Warm illustrated New Zealand lake, mountains and calm landscape",
+      src: "/images/countries/new-zealand-photo.jpg",
+      alt: "Vintage globe map focused on New Zealand",
       caption: "New Zealand planning with lifestyle and route-fit awareness."
     },
     bestFor: "Students and families seeking a calmer destination with education, lifestyle and settlement planning.",
@@ -321,8 +321,8 @@ export const countries: Country[] = [
     flag: "🇪🇺",
     region: "Europe",
     image: {
-      src: "/images/countries/europe.svg",
-      alt: "Warm illustrated European street, arches and evening city scene",
+      src: "/images/countries/europe-photo.jpg",
+      alt: "European Union flag close-up",
       caption: "Europe needs country-specific comparison, not generic advice."
     },
     bestFor: "Students, visitors and professionals comparing Germany, Ireland and other European routes.",
@@ -378,8 +378,8 @@ export const countries: Country[] = [
     flag: "🇦🇪",
     region: "Middle East + global",
     image: {
-      src: "/images/countries/uae-other.svg",
-      alt: "Warm illustrated UAE skyline, desert light and global mobility scene",
+      src: "/images/countries/uae-photo.jpg",
+      alt: "Dubai skyline with Burj Khalifa at sunrise",
       caption: "Regional and other destinations compared by purpose and fit."
     },
     bestFor: "Applicants exploring regional work, visitor, business or stepping-stone international plans.",

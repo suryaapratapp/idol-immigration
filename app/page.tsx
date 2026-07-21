@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { AIAdvisorSpotlight } from "@/components/AIAdvisorSpotlight";
 import { CountryCard } from "@/components/CountryCard";
+import { GoogleReviewsSlider } from "@/components/GoogleReviewsSlider";
 import { Hero } from "@/components/Hero";
 import { JsonLd } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ServiceCard } from "@/components/ServiceCard";
-import { TestimonialCard } from "@/components/TestimonialCard";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { generalFaqs } from "@/data/faqs";
 import { countries } from "@/data/countries";
@@ -17,7 +18,7 @@ import { googleReviews } from "@/data/testimonials";
 import { createMetadata, faqSchema } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Immigration Consultant in Gurugram | Canada PR, Australia PR, Study Visa | Idol Immigration",
+  title: "#1 Best Immigration & Study Abroad Consultant in India",
   description:
     "Trusted immigration consultant in Gurugram for Canada PR, Australia PR, UK study visa, work visa and tourist visa. Honest eligibility review. Enquire on WhatsApp.",
   path: "/",
@@ -34,6 +35,10 @@ export const metadata: Metadata = createMetadata({
     "MBBS abroad consultant in Gurugram"
   ]
 });
+
+metadata.title = {
+  absolute: "#1 Best Immigration & Study Abroad Consultant in India"
+};
 
 const homepageServiceSlugs = [
   "study-abroad",
@@ -53,6 +58,8 @@ export default function HomePage() {
     <>
       <JsonLd data={faqSchema(generalFaqs)} />
       <Hero />
+
+      <AIAdvisorSpotlight />
 
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
@@ -148,10 +155,8 @@ export default function HomePage() {
             copy="A few recent Google review excerpts from named clients."
             align="center"
           />
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {googleReviews.slice(0, 3).map((testimonial) => (
-              <TestimonialCard key={testimonial.name} testimonial={testimonial} />
-            ))}
+          <div className="mt-12">
+            <GoogleReviewsSlider reviews={googleReviews} />
           </div>
           <div className="mt-10">
             <WhatsAppCTA

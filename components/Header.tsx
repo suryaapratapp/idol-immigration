@@ -61,14 +61,14 @@ export function Header() {
   }, []);
 
   return (
-    <header ref={headerRef} className="sticky top-0 z-50 border-b border-stone-200/80 bg-white/92 shadow-[0_12px_34px_rgba(15,23,42,0.06)] backdrop-blur-xl">
+    <header ref={headerRef} className="sticky top-0 z-50 border-b border-slate-200 bg-white shadow-[0_10px_26px_rgba(7,29,51,0.08)]">
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           className="group flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           href="/"
           aria-label="Idol Immigration home"
         >
-          <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-[8px] border border-gold/40 bg-white shadow-[0_12px_30px_rgba(224,122,95,0.16)]">
+          <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-full border border-slate-200 bg-white shadow-[0_10px_24px_rgba(7,29,51,0.12)]">
             <Image
               src="/images/logo-idol.png"
               alt="Idol Immigration logo"
@@ -85,7 +85,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 rounded-full border border-stone-200 bg-ivory/70 p-1 xl:flex" aria-label="Primary navigation">
+        <nav className="hidden items-center gap-1 border border-slate-200 bg-white p-1 xl:flex" aria-label="Primary navigation">
           {navLinks.map((link) => {
             const active =
               link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
@@ -107,10 +107,10 @@ export function Header() {
                     aria-expanded={servicesOpen}
                     aria-haspopup="menu"
                     className={[
-                      "inline-flex items-center gap-1 rounded-full px-3 py-2 text-xs font-semibold transition",
+                      "inline-flex items-center gap-1 px-3 py-2 text-xs font-bold uppercase tracking-[0.08em] transition",
                       active
-                        ? "bg-white text-ink shadow-sm ring-1 ring-gold/30"
-                        : "text-slate-600 hover:bg-white hover:text-ink"
+                        ? "bg-gold text-white shadow-sm"
+                        : "text-ink hover:bg-ivory hover:text-gold"
                     ].join(" ")}
                     href="/services"
                     onClick={() => {
@@ -141,7 +141,7 @@ export function Header() {
                       role="menu"
                     >
                       <Link
-                        className="block rounded-[8px] bg-ivory px-4 py-3 text-sm font-semibold text-ink transition hover:bg-stone-100"
+                        className="block bg-ivory px-4 py-3 text-sm font-bold text-ink transition hover:bg-slate-100"
                         href="/services"
                         onClick={() => setServicesOpen(false)}
                         role="menuitem"
@@ -151,7 +151,7 @@ export function Header() {
                       <div className="my-2 h-px bg-stone-200" />
                       {serviceNavLinks.map((serviceLink) => (
                         <Link
-                          className="block rounded-[8px] px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-ivory hover:text-ink"
+                          className="block px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-ivory hover:text-ink"
                           href={serviceLink.href}
                           key={serviceLink.href}
                           onClick={() => setServicesOpen(false)}
@@ -184,10 +184,10 @@ export function Header() {
                     aria-expanded={countriesOpen}
                     aria-haspopup="menu"
                     className={[
-                      "inline-flex items-center gap-1 rounded-full px-3 py-2 text-xs font-semibold transition",
+                      "inline-flex items-center gap-1 px-3 py-2 text-xs font-bold uppercase tracking-[0.08em] transition",
                       active
-                        ? "bg-white text-ink shadow-sm ring-1 ring-gold/30"
-                        : "text-slate-600 hover:bg-white hover:text-ink"
+                        ? "bg-gold text-white shadow-sm"
+                        : "text-ink hover:bg-ivory hover:text-gold"
                     ].join(" ")}
                     href="/countries"
                     onClick={() => {
@@ -218,7 +218,7 @@ export function Header() {
                       role="menu"
                     >
                       <Link
-                        className="block rounded-[8px] bg-ivory px-4 py-3 text-sm font-semibold text-ink transition hover:bg-stone-100"
+                        className="block bg-ivory px-4 py-3 text-sm font-bold text-ink transition hover:bg-slate-100"
                         href="/countries"
                         onClick={() => setCountriesOpen(false)}
                         role="menuitem"
@@ -228,7 +228,7 @@ export function Header() {
                       <div className="my-2 h-px bg-stone-200" />
                       {countries.map((country) => (
                         <Link
-                          className="flex items-center gap-3 rounded-[8px] px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-ivory hover:text-ink"
+                          className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-ivory hover:text-ink"
                           href={`/countries/${country.slug}`}
                           key={country.slug}
                           onClick={() => setCountriesOpen(false)}
@@ -247,8 +247,8 @@ export function Header() {
             return (
               <Link
                 className={[
-                  "rounded-full px-3 py-2 text-xs font-semibold transition",
-                  active ? "bg-white text-ink shadow-sm ring-1 ring-gold/30" : "text-slate-600 hover:bg-white hover:text-ink"
+                  "px-3 py-2 text-xs font-bold uppercase tracking-[0.08em] transition",
+                  active ? "bg-gold text-white shadow-sm" : "text-ink hover:bg-ivory hover:text-gold"
                 ].join(" ")}
                 href={link.href}
                 key={link.href}
@@ -261,7 +261,7 @@ export function Header() {
 
         <div className="hidden items-center gap-3 xl:flex">
           <a
-            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(15,23,42,0.18)] transition hover:bg-gold hover:text-ink"
+            className="inline-flex min-h-11 items-center gap-2 bg-ink px-4 py-2 text-sm font-bold text-white shadow-[0_14px_34px_rgba(7,29,51,0.18)] transition hover:bg-gold"
             href={whatsappLink()}
             target="_blank"
             rel="noreferrer"
@@ -272,7 +272,7 @@ export function Header() {
         </div>
 
         <button
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-stone-200 bg-ivory text-ink xl:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center border border-slate-200 bg-ivory text-ink xl:hidden"
           type="button"
           onClick={() => setOpen((value) => !value)}
           aria-label={open ? "Close menu" : "Open menu"}
