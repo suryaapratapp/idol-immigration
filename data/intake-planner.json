@@ -1,0 +1,112 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-21",
+  "intakes": [
+    { "id": "sep-2026", "label": "September 2026", "date": "2026-09-01" },
+    { "id": "jan-2027", "label": "January 2027", "date": "2027-01-12" },
+    { "id": "may-2027", "label": "May 2027", "date": "2027-05-10" },
+    { "id": "sep-2027", "label": "September 2027", "date": "2027-09-01" },
+    { "id": "jan-2028", "label": "January 2028", "date": "2028-01-11" }
+  ],
+  "countries": ["Canada", "United Kingdom", "Australia", "New Zealand", "Germany", "United States"],
+  "purposes": [
+    { "id": "study", "label": "Study" },
+    { "id": "work", "label": "Work" },
+    { "id": "pr", "label": "Permanent residence" }
+  ],
+  "englishStatuses": [
+    { "id": "not-taken", "label": "Not taken" },
+    { "id": "booked", "label": "Booked" },
+    { "id": "done", "label": "Done" }
+  ],
+  "milestones": [
+    {
+      "id": "english-test",
+      "labels": {
+        "study": "Book and sit IELTS / PTE",
+        "work": "Complete the required English test",
+        "pr": "Complete IELTS General / PTE Core"
+      },
+      "weeksBefore": { "study": 38, "work": 36, "pr": 52 }
+    },
+    {
+      "id": "shortlist-apply",
+      "labels": {
+        "study": "Shortlist and apply to universities",
+        "work": "Shortlist employers and begin applications",
+        "pr": "Shortlist programmes and assess points"
+      },
+      "weeksBefore": { "study": 34, "work": 32, "pr": 46 }
+    },
+    {
+      "id": "offer",
+      "labels": {
+        "study": "Receive offer and CAS / LOA",
+        "work": "Secure offer and sponsorship evidence",
+        "pr": "Complete nomination / profile prerequisites"
+      },
+      "weeksBefore": { "study": 24, "work": 22, "pr": 34 }
+    },
+    {
+      "id": "proof-funds",
+      "labels": {
+        "study": "Arrange and season proof of funds",
+        "work": "Arrange settlement funds and financial evidence",
+        "pr": "Arrange and season settlement funds"
+      },
+      "weeksBefore": { "study": 20, "work": 18, "pr": 28 }
+    },
+    {
+      "id": "documents",
+      "labels": {
+        "study": "Compile academic and visa documents",
+        "work": "Compile employment and visa documents",
+        "pr": "Compile civil, employment and credential documents"
+      },
+      "weeksBefore": { "study": 16, "work": 15, "pr": 22 }
+    },
+    {
+      "id": "visa-application",
+      "labels": {
+        "study": "Submit the student visa application",
+        "work": "Submit the work visa application",
+        "pr": "Submit the permanent residence application"
+      },
+      "weeksBefore": { "study": 12, "work": 12, "pr": 18 }
+    },
+    {
+      "id": "biometrics-medical",
+      "labels": {
+        "study": "Complete biometrics and medicals",
+        "work": "Complete biometrics and medicals",
+        "pr": "Complete biometrics, medicals and police checks"
+      },
+      "weeksBefore": { "study": 9, "work": 9, "pr": 14 }
+    },
+    {
+      "id": "decision-travel",
+      "labels": {
+        "study": "Decision buffer, accommodation and travel",
+        "work": "Decision buffer and relocation planning",
+        "pr": "Decision buffer and arrival preparation"
+      },
+      "weeksBefore": { "study": 4, "work": 4, "pr": 6 }
+    }
+  ],
+  "countryAdjustments": {
+    "Canada": { "offer": 2, "proof-funds": 4, "visa-application": 2, "biometrics-medical": 2 },
+    "United Kingdom": { "shortlist-apply": 2, "offer": 1, "visa-application": 1 },
+    "Australia": { "english-test": 3, "documents": 3, "visa-application": 3, "biometrics-medical": 2 },
+    "New Zealand": { "documents": 2, "visa-application": 2 },
+    "Germany": { "shortlist-apply": 4, "proof-funds": 4, "documents": 4, "visa-application": 4 },
+    "United States": { "offer": 3, "proof-funds": 2, "visa-application": 3 }
+  },
+  "officialSources": [
+    { "country": "Canada", "url": "https://www.canada.ca/en/services/immigration-citizenship.html" },
+    { "country": "United Kingdom", "url": "https://www.gov.uk/browse/visas-immigration" },
+    { "country": "Australia", "url": "https://immi.homeaffairs.gov.au/" },
+    { "country": "New Zealand", "url": "https://www.immigration.govt.nz/" },
+    { "country": "Germany", "url": "https://www.make-it-in-germany.com/en/visa-residence" },
+    { "country": "United States", "url": "https://travel.state.gov/content/travel/en/us-visas.html" }
+  ]
+}
