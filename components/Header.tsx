@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, Menu, MessageCircle, X } from "lucide-react";
+import { ChevronDown, Mail, Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { countries } from "@/data/countries";
-import { navLinks, serviceNavLinks, whatsappLink } from "@/data/site";
+import { navLinks, serviceNavLinks } from "@/data/site";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -247,15 +247,13 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 xl:flex">
-          <a
+          <Link
             className="inline-flex min-h-11 items-center gap-2 bg-ink px-4 py-2 text-sm font-bold text-white shadow-[0_14px_34px_rgba(7,29,51,0.18)] transition hover:bg-gold"
-            href={whatsappLink()}
-            target="_blank"
-            rel="noreferrer"
+            href="/contact"
           >
-            <MessageCircle className="h-4 w-4" aria-hidden="true" />
-            Enquire Now
-          </a>
+            <Mail className="h-4 w-4" aria-hidden="true" />
+            Contact Us
+          </Link>
         </div>
 
         <button
@@ -339,15 +337,14 @@ export function Header() {
                 </Link>
               );
             })}
-            <a
+            <Link
               className="mt-2 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white"
-              href={whatsappLink()}
-              target="_blank"
-              rel="noreferrer"
+              href="/contact"
+              onClick={() => setOpen(false)}
             >
-              <MessageCircle className="h-4 w-4" aria-hidden="true" />
-              WhatsApp Enquiry
-            </a>
+              <Mail className="h-4 w-4" aria-hidden="true" />
+              Contact Us
+            </Link>
           </nav>
         </div>
       ) : null}

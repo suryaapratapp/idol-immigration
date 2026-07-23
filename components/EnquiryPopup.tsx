@@ -2,14 +2,15 @@
 
 import Image from "next/image";
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { X } from "lucide-react";
+import { CheckCircle2, LoaderCircle, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { countries } from "@/data/countries";
 import { allServiceCards } from "@/data/services";
-import { whatsappLink } from "@/data/site";
+import { submitToFormspree } from "@/lib/formspree";
 
 const storageKey = "idol-enquiry-popup-dismissed";
 const enquiryFinishedEvent = "idol:enquiry-finished";
+const enquiryEndpoint = "https://formspree.io/f/mykrdryn";
 
 const countryCodes = ["+91", "+1", "+44", "+61", "+64", "+971", "+49"];
 const ageOptions = ["Select Your Age", "Under 18", "18 - 24", "25 - 34", "35 - 44", "45+"];
@@ -35,6 +36,8 @@ const countryOptions = ["Country to immigrate*", ...countries.map((country) => c
 
 export function EnquiryPopup() {
   const [open, setOpen] = useState(false);
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
 
@@ -85,25 +88,26 @@ export function EnquiryPopup() {
     window.dispatchEvent(new CustomEvent(enquiryFinishedEvent));
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const form = new FormData(event.currentTarget);
-    const message = [
-      "Hi Idol Immigration, I filled the website enquiry form.",
-      `Name: ${form.get("name") || ""}`,
-      `Email: ${form.get("email") || ""}`,
-      `Phone/WhatsApp: ${form.get("countryCode") || ""} ${form.get("phone") || ""}`,
-      `Age: ${form.get("age") || ""}`,
-      `Highest education: ${form.get("education") || ""}`,
-      `Work experience: ${form.get("workExperience") || ""}`,
-      `Visa type: ${form.get("visaType") || ""}`,
-      `Country to immigrate: ${form.get("country") || ""}`
-    ].join("\n");
+    const form = event.currentTarget;
+    setStatus("submitting");
+    setErrorMessage("");
 
-    window.sessionStorage.setItem(storageKey, "true");
-    setOpen(false);
-    window.dispatchEvent(new CustomEvent(enquiryFinishedEvent));
-    window.open(whatsappLink(message), "_blank", "noopener,noreferrer");
+    try {
+      await submitToFormspree(form, enquiryEndpoint);
+      form.reset();
+      window.sessionStorage.setItem(storageKey, "true");
+      window.dispatchEvent(new CustomEvent(enquiryFinishedEvent));
+      setStatus("success");
+    } catch (error) {
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "We could not send your enquiry. Please try again."
+      );
+      setStatus("error");
+    }
   }
 
   if (!open) {
@@ -148,37 +152,73 @@ export function EnquiryPopup() {
           </div>
         </div>
 
-        <form className="grid gap-2 p-3 sm:p-4" onSubmit={handleSubmit}>
-          <Field name="name" placeholder="Name*" required />
-          <Field name="email" placeholder="Email*" required type="email" />
-
-          <div className="grid grid-cols-[0.32fr_0.68fr] gap-2">
-            <select
-              aria-label="Country code"
-              className="h-11 border border-slate-300 bg-white px-3 text-sm font-semibold text-ink focus:border-gold focus:ring-gold"
-              defaultValue="+91"
-              name="countryCode"
-            >
-              {countryCodes.map((code) => (
-                <option key={code}>{code}</option>
-              ))}
-            </select>
-            <Field name="phone" placeholder="Phone No*" required type="tel" />
+        {status === "success" ? (
+          <div className="grid min-h-80 place-items-center p-6 text-center sm:p-10" role="status">
+            <div>
+              <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-emerald-50 text-emerald-700">
+                <CheckCircle2 className="h-7 w-7" aria-hidden="true" />
+              </span>
+              <h3 className="mt-5 text-2xl font-extrabold text-ink">Enquiry sent</h3>
+              <p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-slate-600">
+                Thank you. The Idol Immigration team has received your details and will contact you shortly.
+              </p>
+              <button
+                className="mt-6 inline-flex min-h-11 items-center justify-center bg-ink px-6 text-sm font-bold text-white transition hover:bg-gold"
+                onClick={close}
+                type="button"
+              >
+                Close
+              </button>
+            </div>
           </div>
-
-          <Select name="age" options={ageOptions} required />
-          <Select name="education" options={educationOptions} />
-          <Select name="workExperience" options={workExperienceOptions} />
-          <Select name="visaType" options={visaTypeOptions} required />
-          <Select name="country" options={countryOptions} required />
-
-          <button
-            className="mx-auto inline-flex min-h-12 items-center justify-center bg-ink px-7 py-2 text-base font-extrabold text-white shadow-[0_14px_34px_rgba(7,29,51,0.18)] transition hover:bg-gold"
-            type="submit"
+        ) : (
+          <form
+            action={enquiryEndpoint}
+            className="grid gap-2 p-3 sm:p-4"
+            method="POST"
+            onSubmit={handleSubmit}
           >
-            Submit
-          </button>
-        </form>
+            <input name="_subject" type="hidden" value="New quick enquiry from Idol Immigration website" />
+            <input name="formSource" type="hidden" value="Website quick enquiry popup" />
+            <Field name="name" placeholder="Name*" required />
+            <Field name="email" placeholder="Email*" required type="email" />
+
+            <div className="grid grid-cols-[0.32fr_0.68fr] gap-2">
+              <select
+                aria-label="Country code"
+                className="h-11 border border-slate-300 bg-white px-3 text-sm font-semibold text-ink focus:border-gold focus:ring-gold"
+                defaultValue="+91"
+                name="countryCode"
+              >
+                {countryCodes.map((code) => (
+                  <option key={code}>{code}</option>
+                ))}
+              </select>
+              <Field name="phone" placeholder="Phone No*" required type="tel" />
+            </div>
+
+            <Select name="age" options={ageOptions} required />
+            <Select name="education" options={educationOptions} />
+            <Select name="workExperience" options={workExperienceOptions} />
+            <Select name="visaType" options={visaTypeOptions} required />
+            <Select name="country" options={countryOptions} required />
+
+            {status === "error" ? (
+              <p className="text-center text-xs font-semibold text-red-700" role="alert">
+                {errorMessage}
+              </p>
+            ) : null}
+
+            <button
+              className="mx-auto inline-flex min-h-12 items-center justify-center gap-2 bg-ink px-7 py-2 text-base font-extrabold text-white shadow-[0_14px_34px_rgba(7,29,51,0.18)] transition hover:bg-gold disabled:cursor-wait disabled:opacity-65"
+              disabled={status === "submitting"}
+              type="submit"
+            >
+              {status === "submitting" ? <LoaderCircle className="h-4 w-4 animate-spin" aria-hidden="true" /> : null}
+              {status === "submitting" ? "Sending..." : "Submit"}
+            </button>
+          </form>
+        )}
       </div>
     </div>
   );

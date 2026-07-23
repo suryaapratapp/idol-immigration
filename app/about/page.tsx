@@ -31,7 +31,7 @@ export default function AboutPage() {
       </PageHero>
 
       <section className="bg-white py-16 sm:py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:px-8">
           <div>
             <SectionHeader
               eyebrow="Our position"
@@ -54,7 +54,7 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-          <div className="grid gap-5 text-sm leading-7 text-slate-600">
+          <div className="flex flex-col gap-5 text-sm leading-7 text-slate-600">
             <p>
               At Idol Immigration & Overseas Consultants, guidance begins with
               eligibility and pathway clarity. The team reviews applicant goals,

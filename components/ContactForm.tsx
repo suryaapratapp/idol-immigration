@@ -1,9 +1,12 @@
 "use client";
 
-import { FormEvent } from "react";
+import { CheckCircle2, LoaderCircle } from "lucide-react";
+import { FormEvent, useState } from "react";
 import { countries } from "@/data/countries";
 import { allServiceCards } from "@/data/services";
-import { whatsappLink } from "@/data/site";
+import { submitToFormspree } from "@/lib/formspree";
+
+const contactEndpoint = "https://formspree.io/f/xqerdral";
 
 const countryCodes = ["+91", "+1", "+44", "+61", "+64", "+971", "+49"];
 const ageOptions = ["Select Your Age", "Under 18", "18 - 24", "25 - 34", "35 - 44", "45+"];
@@ -28,26 +31,61 @@ const visaTypeOptions = ["Visa Type*", ...allServiceCards.slice(0, 10).map((serv
 const countryOptions = ["Country to immigrate*", ...countries.map((country) => country.name), "Not sure"];
 
 export function ContactForm() {
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const form = new FormData(event.currentTarget);
-    const message = [
-      "Hi Idol Immigration, I want guidance.",
-      `Name: ${form.get("name") || ""}`,
-      `Email: ${form.get("email") || ""}`,
-      `Phone/WhatsApp: ${form.get("countryCode") || ""} ${form.get("phone") || ""}`,
-      `Age: ${form.get("age") || ""}`,
-      `Highest education: ${form.get("education") || ""}`,
-      `Work experience: ${form.get("workExperience") || ""}`,
-      `Visa type: ${form.get("visaType") || ""}`,
-      `Country to immigrate: ${form.get("country") || ""}`
-    ].join("\n");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-    window.open(whatsappLink(message), "_blank", "noopener,noreferrer");
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    setStatus("submitting");
+    setErrorMessage("");
+
+    try {
+      await submitToFormspree(form, contactEndpoint);
+      form.reset();
+      setStatus("success");
+    } catch (error) {
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "We could not send your enquiry. Please try again."
+      );
+      setStatus("error");
+    }
+  }
+
+  if (status === "success") {
+    return (
+      <div className="grid min-h-[520px] place-items-center border border-slate-300 bg-white p-6 text-center shadow-sm" role="status">
+        <div>
+          <span className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-emerald-50 text-emerald-700">
+            <CheckCircle2 className="h-8 w-8" aria-hidden="true" />
+          </span>
+          <h2 className="mt-6 text-3xl font-extrabold text-ink">Thank you</h2>
+          <p className="mx-auto mt-3 max-w-md text-sm leading-7 text-slate-600">
+            Your enquiry has been sent to Idol Immigration. Our team will review your details and contact you shortly.
+          </p>
+          <button
+            className="mt-7 inline-flex min-h-12 items-center justify-center bg-ink px-6 text-sm font-bold text-white transition hover:bg-gold"
+            onClick={() => setStatus("idle")}
+            type="button"
+          >
+            Send another enquiry
+          </button>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <form className="grid gap-4 border border-slate-300 bg-white p-5 shadow-sm sm:p-6" onSubmit={handleSubmit}>
+    <form
+      action={contactEndpoint}
+      className="grid gap-4 border border-slate-300 bg-white p-5 shadow-sm sm:p-6"
+      method="POST"
+      onSubmit={handleSubmit}
+    >
+      <input name="_subject" type="hidden" value="New contact enquiry from Idol Immigration website" />
+      <input name="formSource" type="hidden" value="Contact page" />
       <Field name="name" placeholder="Name*" required />
       <Field name="email" placeholder="Email*" required type="email" />
       <div className="grid gap-4 sm:grid-cols-[0.32fr_0.68fr]">
@@ -68,14 +106,19 @@ export function ContactForm() {
       <Select name="workExperience" options={workExperienceOptions} />
       <Select name="visaType" options={visaTypeOptions} required />
       <Select name="country" options={countryOptions} required />
-      <p className="text-sm leading-6 text-slate-500">
-        We usually begin with WhatsApp so you can share your situation easily.
-      </p>
+      <p className="text-sm leading-6 text-slate-500">Your details are sent securely to the Idol Immigration team.</p>
+      {status === "error" ? (
+        <p className="text-center text-sm font-semibold text-red-700" role="alert">
+          {errorMessage}
+        </p>
+      ) : null}
       <button
-        className="mx-auto inline-flex min-h-14 items-center justify-center bg-ink px-10 py-3 text-lg font-extrabold text-white transition hover:bg-gold"
+        className="mx-auto inline-flex min-h-14 items-center justify-center gap-2 bg-ink px-10 py-3 text-lg font-extrabold text-white transition hover:bg-gold disabled:cursor-wait disabled:opacity-65"
+        disabled={status === "submitting"}
         type="submit"
       >
-        Submit
+        {status === "submitting" ? <LoaderCircle className="h-5 w-5 animate-spin" aria-hidden="true" /> : null}
+        {status === "submitting" ? "Sending..." : "Send Enquiry"}
       </button>
     </form>
   );

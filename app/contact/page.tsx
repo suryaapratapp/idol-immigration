@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, MessageCircle } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -9,7 +9,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Contact Idol Immigration",
   description:
-    "Start a WhatsApp consultation with Idol Immigration for visa, study abroad, PR, tourist visa, refusal review and settlement guidance.",
+    "Contact Idol Immigration for visa, study abroad, PR, tourist visa, refusal review and settlement guidance.",
   path: "/contact",
   keywords: ["immigration consultant for Indians", "study abroad consultant India", "tourist visa consultant India"]
 });
@@ -19,8 +19,8 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Start With a WhatsApp Consultation"
-        copy="Tell us your goal, background, target country and concern. We usually begin with WhatsApp so you can share your situation easily."
+        title="Contact Idol Immigration"
+        copy="Tell us your goal, background, target country and concern. Send the form, email us or speak with the team on WhatsApp."
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <a
@@ -33,7 +33,7 @@ export default function ContactPage() {
             Chat on WhatsApp
           </a>
           <a
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-gold"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:border-gold hover:text-gold"
             href={`mailto:${site.email}`}
           >
             <Mail className="h-4 w-4" aria-hidden="true" />
@@ -46,22 +46,44 @@ export default function ContactPage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
           <div>
             <SectionHeader
-              eyebrow="WhatsApp-first"
-              title="Share Your Situation in Simple Words"
-              copy="No need to know the perfect visa name. Send your profile, goal and timeline. We will help you understand the right starting point."
+              eyebrow="Contact details"
+              title="Talk to the Idol Immigration Team"
+              copy="No need to know the perfect visa name. Share your profile, goal and timeline, and we will help you understand the right starting point."
             />
             <div className="mt-8 grid gap-4">
               <div className="rounded-[8px] border border-slate-200 bg-mist/35 p-5">
-                <p className="text-sm font-semibold text-ink">WhatsApp</p>
+                <p className="flex items-center gap-2 text-sm font-semibold text-ink">
+                  <MessageCircle className="h-4 w-4 text-gold" aria-hidden="true" />
+                  WhatsApp
+                </p>
                 <a className="mt-1 block text-lg font-semibold text-ocean" href={whatsappLink()} target="_blank" rel="noreferrer">
                   {site.whatsappNumber}
                 </a>
               </div>
               <div className="rounded-[8px] border border-slate-200 bg-mist/35 p-5">
-                <p className="text-sm font-semibold text-ink">Email</p>
+                <p className="flex items-center gap-2 text-sm font-semibold text-ink">
+                  <Mail className="h-4 w-4 text-gold" aria-hidden="true" />
+                  Email
+                </p>
                 <a className="mt-1 block text-lg font-semibold text-ocean" href={`mailto:${site.email}`}>
                   {site.email}
                 </a>
+              </div>
+              <div className="rounded-[8px] border border-slate-200 bg-mist/35 p-5">
+                <p className="flex items-center gap-2 text-sm font-semibold text-ink">
+                  <Phone className="h-4 w-4 text-gold" aria-hidden="true" />
+                  Phone
+                </p>
+                <a className="mt-1 block text-lg font-semibold text-ocean" href={`tel:${site.whatsappDigits}`}>
+                  {site.phoneDisplay}
+                </a>
+              </div>
+              <div className="rounded-[8px] border border-slate-200 bg-mist/35 p-5">
+                <p className="flex items-center gap-2 text-sm font-semibold text-ink">
+                  <MapPin className="h-4 w-4 text-gold" aria-hidden="true" />
+                  Office
+                </p>
+                <address className="mt-2 text-sm not-italic leading-6 text-slate-600">{site.address}</address>
               </div>
             </div>
           </div>

@@ -18,6 +18,16 @@ export const metadata: Metadata = {
     template: `%s | ${site.shortName}`
   },
   description: site.description,
+  icons: {
+    icon: [
+      {
+        url: "/images/logo-idol.png",
+        type: "image/png"
+      }
+    ],
+    shortcut: "/images/logo-idol.png",
+    apple: "/images/logo-idol.png"
+  },
   alternates: {
     canonical: site.url
   },
