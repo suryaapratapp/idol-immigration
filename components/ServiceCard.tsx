@@ -41,6 +41,7 @@ export function ServiceCard({ service, compact = false }: ServiceCardProps) {
           href={`/services/${service.slug}`}
         >
           Learn more
+          <span className="sr-only"> about {service.shortTitle}</span>
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </Link>
         <a

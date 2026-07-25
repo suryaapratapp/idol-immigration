@@ -2,37 +2,50 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  trailingSlash: false,
   async redirects() {
     return [
       {
-        source: "/home-2",
-        destination: "/",
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "idolimmigration.com"
+          }
+        ],
+        destination: "https://www.idolimmigration.com/:path*",
         permanent: true
       },
       {
-        source: "/home-2/",
-        destination: "/",
+        source: "/settlement-support",
+        destination: "/services/settlement-support",
         permanent: true
+      }
+    ];
+  },
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff"
+          },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin"
+          }
+        ]
       },
       {
-        source: "/visitor-visa-2",
-        destination: "/services/visitor-visa",
-        permanent: true
-      },
-      {
-        source: "/visitor-visa-2/",
-        destination: "/services/visitor-visa",
-        permanent: true
-      },
-      {
-        source: "/c11-work-permit",
-        destination: "/services/work-business-visa",
-        permanent: true
-      },
-      {
-        source: "/c11-work-permit/",
-        destination: "/services/work-business-visa",
-        permanent: true
+        source: "/api/:path*",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow, noarchive"
+          }
+        ]
       }
     ];
   },

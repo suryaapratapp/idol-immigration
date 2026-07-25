@@ -9,7 +9,7 @@ import { ResourceCard } from "@/components/ResourceCard";
 import { SectionHeader } from "@/components/SectionHeader";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { resourceBySlug, resources } from "@/data/resources";
-import { absoluteUrl, createMetadata, faqSchema } from "@/lib/seo";
+import { absoluteUrl, breadcrumbSchema, createMetadata, faqSchema } from "@/lib/seo";
 import { site } from "@/data/site";
 
 type BlogPageProps = {
@@ -56,7 +56,10 @@ export default async function BlogDetailPage({ params }: BlogPageProps) {
             "@type": "BlogPosting",
             headline: resource.title,
             description: resource.description,
+            url: absoluteUrl(`/blogs/${resource.slug}`),
             mainEntityOfPage: absoluteUrl(`/blogs/${resource.slug}`),
+            image: absoluteUrl(resource.image.src),
+            inLanguage: "en-IN",
             author: {
               "@type": "Organization",
               name: site.name
@@ -64,10 +67,19 @@ export default async function BlogDetailPage({ params }: BlogPageProps) {
             publisher: {
               "@type": "Organization",
               name: site.name,
-              url: site.url
+              url: site.url,
+              logo: {
+                "@type": "ImageObject",
+                url: absoluteUrl("/images/logo-idol.png")
+              }
             }
           },
-          faqSchema(blogFaqs)
+          faqSchema(blogFaqs),
+          breadcrumbSchema([
+            { name: "Home", href: "/" },
+            { name: "Blogs", href: "/blogs" },
+            { name: resource.title, href: `/blogs/${resource.slug}` }
+          ])
         ]}
       />
       <PageHero

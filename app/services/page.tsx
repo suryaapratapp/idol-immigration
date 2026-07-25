@@ -8,9 +8,9 @@ import { allServiceCards } from "@/data/services";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "All Visa & Immigration Services in Gurugram | Idol Immigration",
+  title: "Visa & Immigration Services in Gurugram",
   description:
-    "Study abroad, Canada PR, Australia PR, work visa, tourist visa, MBBS abroad, visa refusal review and settlement support - all under one roof in Gurugram.",
+    "Explore study abroad, PR, work, tourist, student and family visa guidance, MBBS abroad, refusal review and settlement support in Gurugram.",
   path: "/services",
   keywords: [
     "study abroad consultant India",

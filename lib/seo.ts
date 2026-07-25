@@ -31,8 +31,23 @@ export function createMetadata({
     title: pageTitle,
     description,
     keywords,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1
+      }
+    },
     alternates: {
-      canonical: url
+      canonical: url,
+      languages: {
+        "en-IN": url,
+        "x-default": url
+      }
     },
     openGraph: {
       title: fullTitle,
@@ -40,6 +55,7 @@ export function createMetadata({
       url,
       siteName: site.shortName,
       type: "website",
+      locale: "en_IN",
       images: [
         {
           url: "/images/global-journey-hero.png",
@@ -68,7 +84,10 @@ export function professionalServiceSchema() {
     email: site.email,
     telephone: site.whatsappNumber,
     image: absoluteUrl("/images/global-journey-hero.png"),
-    priceRange: "$$",
+    logo: {
+      "@type": "ImageObject",
+      url: absoluteUrl("/images/logo-idol.png")
+    },
     address: {
       "@type": "PostalAddress",
       streetAddress:
@@ -78,22 +97,13 @@ export function professionalServiceSchema() {
       postalCode: "122002",
       addressCountry: "IN"
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "42",
-      bestRating: "5",
-      worstRating: "1"
-    },
     description: site.description,
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        opens: "10:00",
-        closes: "18:30"
-      }
-    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      telephone: site.whatsappNumber,
+      email: site.email
+    },
     areaServed: [
       "India",
       "United Kingdom",
@@ -135,6 +145,21 @@ export function professionalServiceSchema() {
       site.socials.facebook,
       site.socials.youtube
     ]
+  };
+}
+
+export function websiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${site.url}/#website`,
+    name: site.shortName,
+    alternateName: site.name,
+    url: site.url,
+    inLanguage: "en-IN",
+    publisher: {
+      "@id": `${site.url}/#organization`
+    }
   };
 }
 

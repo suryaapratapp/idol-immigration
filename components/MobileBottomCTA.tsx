@@ -7,7 +7,7 @@ export function MobileBottomCTA() {
     <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 px-3 py-3 shadow-2xl backdrop-blur sm:hidden">
       <div className="grid grid-cols-2 gap-2">
         <a
-          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[#25D366] px-3 text-sm font-semibold text-white"
+          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[#0F7A3F] px-3 text-sm font-semibold text-white"
           href={whatsappLink()}
           target="_blank"
           rel="noreferrer"

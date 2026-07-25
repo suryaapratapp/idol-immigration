@@ -1,8 +1,8 @@
 export const site = {
   name: "Idol Immigration & Overseas Consultants",
   shortName: "Idol Immigration",
-  domain: "idolimmigration.com",
-  url: "https://idolimmigration.com",
+  domain: "www.idolimmigration.com",
+  url: "https://www.idolimmigration.com",
   email: "info@idolimmigration.com",
   whatsappNumber: "+918527427723",
   whatsappDigits: "918527427723",

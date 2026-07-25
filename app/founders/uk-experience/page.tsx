@@ -26,7 +26,7 @@ import { absoluteUrl, breadcrumbSchema, createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "Founders' UK Experience Guide",
   description:
-    "Founder-led UK arrival and settlement guide for Indian students and families, with accommodation, banking, groceries, transport, utilities, work, discounts and scam-safety links.",
+    "A founder-led UK arrival guide for Indian students and families covering accommodation, banking, transport, work, budgeting and scam safety.",
   path: "/founders/uk-experience",
   keywords: [
     "overseas settlement support",
@@ -336,7 +336,7 @@ export default function UkExperiencePage() {
               title="Plan your UK arrival with someone who understands the journey"
               copy="Send your arrival city, accommodation status, course or work plan and current doubts. Idol can help you prepare a practical first-month checklist."
               message="Hi Idol Immigration, I want a UK arrival and settlement checklist."
-              secondaryHref="/settlement-support"
+              secondaryHref="/services/settlement-support"
               secondaryLabel="View settlement support"
             />
           </div>

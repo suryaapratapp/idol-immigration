@@ -8,16 +8,19 @@ import { Header } from "@/components/Header";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { JsonLd } from "@/components/JsonLd";
 import { MobileBottomCTA } from "@/components/MobileBottomCTA";
-import { professionalServiceSchema } from "@/lib/seo";
+import { professionalServiceSchema, websiteSchema } from "@/lib/seo";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  applicationName: site.shortName,
   title: {
     default: `${site.shortName} | Visa, Study Abroad & Settlement Guidance`,
     template: `%s | ${site.shortName}`
   },
   description: site.description,
+  category: "Immigration and study abroad consultancy",
+  referrer: "strict-origin-when-cross-origin",
   icons: {
     icon: [
       {
@@ -29,7 +32,22 @@ export const metadata: Metadata = {
     apple: "/images/logo-idol.png"
   },
   alternates: {
-    canonical: site.url
+    canonical: site.url,
+    languages: {
+      "en-IN": site.url,
+      "x-default": site.url
+    }
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1
+    }
   },
   openGraph: {
     title: `${site.shortName} | Visa, Study Abroad & Settlement Guidance`,
@@ -37,7 +55,8 @@ export const metadata: Metadata = {
     url: site.url,
     siteName: site.shortName,
     images: ["/images/global-journey-hero.png"],
-    type: "website"
+    type: "website",
+    locale: "en_IN"
   },
   twitter: {
     card: "summary_large_image",
@@ -50,7 +69,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en-IN">
       <body>
         <GoogleAnalytics />
-        <JsonLd data={professionalServiceSchema()} />
+        <JsonLd data={[professionalServiceSchema(), websiteSchema()]} />
         <Header />
         <main>{children}</main>
         <Footer />

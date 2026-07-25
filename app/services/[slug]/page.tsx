@@ -41,77 +41,77 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   const metaBySlug: Record<string, { title: string; description: string }> = {
     "study-abroad": {
-      title: "Study Abroad Consultant in Gurugram | UK, Canada, Australia | Idol Immigration",
+      title: "Study Abroad Consultant in Gurugram",
       description:
-        "Plan your study abroad with a trusted consultant in Gurugram. UK, Canada, Australia, USA & Europe. Course shortlisting, SOP review and visa readiness support."
+        "Plan study in the UK, Canada, Australia, USA or Europe with course shortlisting, SOP review and visa readiness support in Gurugram."
     },
     "visitor-visa": {
-      title: "Tourist & Visitor Visa Consultant in Gurugram | Idol Immigration",
+      title: "Tourist & Visitor Visa Consultant in Gurugram",
       description:
         "Get expert tourist and visitor visa guidance in Gurugram for UK, Canada, USA, Europe and more. Itinerary, funds and document review. No false promises."
     },
     "pr-skilled-migration": {
-      title: "Canada PR & Australia PR Consultant in Gurugram | Idol Immigration",
+      title: "Canada & Australia PR Consultant in Gurugram",
       description:
-        "Honest PR and skilled migration guidance in Gurugram. Canada Express Entry, PNP, Australia 189/190/491. Eligibility check, document planning and backup routes."
+        "PR and skilled migration guidance in Gurugram for Canada Express Entry, PNP and Australia 189, 190 and 491 routes."
     },
     "work-business-visa": {
-      title: "Work Visa & Business Visa Consultant in Gurugram | Idol Immigration",
+      title: "Work & Business Visa Consultant in Gurugram",
       description:
-        "Work visa, business visa, investor and start-up route guidance in Gurugram. UK Skilled Worker, Canada, Australia, Germany. Route review and document planning."
+        "Work, business, investor and start-up visa guidance in Gurugram for the UK, Canada, Australia and Germany, with document planning."
     },
     "dependent-visa": {
-      title: "Dependent Visa Help in Gurugram | Spouse & Family Visa | Idol Immigration",
+      title: "Dependent & Family Visa Help in Gurugram",
       description:
-        "Dependent visa guidance in Gurugram for spouses, children and eligible family members. Relationship evidence, funds review and consistency checks for UK, Canada, Australia."
+        "Dependent visa guidance in Gurugram for spouses, children and eligible family members, including evidence, funds and consistency checks."
     },
     "mbbs-abroad": {
-      title: "MBBS Abroad Consultant in Gurugram for Indian Students | Idol Immigration",
+      title: "MBBS Abroad Consultant for Indian Students",
       description:
-        "Compare MBBS abroad options - Russia, Philippines, Georgia, Kazakhstan and more. Country, university, eligibility and visa guidance from a Gurugram consultant."
+        "Compare MBBS options in Russia, the Philippines, Georgia, Kazakhstan and more, with country, university, eligibility and visa guidance."
     },
     "visa-refusal-review": {
-      title: "Visa Refusal Review & Reapplication Help in Gurugram | Idol Immigration",
+      title: "Visa Refusal Review & Reapplication Help",
       description:
-        "Had a visa refusal? Get an honest second look in Gurugram. Refusal letter analysis, document gap review and reapplication readiness for UK, Canada, Australia and more."
+        "Get refusal letter analysis, document gap review and reapplication readiness guidance in Gurugram for the UK, Canada, Australia and more."
     },
     "student-visa": {
-      title: "Student Visa Application Support in Gurugram | Idol Immigration",
+      title: "Student Visa Application Support in Gurugram",
       description:
-        "Build a strong student visa file with guidance from Gurugram. Forms, SOP review, funds planning and country-specific document support for UK, Canada, Australia and USA."
+        "Prepare forms, SOPs, funds and country-specific student visa documents for the UK, Canada, Australia and USA with support in Gurugram."
     },
     "spouse-family-visa": {
-      title: "Spouse & Family Visa Consultant in Gurugram | Idol Immigration",
+      title: "Spouse & Family Visa Consultant in Gurugram",
       description:
-        "Spouse visa and family visa guidance in Gurugram. Relationship evidence, funds and consistency review for UK, Canada, Australia and dependent open work permits."
+        "Spouse and family visa guidance in Gurugram, including relationship evidence, funds and consistency review for major destinations."
     },
     "ielts-pte-interview-preparation": {
-      title: "IELTS & PTE Prep in Gurugram | Visa Interview Coaching | Idol Immigration",
+      title: "IELTS, PTE & Visa Interview Prep in Gurugram",
       description:
-        "Prepare for IELTS, PTE and visa interviews with practical coaching in Gurugram / Delhi NCR. English confidence, interview practice and purpose clarity for students and visa applicants."
+        "Prepare for IELTS, PTE and visa interviews with practical coaching, English confidence and purpose clarity in Gurugram and Delhi NCR."
     },
     "settlement-support": {
-      title: "Post-Landing & Settlement Support for Indians Moving Abroad | Idol Immigration",
+      title: "Post-Landing & Settlement Support Abroad",
       description:
-        "Get ready for your first weeks abroad. Accommodation planning, bank account, SIM, CV, part-time job readiness and first 30-day checklist - from your Gurugram consultant."
+        "Prepare for accommodation, banking, SIM setup, CVs, part-time work readiness and your first 30 days abroad with support in Gurugram."
     },
     "sop-statement-review": {
-      title: "SOP & GTE Statement Review for Indian Visa Applicants | Idol Immigration",
+      title: "SOP & GTE Statement Review",
       description:
         "Make your SOP, GTE or personal statement stronger. Story logic, course fit and risk signal review by an experienced immigration consultant in Gurugram."
     },
     "accommodation-guidance": {
-      title: "Accommodation Guidance Before Moving Abroad | Idol Immigration",
+      title: "Accommodation Guidance Before Moving Abroad",
       description:
-        "Find safe, affordable accommodation before arriving abroad. Temporary stays, room search basics, safety checks and budgeting guidance from Idol Immigration, Gurugram."
+        "Plan temporary stays, room searches, safety checks and accommodation budgets before moving abroad with guidance in Gurugram."
     },
     "part-time-job-guidance": {
-      title: "Part-Time Job Guidance Abroad for Indian Students | Idol Immigration",
+      title: "Part-Time Job Guidance for Students Abroad",
       description:
         "Prepare for legal part-time work abroad. CV tips, interview confidence, skills planning and realistic expectations - guidance from Idol Immigration in Gurugram."
     },
     "skill-development-before-moving": {
-      title: "Skills to Build Before Moving Abroad | Pre-Departure Help | Idol Immigration",
+      title: "Skills to Build Before Moving Abroad",
       description:
         "Build English confidence, LinkedIn, digital skills and budgeting basics before moving abroad. Pre-departure skill guidance from Idol Immigration, Gurugram."
     }
@@ -517,7 +517,7 @@ function PartTimeJobDetails() {
             To know more about job search, volunteer work, CV building, interview preparation, local rules and anything else you need support with, please reach out to us. We can help you plan the next practical step.
           </p>
           <a
-            className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-gold px-5 py-3 text-sm font-semibold text-ink transition hover:bg-white"
+            className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-gold px-5 py-3 text-sm font-semibold text-white transition hover:bg-ink"
             href={whatsappLink("Hi Idol Immigration, I want part-time job and volunteer work guidance.")}
             target="_blank"
             rel="noreferrer"

@@ -7,7 +7,8 @@ import { createMetadata, faqSchema } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
   title: "FAQs",
-  description: "Frequently asked questions about Idol Immigration services.",
+  description:
+    "Answers to common questions about Idol Immigration consultations, visa guidance, documents, timelines, fees and application outcomes.",
   path: "/faqs"
 });
 

@@ -30,7 +30,7 @@ export function Footer() {
             </span>
             <div>
               <p className="font-semibold">{site.name}</p>
-              <p className="text-sm text-slate-500">Premium immigration guidance from Gurugram</p>
+              <p className="text-sm text-slate-600">Premium immigration guidance from Gurugram</p>
             </div>
           </div>
           <p className="mt-6 max-w-md text-sm leading-7 text-slate-600">
@@ -100,7 +100,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-stone-200 bg-white/70">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 text-xs leading-6 text-slate-500 sm:px-6 lg:flex-row lg:items-start lg:justify-between lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 text-xs leading-6 text-slate-600 sm:px-6 lg:flex-row lg:items-start lg:justify-between lg:px-8">
           <p className="max-w-4xl">
             Disclaimer: Idol Immigration provides immigration consultation, documentation support, application guidance and study abroad support. For services requiring licensed representation, clients should verify the relevant authorised representative through the official regulatory body. Immigration rules, eligibility, documents, timelines and outcomes depend on official government criteria and individual circumstances. We do not guarantee visa approval.
           </p>

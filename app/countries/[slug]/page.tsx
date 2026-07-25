@@ -30,9 +30,9 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
 
   const metaBySlug: Record<string, { title: string; description: string; keywords: string[] }> = {
     canada: {
-      title: "Canada PR Consultant in Gurugram | Express Entry, PNP & Study Visa | Idol Immigration",
+      title: "Canada PR Consultant in Gurugram",
       description:
-        "Canada PR, Express Entry, PNP, study visa and visitor visa guidance for Indian applicants in Gurugram. Honest CRS score review, document planning and backup routes.",
+        "Canada PR, Express Entry, PNP, study and visitor visa guidance for Indian applicants in Gurugram, with CRS review and document planning.",
       keywords: [
         "Canada PR consultant in Gurugram",
         "Canada PR from India",
@@ -45,9 +45,9 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
       ]
     },
     australia: {
-      title: "Australia PR Consultant in Gurugram | Skilled Visa 189, 190, 491 | Idol Immigration",
+      title: "Australia PR Consultant in Gurugram",
       description:
-        "Australia PR, Subclass 189, 190 and 491 skilled visa guidance for Indian applicants in Gurugram. Profile assessment, points review, document planning and backup routes.",
+        "Australia PR and Subclass 189, 190 and 491 skilled visa guidance for Indian applicants in Gurugram, including points and document review.",
       keywords: [
         "Australia PR consultant in Gurugram",
         "Australia PR from India",
@@ -58,9 +58,9 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
       ]
     },
     uk: {
-      title: "UK Visa Consultant in Gurugram | Student, Work & Visitor Visa | Idol Immigration",
+      title: "UK Visa Consultant in Gurugram",
       description:
-        "UK student visa, Skilled Worker visa, visitor visa and dependent visa guidance for Indian applicants in Gurugram. CAS help, funds review and SOP support included.",
+        "UK student, Skilled Worker, visitor and dependent visa guidance for Indian applicants in Gurugram, including CAS, funds and SOP support.",
       keywords: [
         "UK student visa for Indian students",
         "UK student visa consultant Gurugram",
@@ -74,9 +74,9 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
       ]
     },
     usa: {
-      title: "USA Visa Consultant in Gurugram | F1 Student, B1/B2 Visitor Visa | Idol Immigration",
+      title: "USA Visa Consultant in Gurugram",
       description:
-        "USA F1 student visa, B1/B2 visitor visa and tourist visa guidance for Indian applicants in Gurugram. Interview preparation, purpose clarity and document review.",
+        "USA F1 student, B1/B2 visitor and tourist visa guidance for Indian applicants in Gurugram, with interview preparation and document review.",
       keywords: [
         "USA student visa",
         "USA B1/B2 visa consultant",
@@ -87,9 +87,9 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
       ]
     },
     "new-zealand": {
-      title: "New Zealand Visa Consultant in Gurugram | Study, PR & Work | Idol Immigration",
+      title: "New Zealand Visa Consultant in Gurugram",
       description:
-        "New Zealand student visa, work visa, visitor visa and family visa guidance for Indian applicants in Gurugram. Country comparison, eligibility and document planning.",
+        "New Zealand student, work, visitor and family visa guidance for Indian applicants in Gurugram, with eligibility and document planning.",
       keywords: [
         "New Zealand visa consultant in Gurugram",
         "New Zealand student visa",
@@ -100,9 +100,9 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
       ]
     },
     europe: {
-      title: "Europe Visa Consultant in Gurugram | Germany Work, Study & PR | Idol Immigration",
+      title: "Europe Visa Consultant in Gurugram",
       description:
-        "Europe visa guidance in Gurugram - Germany Opportunity Card, job seeker visa, work visa and student visa for Indian applicants. Route comparison and document planning.",
+        "Europe visa guidance in Gurugram for the Germany Opportunity Card, job seeker, work and student routes, with document and route planning.",
       keywords: [
         "Europe visa consultant in Gurugram",
         "Germany Opportunity Card",
@@ -116,9 +116,9 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
       ]
     },
     "uae-other-destinations": {
-      title: "UAE & International Visa Consultant in Gurugram | Idol Immigration",
+      title: "UAE Visa Consultant in Gurugram",
       description:
-        "UAE tourist visa, work visa, business travel and family visit guidance for Indian applicants in Gurugram. Stepping-stone and regional route planning also covered.",
+        "UAE tourist, work, business travel and family visit visa guidance for Indian applicants in Gurugram, including regional route planning.",
       keywords: [
         "UAE visa consultant in Gurugram",
         "UAE tourist visa",

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import type { Country } from "@/data/countries";
@@ -11,12 +12,14 @@ type CountryCardProps = {
 export function CountryCard({ country, compact = false }: CountryCardProps) {
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-[8px] border border-stone-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-gold/60 hover:shadow-[0_24px_70px_rgba(15,23,42,0.10)]">
-      <div
-        aria-label={country.image.alt}
-        className={`relative bg-cover bg-center ${compact ? "min-h-28" : "min-h-36"}`}
-        role="img"
-        style={{ backgroundImage: `url(${country.image.src})` }}
-      >
+      <div className={`relative overflow-hidden ${compact ? "min-h-28" : "min-h-36"}`}>
+        <Image
+          src={country.image.src}
+          alt={country.image.alt}
+          fill
+          sizes="(min-width: 1280px) 25vw, (min-width: 768px) 34vw, 78vw"
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
         <div className={`absolute left-4 right-4 flex items-end justify-between gap-4 ${compact ? "bottom-3" : "bottom-4"}`}>
           <div>

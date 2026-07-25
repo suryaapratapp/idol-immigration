@@ -7,9 +7,10 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/home-2/", "/visitor-visa-2/", "/c11-work-permit/"]
+        disallow: "/api/"
       }
     ],
-    sitemap: `${site.url}/sitemap.xml`
+    sitemap: `${site.url}/sitemap.xml`,
+    host: site.url
   };
 }

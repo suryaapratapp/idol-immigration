@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { GoogleReviewsSlider } from "@/components/GoogleReviewsSlider";
-import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { VideoTestimonials } from "@/components/VideoTestimonials";
@@ -20,26 +19,6 @@ export const metadata: Metadata = createMetadata({
 export default function SuccessStoriesPage() {
   return (
     <>
-      <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "Review",
-          itemReviewed: {
-            "@type": "ProfessionalService",
-            name: "Idol Immigration & Overseas Consultants"
-          },
-          reviewRating: {
-            "@type": "Rating",
-            ratingValue: "5",
-            bestRating: "5"
-          },
-          author: {
-            "@type": "Person",
-            name: googleReviews[0].name
-          },
-          reviewBody: googleReviews[0].reviewText
-        }}
-      />
       <PageHero
         eyebrow="Success stories"
         title="Client Reviews and Video Testimonials"

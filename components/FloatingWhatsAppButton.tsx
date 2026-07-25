@@ -41,7 +41,7 @@ export function FloatingWhatsAppButton() {
             Send us your country and visa goal on WhatsApp. We will guide your next step clearly.
           </p>
           <a
-            className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-xs font-semibold text-white"
+            className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#0F7A3F] px-4 py-2 text-xs font-semibold text-white"
             href={whatsappLink("Hi Idol Immigration, I need help choosing the right visa or country.")}
             target="_blank"
             rel="noreferrer"
@@ -53,7 +53,7 @@ export function FloatingWhatsAppButton() {
         </div>
       ) : null}
       <a
-        className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white shadow-2xl transition hover:-translate-y-1 hover:shadow-glow"
+        className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#0F7A3F] text-white shadow-2xl transition hover:-translate-y-1 hover:shadow-glow"
         href={whatsappLink()}
         target="_blank"
         rel="noreferrer"

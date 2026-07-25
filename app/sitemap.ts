@@ -11,7 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/founders",
     "/founders/uk-experience",
     "/services",
-    "/settlement-support",
     "/countries",
     "/ai-pathway-advisor",
     "/tools",
@@ -37,7 +36,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticRoutes, ...dynamicRoutes].map((route) => ({
     url: `${site.url}${route}`,
-    lastModified: new Date(),
     changeFrequency: "monthly",
     priority: route === "" ? 1 : 0.7
   }));

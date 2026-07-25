@@ -460,7 +460,7 @@ export const resources: Resource[] = [
   },
   {
     slug: "part-time-jobs-international-students",
-    title: "How to Find Part-Time Jobs as an International Student",
+    title: "Part-Time Jobs for International Students",
     description:
       "A practical guide to CV readiness, communication, job search habits, interview confidence and realistic expectations.",
     category: "Work Visa",
@@ -709,7 +709,7 @@ function seoTopicPlaceholders(): Resource[] {
     },
     {
       slug: "difference-australia-189-190-491-visas",
-      title: "Difference Between Australia 189, 190 and 491 Visas",
+      title: "Australia 189 vs 190 vs 491 Visas",
       description: "Compare Australia Subclass 189 visa, Subclass 190 visa and Subclass 491 visa by nomination, location, points and profile fit.",
       category: "PR Updates",
       keywords: ["Australia Subclass 189 visa", "Australia Subclass 190 visa", "Australia Subclass 491 visa"],
@@ -773,7 +773,7 @@ function seoTopicPlaceholders(): Resource[] {
     },
     {
       slug: "best-countries-indian-students-study-abroad",
-      title: "Best Countries for Indian Students to Study Abroad",
+      title: "Best Study Abroad Countries for Indian Students",
       description: "Compare Canada, UK, Australia, USA, New Zealand and Europe by course fit, cost, documents, work options and post-landing support.",
       category: "Study Abroad",
       keywords: ["study abroad consultant", "study abroad consultant in Gurugram", "pre-departure support"],

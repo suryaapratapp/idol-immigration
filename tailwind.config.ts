@@ -14,7 +14,7 @@ const config: Config = {
         ink: "#0b2238",
         ocean: "#d71920",
         cyan: "#ff4b55",
-        gold: "#e31b23",
+        gold: "#d71920",
         ivory: "#f7f8fb",
         mist: "#eef3f8",
         graphite: "#1f2937"
